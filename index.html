@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>中3数学 期末テスト対策</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f5f9;color:#1c2330;font-family:"BIZ UDPGothic","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;font-size:18px;line-height:1.75}
+#app{max-width:1120px;margin:0 auto;padding:18px 20px 60px}
+i{font-family:"Times New Roman",Times,serif;font-style:italic;font-size:1.12em;padding:0 1px}
+sup{font-size:.7em}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.86em;line-height:1.2;margin:0 3px}
+.fr>span:first-child{border-bottom:1.5px solid currentColor;padding:0 4px}
+.fr>span{padding:0 4px}
+.hd h1{margin:6px 0 2px;font-size:30px}
+.hd p{margin:0 0 14px;color:#445}
+.sm{font-size:14px;color:#667;margin-left:8px}
+.sum{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.sum>div{background:#fff;border-radius:12px;padding:10px 18px;min-width:150px;box-shadow:0 1px 3px #0001}
+.sum b{font-size:28px;margin-right:2px}
+.sum span{display:block;font-size:13px;color:#667}
+.sum .warn{background:#fff3e6;outline:2px solid #f0a040}
+.modes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.mode{border:0;border-radius:14px;padding:16px;text-align:left;color:#fff;cursor:pointer;font:inherit;box-shadow:0 2px 6px #0002}
+.mode b{display:block;font-size:21px;margin-bottom:4px}
+.mode span{font-size:14px;line-height:1.5;display:block}
+.mode em{font-style:normal;background:#fff;color:#c33;border-radius:99px;padding:0 9px;margin-left:8px;font-size:16px}
+.m1{background:#d9482b}.m2{background:#c27a00}.m3{background:#1f4e9c}.m4{background:#2a8a5c}
+.mode:hover{filter:brightness(1.08)}
+.box{background:#fff;border-radius:12px;padding:12px 20px;box-shadow:0 1px 3px #0001}
+.weakbox h2{font-size:18px;margin:4px 0}
+.weakbox ul{margin:4px 0;padding-left:22px;font-size:16px;line-height:1.7}
+.sec{font-size:20px;margin:22px 0 8px}
+.unit{background:#fff;border-radius:12px;margin-bottom:8px;box-shadow:0 1px 3px #0001}
+.unit summary{padding:12px 18px;cursor:pointer;display:flex;align-items:center;gap:10px}
+.unit summary b{font-size:18px}
+.unit summary .sm2{margin-left:auto}
+.tl{width:100%;border-collapse:collapse}
+.tl td,.tl th{padding:7px 18px;border-top:1px solid #e6e9ef;text-align:left;font-size:16px}
+.tl .rc{white-space:nowrap;width:120px}
+.tl td:last-child{width:120px;text-align:right}
+.bd{font-size:12px;border-radius:99px;padding:1px 9px;margin-left:8px;white-space:nowrap}
+.bd.w{background:#fde3dd;color:#b3321a}.bd.n{background:#fff0cc;color:#8a5a00}.bd.s{background:#e3ecfb;color:#1f4e9c}
+.btn{font:inherit;font-size:16px;border:1.5px solid #1f4e9c;background:#fff;color:#1f4e9c;border-radius:9px;padding:6px 14px;cursor:pointer}
+.btn:hover{background:#eaf1fc}
+.btn.big{background:#1f4e9c;color:#fff;font-size:19px;padding:10px 26px;font-weight:bold}
+.btn.big:hover{background:#173d7c}
+.btn.ghost{border-color:#aab;color:#556}
+.btn.ok{border-color:#1a9c5a;color:#fff;background:#1a9c5a;font-size:18px;padding:9px 22px}
+.btn.ng{border-color:#c33;color:#c33}
+.btn:disabled{opacity:.35;cursor:default}
+.foot{margin-top:26px;font-size:14px;color:#667}
+.top{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.mn{font-weight:bold;font-size:19px}
+.pg{margin-left:auto;color:#445}
+.tm{background:#1c2330;color:#fff;border-radius:8px;padding:2px 12px;font-variant-numeric:tabular-nums}
+.tm.hot{background:#c33}
+.nav{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.nb{font:inherit;font-size:14px;width:36px;height:32px;border:1.5px solid #bcc3d1;background:#fff;border-radius:7px;cursor:pointer}
+.nb.done{background:#dbe7fb;border-color:#1f4e9c}.nb.cur{outline:3px solid #f0a040}
+.nb.o{background:#d9f3e4;border-color:#1a9c5a}.nb.x{background:#fde0dc;border-color:#c33}
+.card{background:#fff;border-radius:14px;padding:18px 26px 22px;box-shadow:0 2px 8px #0001}
+.qhead{display:flex;align-items:center;gap:10px;border-bottom:2px solid #e6e9ef;padding-bottom:8px;margin-bottom:12px;flex-wrap:wrap}
+.un{background:#1c2330;color:#fff;border-radius:6px;padding:0 10px;font-size:14px}
+.tn{font-weight:bold}
+.qbody.hasfig{display:grid;grid-template-columns:1fr auto;gap:22px;align-items:start}
+.qtext{font-size:20px}
+.qfig{max-width:660px}
+.note{display:block;font-size:14px;color:#667;line-height:1.5;margin-top:2px}
+.figs{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-end}
+.cap{font-size:14px;color:#445;font-weight:bold}
+svg{max-width:100%;height:auto}
+svg text{font-family:"Times New Roman","Hiragino Mincho ProN","Yu Mincho",serif}
+.gl{stroke:#222;stroke-width:1.8;stroke-linecap:round}.gd{stroke-dasharray:5 4}.gt{stroke-width:1;stroke:#666}
+.gar{fill:none;stroke:#222;stroke-width:1.3}.gtk{stroke:#222;stroke-width:1.4}
+.garc{fill:none;stroke:#777;stroke-width:1;stroke-dasharray:3 3}
+.gpt{font-size:17px;text-anchor:middle;fill:#111}
+.gln{font-size:15px;text-anchor:middle;fill:#111;paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}
+.gan{font-size:13px;text-anchor:middle;fill:#111;paint-order:stroke;stroke:#fff;stroke-width:3px}
+.gg{stroke:#c9d6ea;stroke-width:1}.gax{stroke:#222;stroke-width:1.5}
+.gtx{font-size:12px;fill:#333}.gxl,.gyl{font-size:14px;fill:#111}.gtt{font-size:14px;paint-order:stroke;stroke:#fff;stroke-width:4px}
+.tb{border-collapse:collapse;font-size:16px;background:#fff}
+.tb td,.tb th{border:1px solid #889;padding:2px 14px;text-align:right}
+.tb th{background:#eef1f6;text-align:center}
+.work{display:grid;grid-template-columns:1fr 300px;gap:24px;margin-top:16px;align-items:start}
+.part{padding:10px 0;border-top:1px dashed #d5dae3}
+.plabel{font-size:19px;margin-bottom:4px}
+.line{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:21px}
+.fld{display:inline-flex;align-items:center;justify-content:center;min-width:86px;min-height:52px;padding:2px 10px;border:2px solid #8b97ab;border-radius:9px;background:#fff;font-size:24px;cursor:pointer;font-family:"Times New Roman",serif}
+.fld.wide{min-width:120px}
+.fld.on{border-color:#e07b00;box-shadow:0 0 0 4px #ffe2b8;background:#fffaf2}
+.fld.on:after{content:"";width:2px;height:26px;background:#e07b00;margin-left:2px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.fld.lock{background:#f1f3f7;cursor:default}
+.opts{display:flex;flex-direction:column;gap:7px;align-items:flex-start}
+.opts.pic{flex-direction:row;flex-wrap:wrap}
+.opt{font:inherit;font-size:19px;text-align:left;border:2px solid #bcc3d1;background:#fff;border-radius:10px;padding:7px 16px;cursor:pointer;display:flex;gap:10px;align-items:center}
+.opt:hover{border-color:#1f4e9c}
+.opt.sel{border-color:#1f4e9c;background:#e4eefc;box-shadow:0 0 0 2px #1f4e9c inset}
+.opt.lock{cursor:default}
+.opt.good{border-color:#1a9c5a;background:#dff5ea;box-shadow:0 0 0 2px #1a9c5a inset}
+.opt.bad{border-color:#c33;background:#fde6e3;box-shadow:0 0 0 2px #c33 inset}
+.ck{display:inline-block;width:22px;height:22px;border:2px solid #8b97ab;border-radius:5px;line-height:18px;text-align:center;font-size:16px;flex:none;background:#fff}
+.fillbox{font-size:19px;line-height:2.5;background:#f7f9fc;border-radius:10px;padding:8px 16px}
+.sel{font:inherit;font-size:17px;padding:5px 6px;border:2px solid #8b97ab;border-radius:8px;background:#fffaf2;max-width:100%}
+.sel.good{border-color:#1a9c5a;background:#dff5ea}.sel.bad{border-color:#c33;background:#fde6e3}
+.fixans{color:#c33;font-weight:bold;margin:0 6px}
+.plot{display:inline-block;cursor:crosshair;border:2px solid #8b97ab;border-radius:10px;padding:4px;background:#fff}
+.plot.lock{cursor:default}
+.right{font-size:17px;color:#b3321a;margin-top:6px}
+.right .line{display:inline-flex;font-size:19px}
+.ra{font-size:22px;font-family:"Times New Roman",serif;margin:0 4px}
+.mark{display:inline-block;margin-top:6px;font-weight:bold;border-radius:8px;padding:1px 14px;font-size:18px}
+.mark.o{background:#dff5ea;color:#12784a}.mark.x{background:#fde6e3;color:#b3321a}
+.mark span{font-weight:normal;margin-left:10px;font-size:15px}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;position:sticky;top:10px;background:#eef1f6;border-radius:14px;padding:12px}
+.key{font:inherit;font-size:24px;height:54px;border:0;border-radius:10px;background:#fff;box-shadow:0 2px 0 #b9c1cf;cursor:pointer}
+.key:active{transform:translateY(2px);box-shadow:none}
+.key.fn{font-size:13px;background:#dfe5ee}
+.key.go{background:#1f4e9c;color:#fff;font-size:17px;font-weight:bold;box-shadow:0 2px 0 #12336b}
+.kpn{grid-column:1/-1;font-size:12.5px;color:#556;line-height:1.5}
+.warnbar{color:#b3321a;font-size:16px;min-height:6px;margin-top:6px}
+.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.info{flex-basis:100%;border-radius:8px;padding:4px 14px;font-size:16px}
+.info.ok{background:#dff5ea;color:#12784a}.info.ng{background:#fff0cc;color:#7a4f00}
+.expl{margin-top:16px;background:#fffbea;border-left:6px solid #e3b400;border-radius:8px;padding:12px 20px;font-size:18px;line-height:2.1}
+.mt{font-weight:bold;font-size:15px;color:#7a5f00;margin-bottom:2px}
+.proof{background:#fff;border:1.5px solid #ccd;border-radius:8px;padding:8px 16px;margin:6px 0;line-height:2}
+.model{background:#f1f7ff;border-radius:10px;padding:10px 16px;margin-bottom:10px}
+.checks{background:#f7f9fc;border-radius:10px;padding:10px 16px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:17px;cursor:pointer}
+.chk input{width:22px;height:22px;margin-top:6px;flex:none}
+.selfb{display:flex;gap:12px;margin-top:12px}
+.score{font-size:22px;text-align:center;margin:6px 0 12px}
+.score b{font-size:64px;color:#1f4e9c}
+.score span{font-size:15px;color:#667;margin-left:8px}
+.rl{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.rrow{font:inherit;font-size:15px;text-align:left;display:flex;gap:10px;align-items:center;border:1.5px solid #ccd;border-radius:8px;background:#fff;padding:5px 10px;cursor:pointer}
+.rrow.x{background:#fff4f2;border-color:#e6a59c}.rrow.o{background:#f3fbf6}
+.rrow b{width:26px;text-align:right}.mk{font-weight:bold;width:22px}
+.rrow.x .mk{color:#c33}.rrow.o .mk{color:#1a9c5a}
+#ov{position:fixed;inset:0;background:#0007;display:flex;align-items:center;justify-content:center;z-index:9}
+.dlg{background:#fff;border-radius:16px;padding:22px 30px;max-width:520px;box-shadow:0 10px 40px #0005}
+.dlg h3{margin:0 0 6px;font-size:22px}
+.dbt{display:flex;gap:12px;justify-content:flex-end;margin-top:14px}
+@media(max-width:900px){.modes{grid-template-columns:1fr 1fr}.work{grid-template-columns:1fr}.qbody.hasfig{grid-template-columns:1fr}.rl{grid-template-columns:1fr}.kp{position:static}}
+
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ===== 土台：乱数・分数・表示・図・グラフ ===== */
+function ri(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function shuffle(arr) { var a = arr.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+function gcd(a, b) { a = Math.abs(Math.round(a)); b = Math.abs(Math.round(b)); while (b) { var t = a % b; a = b; b = t; } return a || 1; }
+
+/* 分数 {n,d}。F(3,4)  F(2.5)  F({n,d}) */
+function F(n, d) {
+  if (n && typeof n === 'object') { if (d === undefined) return n; n = n.n / n.d; }
+  if (d === undefined) d = 1;
+  if (d && typeof d === 'object') { n = n * d.d; d = d.n; }
+  var k = 0;
+  while ((Math.abs(n - Math.round(n)) > 1e-9 || Math.abs(d - Math.round(d)) > 1e-9) && k < 6) { n *= 10; d *= 10; k++; }
+  n = Math.round(n); d = Math.round(d);
+  if (d < 0) { n = -n; d = -d; }
+  var g = gcd(n, d);
+  return { n: n / g, d: d / g };
+}
+function fadd(a, b) { a = F(a); b = F(b); return F(a.n * b.d + b.n * a.d, a.d * b.d); }
+function fsub(a, b) { a = F(a); b = F(b); return F(a.n * b.d - b.n * a.d, a.d * b.d); }
+function fmul(a, b) { a = F(a); b = F(b); return F(a.n * b.n, a.d * b.d); }
+function fdiv(a, b) { a = F(a); b = F(b); return F(a.n * b.d, a.d * b.n); }
+function fval(a) { a = F(a); return a.n / a.d; }
+function feq(a, b) { a = F(a); b = F(b); return a.n === b.n && a.d === b.d; }
+function fneg(a) { a = F(a); return F(-a.n, a.d); }
+function fabs(a) { a = F(a); return F(Math.abs(a.n), a.d); }
+
+/* 表示 */
+function frac(n, d) { return '<span class="fr"><span>' + n + '</span><span>' + d + '</span></span>'; }
+function fh(a) { a = F(a); var s = a.n < 0 ? '−' : ''; var n = Math.abs(a.n); return a.d === 1 ? s + n : s + frac(n, a.d); }
+function ft(a) { a = F(a); var s = a.n < 0 ? '−' : ''; var n = Math.abs(a.n); return a.d === 1 ? s + n : s + n + '/' + a.d; }
+function dn(x) { var v = Math.round(fval(F(x)) * 10000) / 10000; return String(v).replace('-', '−'); }
+function pn(a) { a = F(a); return a.n < 0 ? '(' + fh(a) + ')' : fh(a); }
+function co(a) { a = F(a); if (a.n === 1 && a.d === 1) return ''; if (a.n === -1 && a.d === 1) return '−'; return fh(a); }
+var X2 = '<i>x</i><sup>2</sup>';
+function yax(a) { return '<i>y</i> = ' + co(a) + X2; }
+function lin(m, n) {
+  m = F(m); n = F(n);
+  var s = '<i>y</i> = ';
+  if (m.n !== 0) s += co(m) + '<i>x</i>';
+  if (n.n !== 0) s += (m.n !== 0 ? (n.n > 0 ? ' + ' : ' − ') + fh(fabs(n)) : fh(n));
+  if (m.n === 0 && n.n === 0) s += '0';
+  return s;
+}
+function v(s) { return '<i>' + s + '</i>'; }
+
+/* 入力文字列 → 分数（だめなら null） */
+function parseNum(str) {
+  if (str === undefined || str === null) return null;
+  str = String(str).replace(/−/g, '-').replace(/\s/g, '');
+  var m = /^(-?)(\d+(?:\.\d+)?)(?:\/(\d+))?$/.exec(str);
+  if (!m) return null;
+  var n = parseFloat(m[2]), d = m[3] ? parseFloat(m[3]) : 1;
+  if (!d) return null;
+  if (m[1]) n = -n;
+  return F(n, d);
+}
+
+/* ===== 図形の図 ===== */
+var _gid = 0;
+function geo(o) {
+  var P = o.pts, names = Object.keys(P), w = o.w || 300, pad = o.pad || 36, hmax = o.hmax || 250;
+  var xs = names.map(function (k) { return P[k][0]; }), ys = names.map(function (k) { return P[k][1]; });
+  var minx = Math.min.apply(null, xs), maxx = Math.max.apply(null, xs), miny = Math.min.apply(null, ys), maxy = Math.max.apply(null, ys);
+  var dx = (maxx - minx) || 1, dy = (maxy - miny) || 1;
+  var s = Math.min((w - 2 * pad) / dx, (hmax - 2 * pad) / dy);
+  var h = dy * s + 2 * pad, ox = (w - dx * s) / 2;
+  function T(k) { var p = typeof k === 'string' ? P[k] : k; return [ox + (p[0] - minx) * s, h - pad - (p[1] - miny) * s]; }
+  var hide = o.hide || '';
+  var vis = names.filter(function (k) { return hide.indexOf(k) < 0; });
+  if (!vis.length) vis = names;
+  var cx = 0, cy = 0;
+  vis.forEach(function (k) { var t = T(k); cx += t[0]; cy += t[1]; });
+  cx /= vis.length; cy /= vis.length;
+  var out = '<svg class="geo" viewBox="0 0 ' + w + ' ' + Math.round(h) + '" width="' + w + '" height="' + Math.round(h) + '">';
+  (o.fill || []).forEach(function (f) {
+    var poly = Array.isArray(f) ? f : f.split('');
+    out += '<polygon points="' + poly.map(function (k) { return T(k).map(r1).join(','); }).join(' ') + '" fill="#ffd9d2" stroke="none"/>';
+  });
+  function seg(sg, cls) { var a = T(sg[0]), b = T(sg[1]); return '<line x1="' + r1(a[0]) + '" y1="' + r1(a[1]) + '" x2="' + r1(b[0]) + '" y2="' + r1(b[1]) + '" class="' + cls + '"/>'; }
+  (o.segs || []).forEach(function (sg) { out += seg(sg, 'gl'); });
+  (o.dash || []).forEach(function (sg) { out += seg(sg, 'gl gd'); });
+  (o.thin || []).forEach(function (sg) { out += seg(sg, 'gl gt'); });
+  /* 平行の印 */
+  (o.par || []).forEach(function (sg) {
+    var a = T(sg[0]), b = T(sg[1]); if (a[0] > b[0]) { var t = a; a = b; b = t; }
+    var mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2, L = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, ux = (b[0] - a[0]) / L, uy = (b[1] - a[1]) / L;
+    var p1 = [mx - ux * 5 - uy * 4, my - uy * 5 + ux * 4], p2 = [mx + ux * 3, my + uy * 3], p3 = [mx - ux * 5 + uy * 4, my - uy * 5 - ux * 4];
+    out += '<polyline points="' + [p1, p2, p3].map(function (p) { return r1(p[0]) + ',' + r1(p[1]); }).join(' ') + '" class="gar"/>';
+  });
+  /* 等しい長さの印 */
+  (o.ticks || []).forEach(function (tk) {
+    var a = T(tk[0][0]), b = T(tk[0][1]), n = tk[1] || 1, L = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, ux = (b[0] - a[0]) / L, uy = (b[1] - a[1]) / L;
+    for (var i = 0; i < n; i++) { var c = [(a[0] + b[0]) / 2 + ux * (i - (n - 1) / 2) * 4, (a[1] + b[1]) / 2 + uy * (i - (n - 1) / 2) * 4]; out += '<line x1="' + r1(c[0] - uy * 5) + '" y1="' + r1(c[1] + ux * 5) + '" x2="' + r1(c[0] + uy * 5) + '" y2="' + r1(c[1] - ux * 5) + '" class="gtk"/>'; }
+  });
+  /* 直角 */
+  (o.rights || []).forEach(function (r) {
+    var p = T(r[0]), a = T(r[1]), b = T(r[2]);
+    var la = Math.hypot(a[0] - p[0], a[1] - p[1]) || 1, lb = Math.hypot(b[0] - p[0], b[1] - p[1]) || 1, q = 9;
+    var u = [(a[0] - p[0]) / la * q, (a[1] - p[1]) / la * q], w2 = [(b[0] - p[0]) / lb * q, (b[1] - p[1]) / lb * q];
+    out += '<polyline points="' + r1(p[0] + u[0]) + ',' + r1(p[1] + u[1]) + ' ' + r1(p[0] + u[0] + w2[0]) + ',' + r1(p[1] + u[1] + w2[1]) + ' ' + r1(p[0] + w2[0]) + ',' + r1(p[1] + w2[1]) + '" class="gar"/>';
+  });
+  /* 角 */
+  (o.angs || []).forEach(function (g) {
+    var p = T(g[0]), a = T(g[1]), b = T(g[2]), rr = g[4] || 17;
+    var a1 = Math.atan2(a[1] - p[1], a[0] - p[0]), a2 = Math.atan2(b[1] - p[1], b[0] - p[0]);
+    var d = a2 - a1; while (d > Math.PI) d -= 2 * Math.PI; while (d < -Math.PI) d += 2 * Math.PI;
+    var s1 = [p[0] + rr * Math.cos(a1), p[1] + rr * Math.sin(a1)], s2 = [p[0] + rr * Math.cos(a2), p[1] + rr * Math.sin(a2)];
+    out += '<path d="M' + r1(s1[0]) + ' ' + r1(s1[1]) + ' A' + rr + ' ' + rr + ' 0 0 ' + (d > 0 ? 1 : 0) + ' ' + r1(s2[0]) + ' ' + r1(s2[1]) + '" class="gar"/>';
+    var mid = a1 + d / 2, tr = g[3] === '●' || g[3] === '○' || g[3] === '×' ? rr - 7 : rr + 13;
+    if (g[3]) out += '<text x="' + r1(p[0] + tr * Math.cos(mid)) + '" y="' + r1(p[1] + tr * Math.sin(mid) + 4) + '" class="gan">' + g[3] + '</text>';
+  });
+  /* 長さ（点線の弧＋数字） */
+  (o.lens || []).forEach(function (l) {
+    var a = T(l[0][0]), b = T(l[0][1]), mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2, L = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1;
+    var nx = -(b[1] - a[1]) / L, ny = (b[0] - a[0]) / L;
+    if ((mx + nx - cx) * (mx + nx - cx) + (my + ny - cy) * (my + ny - cy) < (mx - nx - cx) * (mx - nx - cx) + (my - ny - cy) * (my - ny - cy)) { nx = -nx; ny = -ny; }
+    if (l[2] === -1) { nx = -nx; ny = -ny; }
+    var bl = l[3] || Math.min(24, 9 + L * 0.1);
+    out += '<path d="M' + r1(a[0]) + ' ' + r1(a[1]) + ' Q' + r1(mx + nx * bl * 1.7) + ' ' + r1(my + ny * bl * 1.7) + ' ' + r1(b[0]) + ' ' + r1(b[1]) + '" class="garc"/>';
+    out += '<text x="' + r1(mx + nx * bl * 0.85) + '" y="' + r1(my + ny * bl * 0.85 + 5) + '" class="gln">' + l[1] + '</text>';
+  });
+  (o.dots || '').split('').forEach(function (k) { var t = T(k); out += '<circle cx="' + r1(t[0]) + '" cy="' + r1(t[1]) + '" r="3" fill="#222"/>'; });
+  var nm = o.names || {}, lab = o.lab || {};
+  names.forEach(function (k) {
+    if (hide.indexOf(k) >= 0 && !nm[k]) return;
+    var t = T(k), ddx = t[0] - cx, ddy = t[1] - cy, L = Math.hypot(ddx, ddy) || 1, off = lab[k] || [ddx / L * 14, ddy / L * 14];
+    out += '<text x="' + r1(t[0] + off[0]) + '" y="' + r1(t[1] + off[1] + 5) + '" class="gpt">' + (nm[k] || k) + '</text>';
+  });
+  (o.txt || []).forEach(function (t) { var p = T([t[0], t[1]]); out += '<text x="' + r1(p[0]) + '" y="' + r1(p[1] + 5) + '" class="' + (t[3] || 'gln') + '">' + t[2] + '</text>'; });
+  return out + '</svg>';
+}
+function r1(x) { return Math.round(x * 10) / 10; }
+function figs() { var a = Array.prototype.slice.call(arguments); return '<div class="figs">' + a.map(function (x) { return '<div>' + x + '</div>'; }).join('') + '</div>'; }
+function cap(t, svg) { return '<div class="cap">' + t + '</div>' + svg; }
+
+/* 三角形の頂点：BC=a, CA=b, AB=c → B(0,0) C(a,0) A */
+function triSSS(a, b, c) { var x = (a * a + c * c - b * b) / (2 * a); return { B: [0, 0], C: [a, 0], A: [x, Math.sqrt(Math.max(c * c - x * x, 0.01))] }; }
+/* ∠B=β, ∠C=γ（度）, BC=a */
+function triAA(be, ga, a) { a = a || 10; var al = 180 - be - ga, rad = Math.PI / 180, c = a * Math.sin(ga * rad) / Math.sin(al * rad); return { B: [0, 0], C: [a, 0], A: [c * Math.cos(be * rad), c * Math.sin(be * rad)] }; }
+/* AB=c, BC=a, ∠B=β */
+function triSAS(c, a, be) { var rad = Math.PI / 180; return { B: [0, 0], C: [a, 0], A: [c * Math.cos(be * rad), c * Math.sin(be * rad)] }; }
+function rename(pts, map) { var o = {}; Object.keys(pts).forEach(function (k) { o[map[k] || k] = pts[k]; }); return o; }
+function mirror(pts) { var o = {}; Object.keys(pts).forEach(function (k) { o[k] = [-pts[k][0], pts[k][1]]; }); return o; }
+function rot(pts, deg) { var r = deg * Math.PI / 180, c = Math.cos(r), s = Math.sin(r), o = {}; Object.keys(pts).forEach(function (k) { o[k] = [pts[k][0] * c - pts[k][1] * s, pts[k][0] * s + pts[k][1] * c]; }); return o; }
+function between(p, q, t) { return [p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t]; }
+
+/* ===== 座標のグラフ ===== */
+function graph(o) {
+  var sx = o.sx || 24, sy = o.sy || 24, L = o.padL === undefined ? 36 : o.padL, Tp = 22, R = o.xl ? 52 : 26, B = o.padB === undefined ? 26 : o.padB;
+  var W = L + (o.xmax - o.xmin) * sx + R, H = Tp + (o.ymax - o.ymin) * sy + B, gx = o.gx || 1, gy = o.gy || 1;
+  function X(x) { return L + (x - o.xmin) * sx; }
+  function Y(y) { return Tp + (o.ymax - y) * sy; }
+  o._m = { L: L, T: Tp, sx: sx, sy: sy, W: W, H: H };
+  var id = 'gc' + (++_gid), i, out = '<svg class="gr" viewBox="0 0 ' + r1(W) + ' ' + r1(H) + '" width="' + r1(W * (o.zoom || 1)) + '" height="' + r1(H * (o.zoom || 1)) + '">';
+  out += '<defs><clipPath id="' + id + '"><rect x="' + X(o.xmin) + '" y="' + Y(o.ymax) + '" width="' + (o.xmax - o.xmin) * sx + '" height="' + (o.ymax - o.ymin) * sy + '"/></clipPath></defs>';
+  if (!o.nogrid) {
+    for (i = Math.ceil(o.xmin / gx) * gx; i <= o.xmax + 1e-9; i += gx) out += '<line x1="' + r1(X(i)) + '" y1="' + Y(o.ymax) + '" x2="' + r1(X(i)) + '" y2="' + Y(o.ymin) + '" class="gg"/>';
+    for (i = Math.ceil(o.ymin / gy) * gy; i <= o.ymax + 1e-9; i += gy) out += '<line x1="' + X(o.xmin) + '" y1="' + r1(Y(i)) + '" x2="' + X(o.xmax) + '" y2="' + r1(Y(i)) + '" class="gg"/>';
+  }
+  var ax0 = Math.min(Math.max(0, o.xmin), o.xmax), ay0 = Math.min(Math.max(0, o.ymin), o.ymax);
+  out += '<line x1="' + X(o.xmin) + '" y1="' + Y(ay0) + '" x2="' + (X(o.xmax) + 12) + '" y2="' + Y(ay0) + '" class="gax"/>';
+  out += '<line x1="' + X(ax0) + '" y1="' + Y(o.ymin) + '" x2="' + X(ax0) + '" y2="' + (Y(o.ymax) - 10) + '" class="gax"/>';
+  out += '<text x="' + (X(o.xmax) + 14) + '" y="' + (Y(ay0) + 4) + '" class="gxl">' + (o.xl || '<tspan font-style="italic">x</tspan>') + '</text>';
+  out += '<text x="' + (X(ax0) + (o.yl ? 6 : -4)) + '" y="' + (Y(o.ymax) - 9) + '" class="gyl" text-anchor="' + (o.yl ? 'start' : 'end') + '">' + (o.yl || '<tspan font-style="italic">y</tspan>') + '</text>';
+  out += '<text x="' + (X(ax0) - 5) + '" y="' + (Y(ay0) + 14) + '" class="gtx" text-anchor="end">O</text>';
+  var xt = o.xt || 1, yt = o.yt || 1;
+  if (!o.noticks) {
+    for (i = Math.ceil(o.xmin / xt) * xt; i <= o.xmax + 1e-9; i += xt) if (Math.abs(i) > 1e-9) out += '<text x="' + r1(X(i)) + '" y="' + (Y(ay0) + 14) + '" class="gtx" text-anchor="middle">' + dn(i) + '</text>';
+    for (i = Math.ceil(o.ymin / yt) * yt; i <= o.ymax + 1e-9; i += yt) if (Math.abs(i) > 1e-9) out += '<text x="' + (X(ax0) - 5) + '" y="' + r1(Y(i) + 4) + '" class="gtx" text-anchor="end">' + dn(i) + '</text>';
+  }
+  out += '<g clip-path="url(#' + id + ')">';
+  (o.curves || []).forEach(function (c) {
+    var a = c.a === undefined ? o.xmin : c.a, b = c.b === undefined ? o.xmax : c.b, n = 80, pts = [];
+    for (var k = 0; k <= n; k++) { var xx = a + (b - a) * k / n; pts.push(r1(X(xx)) + ',' + r1(Y(c.f(xx)))); }
+    out += '<polyline points="' + pts.join(' ') + '" fill="none" stroke="' + (c.c || '#1f4e9c') + '" stroke-width="' + (c.w || 2.2) + '"' + (c.dash ? ' stroke-dasharray="5 4"' : '') + '/>';
+  });
+  (o.segs || []).forEach(function (sg) {
+    out += '<line x1="' + r1(X(sg.a[0])) + '" y1="' + r1(Y(sg.a[1])) + '" x2="' + r1(X(sg.b[0])) + '" y2="' + r1(Y(sg.b[1])) + '" stroke="' + (sg.c || '#1f4e9c') + '" stroke-width="' + (sg.w || 2.2) + '"' + (sg.dash ? ' stroke-dasharray="4 3"' : '') + '/>';
+  });
+  out += '</g>';
+  (o.dots || []).forEach(function (d) {
+    out += '<circle cx="' + r1(X(d.x)) + '" cy="' + r1(Y(d.y)) + '" r="' + (d.r || 3.6) + '" fill="' + (d.open ? '#fff' : (d.c || '#1f4e9c')) + '" stroke="' + (d.c || '#1f4e9c') + '" stroke-width="1.6"/>';
+    if (d.label) out += '<text x="' + r1(X(d.x) + (d.dx === undefined ? 8 : d.dx)) + '" y="' + r1(Y(d.y) + (d.dy === undefined ? -6 : d.dy)) + '" class="gpt">' + d.label + '</text>';
+  });
+  (o.texts || []).forEach(function (t) { out += '<text x="' + r1(X(t.x)) + '" y="' + r1(Y(t.y) + 4) + '" class="gtt" text-anchor="' + (t.anchor || 'start') + '" fill="' + (t.c || '#222') + '">' + t.t + '</text>'; });
+  out += '<g class="userpts"></g></svg>';
+  return out;
+}
+/* 階段のグラフ：steps=[[左,右,高さ]]（左をふくまず右をふくむ） */
+function stepGraph(o, steps, opt) {
+  opt = opt || {};
+  var g = { xmin: o.xmin, xmax: o.xmax, ymin: o.ymin, ymax: o.ymax, sx: o.sx, sy: o.sy, gx: o.gx, gy: o.gy, xt: o.xt, yt: o.yt, xl: o.xl, yl: o.yl, padL: o.padL, zoom: o.zoom, segs: [], dots: [] };
+  var c = opt.c || '#1f4e9c';
+  steps.forEach(function (s, i) {
+    g.segs.push({ a: [s[0], s[2]], b: [s[1], s[2]], c: c, w: 2.6 });
+    var lo = opt.swap ? false : true, ro = opt.swap ? true : false;
+    if (i === 0 && s[0] === o.xmin) { if (opt.first !== 'none') g.dots.push({ x: s[0], y: s[2], open: opt.first === 'closed' ? false : true, c: c }); }
+    else g.dots.push({ x: s[0], y: s[2], open: lo, c: c });
+    g.dots.push({ x: s[1], y: s[2], open: ro, c: c });
+  });
+  return graph(g);
+}
+
+/* ===== 問題の部品 ===== */
+function nums(label, tpl, ans, opt) {
+  var p = { kind: 'nums', label: label, tpl: tpl, ans: ans.map(function (a) { return (a && a.s !== undefined) ? a : F(a); }) };
+  if (opt) for (var k in opt) p[k] = opt[k];
+  return p;
+}
+function num(label, pre, ans, post) { return nums(label, [pre || '', 0, post || ''], [ans]); }
+function uniqW(correct, wrongs) { var seen = [correct], r = []; wrongs.forEach(function (w) { if (seen.indexOf(w) < 0) { seen.push(w); r.push(w); } }); return r; }
+function choice(label, correct, wrongs) {
+  wrongs = uniqW(correct, wrongs);
+  var all = [{ t: correct, ok: 1 }].concat(wrongs.map(function (w) { return { t: w, ok: 0 }; }));
+  all = shuffle(all); var idx = 0;
+  all.forEach(function (a, i) { if (a.ok) idx = i; });
+  return { kind: 'choice', label: label, opts: all.map(function (a) { return a.t; }), ans: idx };
+}
+function choiceFixed(label, opts, idx) { return { kind: 'choice', label: label, opts: opts, ans: idx }; }
+function multi(label, opts, okIdx) { return { kind: 'multi', label: label, opts: opts, ans: okIdx.slice().sort() }; }
+function Bk(correct) { var w = uniqW(correct, Array.prototype.slice.call(arguments, 1)); var all = shuffle([correct].concat(w)); return { opts: all, ans: all.indexOf(correct) }; }
+function fill(label, tpl, blanks) { return { kind: 'fill', label: label, tpl: tpl, blanks: blanks }; }
+function selfp(label, model, checks) { return { kind: 'self', label: label, model: model, checks: checks || [] }; }
+function plotp(label, g, pts, show) { return { kind: 'plot', label: label, g: g, pts: pts, show: show }; }
+
+var TYPES = [];
+var UNITS = [null, '関数 y=ax² のきほん', '関数の利用', 'いろいろな関数', '相似な図形と相似条件', '相似の証明', '相似の利用・有効数字', '三角形と比', '中点連結定理・平行線と比'];
+/* id, 単元, 名前, 苦手(1), 自動で丸つけできる(1), 作る関数 */
+function T(id, unit, name, weak, auto, fn) { TYPES.push({ id: id, unit: unit, name: name, weak: weak, auto: auto, gen: fn }); }
+function typeById(id) { for (var i = 0; i < TYPES.length; i++) if (TYPES[i].id === id) return TYPES[i]; return null; }
+function makeProblem(id) { var t = typeById(id); var p = t.gen(); p.type = id; p.unit = t.unit; p.name = t.name; return p; }
+
+/* ===== 丸つけ（画面なしでも動く） ===== */
+function blankAns(p) {
+  if (p.kind === 'nums') return p.ans.map(function () { return ''; });
+  if (p.kind === 'choice') return -1;
+  if (p.kind === 'multi') return [];
+  if (p.kind === 'fill') return p.blanks.map(function () { return -1; });
+  if (p.kind === 'plot') return [];
+  return { shown: false, res: '' };
+}
+function rightAns(p) {
+  if (p.kind === 'nums') return p.ans.map(function (a) { return a.s !== undefined ? a.s : ft(a).replace('−', '-'); });
+  if (p.kind === 'choice') return p.ans;
+  if (p.kind === 'multi') return p.ans.slice();
+  if (p.kind === 'fill') return p.blanks.map(function (b) { return b.ans; });
+  if (p.kind === 'plot') return p.pts.map(function (q) { return q.slice(); });
+  return { shown: true, res: 'o' };
+}
+function fieldOk(a, s) {
+  if (a.s !== undefined) return String(s).replace(/\s/g, '') === a.s;
+  var x = parseNum(s); return !!x && feq(x, a);
+}
+/* 返り値 {ok, note} */
+function judgePart(p, a) {
+  var i, ok;
+  if (p.kind === 'nums') {
+    if (p.ratio) {
+      var x = parseNum(a[0]), y = parseNum(a[1]);
+      if (!x || !y) return { ok: false };
+      if (feq(x, p.ans[0]) && feq(y, p.ans[1])) return { ok: true };
+      if (x.n * y.d * p.ans[1].n === y.n * x.d * p.ans[0].n && x.n > 0 && y.n > 0) return { ok: false, note: '比は合っています。もっとも簡単な整数の比になおしましょう。' };
+      if (feq(x, p.ans[1]) && feq(y, p.ans[0])) return { ok: false, note: '順番が逆です。問題文の順に書きます。' };
+      return { ok: false };
+    }
+    if (p.anyOrder) {
+      var used = [];
+      for (i = 0; i < a.length; i++) {
+        var hit = -1;
+        for (var j = 0; j < p.ans.length; j++) if (used.indexOf(j) < 0 && fieldOk(p.ans[j], a[i])) { hit = j; break; }
+        if (hit < 0) return { ok: false };
+        used.push(hit);
+      }
+      return { ok: true };
+    }
+    ok = true;
+    for (i = 0; i < p.ans.length; i++) if (!fieldOk(p.ans[i], a[i])) ok = false;
+    if (!ok && p.ans.length === 2 && !p.ans[0].s && fieldOk(p.ans[0], a[1]) && fieldOk(p.ans[1], a[0]) && !feq(p.ans[0], p.ans[1])) return { ok: false, note: '2つの数が入れかわっています。' };
+    return { ok: ok };
+  }
+  if (p.kind === 'choice') return { ok: a === p.ans };
+  if (p.kind === 'multi') {
+    var s = a.slice().sort().join(','), t = p.ans.slice().sort().join(',');
+    if (s === t) return { ok: true };
+    var extra = a.some(function (q) { return p.ans.indexOf(q) < 0; });
+    return { ok: false, note: extra ? '' : '選び足りないものがあります。「すべて」選びます。' };
+  }
+  if (p.kind === 'fill') { ok = true; for (i = 0; i < p.blanks.length; i++) if (a[i] !== p.blanks[i].ans) ok = false; return { ok: ok }; }
+  if (p.kind === 'plot') {
+    var key = function (q) { return q[0] + '_' + q[1]; }, A = a.map(key).sort().join(','), B = p.pts.map(key).sort().join(',');
+    return { ok: A === B, note: A === B ? '' : (a.length < p.pts.length ? '点が足りません。' : '') };
+  }
+  return { ok: a.res === 'o' };
+}
+function judgeProblem(prob, answers) {
+  var res = prob.parts.map(function (p, i) { return judgePart(p, answers[i]); });
+  return { parts: res, ok: res.every(function (r) { return r.ok; }), frac: res.filter(function (r) { return r.ok; }).length / res.length };
+}
+
+/* ===== 単元1〜3：関数 y=ax² ===== */
+var AS = [[1, 1], [2, 1], [3, 1], [1, 2], [1, 3], [1, 4], [-1, 1], [-2, 1], [-3, 1], [-1, 2], [-1, 3], [-1, 4], [3, 2], [-3, 2]];
+function ra(list) { var a = pick(list || AS); return F(a[0], a[1]); }
+function nicex(a, lo, hi) { var r = []; for (var x = lo; x <= hi; x++) if (x !== 0 && (a.n * x * x) % a.d === 0) r.push(x); return r; }
+function yv(a, x) { a = F(a); x = F(x); return F(a.n * x.n * x.n, a.d * x.d * x.d); }
+function mn(x) { return String(x).replace('-', '−'); }
+var NOTE1 = '<span class="note">※ 係数が 1 のときは 1、−1 のときは −1 と入れます。</span>';
+
+T('A1', 1, '式を求める（y は x の2乗に比例）', 0, 1, function () {
+  var a = ra(), xs = nicex(a, -6, 6), x = pick(xs), y = yv(a, x), x2 = pick(xs.filter(function (t) { return t !== x && t !== -x; }));
+  return {
+    html: v('y') + ' は ' + v('x') + ' の2乗に比例し、' + v('x') + ' = ' + mn(x) + ' のとき ' + v('y') + ' = ' + fh(y) + ' です。',
+    parts: [nums('(1) ' + v('y') + ' を ' + v('x') + ' の式で表しなさい。' + NOTE1, ['<i>y</i> = ', 0, ' ' + X2], [a]),
+      num('(2) ' + v('x') + ' = ' + mn(x2) + ' のときの ' + v('y') + ' の値を求めなさい。', '<i>y</i> = ', yv(a, x2))],
+    expl: '2乗に比例するから ' + v('y') + ' = ' + v('a') + X2 + ' とおく。<br>' + v('x') + ' = ' + mn(x) + '、' + v('y') + ' = ' + fh(y) + ' を代入すると　' + fh(y) + ' = ' + v('a') + ' × ' + pn(x) + '<sup>2</sup> = ' + (x * x) + v('a') + '<br>' + v('a') + ' = ' + fh(a) + '　よって ' + yax(a) + '<br>(2) ' + v('y') + ' = ' + pn(a) + ' × ' + pn(x2) + '<sup>2</sup> = ' + pn(a) + ' × ' + (x2 * x2) + ' = ' + fh(yv(a, x2)) + '<br><b>注意</b>：負の数の2乗は必ずかっこをつけて ' + pn(-Math.abs(x2)) + '<sup>2</sup> = ' + (x2 * x2) + '（正の数）。'
+  };
+});
+
+T('A2', 1, 'y の値から x の値を求める（答えは2つ）', 0, 1, function () {
+  var a = ra(), x = Math.abs(pick(nicex(a, 1, 6))), y = yv(a, x);
+  return {
+    html: '関数 ' + yax(a) + ' について、' + v('y') + ' = ' + fh(y) + ' となる ' + v('x') + ' の値をすべて求めなさい。',
+    parts: [nums('', ['<i>x</i> = ', 0, ' ， ', 1], [x, -x], { anyOrder: true })],
+    expl: fh(y) + ' = ' + co(a) + X2 + ' より　' + X2 + ' = ' + fh(fdiv(y, a)) + '<br>' + v('x') + ' = ±' + x + '<br><b>ポイント</b>：2乗して ' + (x * x) + ' になる数は ' + x + ' と −' + x + ' の<b>2つ</b>。グラフは ' + v('y') + ' 軸について対称だから、左右に1つずつある。'
+  };
+});
+
+T('A3', 1, '変化の割合', 1, 1, function () {
+  var a = ra(), p, q, k = ri(0, 9);
+  do {
+    if (k < 4) { p = ri(-6, -2); q = ri(p + 1, -1); } else if (k < 7) { p = ri(1, 4); q = ri(p + 1, 6); } else { p = ri(-4, -1); q = ri(1, 5); }
+  } while (p + q === 0);
+  var yp = yv(a, p), yq = yv(a, q), r = fmul(a, p + q);
+  return {
+    html: '関数 ' + yax(a) + ' について、' + v('x') + ' の値が ' + mn(p) + ' から ' + mn(q) + ' まで増加するときの変化の割合を求めなさい。',
+    parts: [num('', '変化の割合 = ', r)],
+    expl: '変化の割合 = (' + v('y') + ' の増加量) ÷ (' + v('x') + ' の増加量)<br>' + v('x') + ' = ' + mn(p) + ' のとき ' + v('y') + ' = ' + fh(yp) + '、　' + v('x') + ' = ' + mn(q) + ' のとき ' + v('y') + ' = ' + fh(yq) + '<br>' +
+      frac(fh(yq) + ' − ' + pn(yp), mn(q) + ' − ' + pn(p)) + ' = ' + frac(fh(fsub(yq, yp)), q - p) + ' = <b>' + fh(r) + '</b><br><b>注意</b>：必ず「<b>あと − まえ</b>」の順でひく。' + (a.n < 0 ? v('a') + ' が負のときは ' + v('y') + ' の値も負。符号を落とさない。' : '') + '<br><b>たしかめの近道</b>：' + v('y') + ' = ' + v('a') + X2 + ' の変化の割合は ' + v('a') + '(' + v('p') + ' + ' + v('q') + ') 。　' + pn(a) + ' × (' + mn(p) + ' + ' + pn(q) + ') = ' + fh(r)
+  };
+});
+
+T('A4', 1, '変化の割合から a を求める', 0, 1, function () {
+  var a = ra(), p, q, vr = ri(0, 1);
+  do { p = ri(-5, 4); q = ri(p + 1, 6); } while (p + q === 0 || (vr && (a.n * (p + q)) % a.d !== 0));
+  var r = fmul(a, p + q), k = ri(-4, 5);
+  var cond = vr ? '関数 ' + lin(r, k) + ' の変化の割合と等しい' : fh(r) + ' である';
+  return {
+    html: '関数 ' + v('y') + ' = ' + v('a') + X2 + ' について、' + v('x') + ' の値が ' + mn(p) + ' から ' + mn(q) + ' まで増加するときの変化の割合が、' + cond + '。' + v('a') + ' の値を求めなさい。',
+    parts: [num('', '<i>a</i> = ', a)],
+    expl: (vr ? '1次関数 ' + lin(r, k) + ' の変化の割合は、傾きの ' + fh(r) + '（一定）。<br>' : '') + v('x') + ' = ' + mn(p) + ' のとき ' + v('y') + ' = ' + (p * p) + v('a') + '、　' + v('x') + ' = ' + mn(q) + ' のとき ' + v('y') + ' = ' + (q * q) + v('a') + '<br>変化の割合 = ' + frac(q * q + '<i>a</i> − ' + p * p + '<i>a</i>', mn(q) + ' − ' + pn(p)) + ' = ' + frac(mn(q * q - p * p) + '<i>a</i>', q - p) + ' = ' + co(F(p + q)) + v('a') + '<br>' + co(F(p + q)) + v('a') + ' = ' + fh(r) + '　より　' + v('a') + ' = <b>' + fh(a) + '</b>'
+  };
+});
+
+function rangeSketch(a, p, q) {
+  var m = Math.max(Math.abs(p), Math.abs(q)), ym = fval(yv(a, m)), up = a.n > 0;
+  var g = { xmin: -m - 1, xmax: m + 1, ymin: up ? -Math.abs(ym) * 0.15 : ym * 1.1, ymax: up ? ym * 1.1 : Math.abs(ym) * 0.15, sx: 20, nogrid: 1, noticks: 1, padL: 20, curves: [], dots: [], texts: [], segs: [] };
+  g.sy = 150 / (g.ymax - g.ymin);
+  var f = function (x) { return fval(a) * x * x; };
+  g.curves.push({ f: f, c: '#aab', w: 1.5 }); g.curves.push({ f: f, a: p, b: q, c: '#d23', w: 3.4 });
+  [p, q].forEach(function (x) { g.dots.push({ x: x, y: f(x), c: '#d23' }); g.segs.push({ a: [x, 0], b: [x, f(x)], c: '#888', dash: 1, w: 1 }); g.texts.push({ x: x, y: up ? -ym * 0.08 : -ym * 0.08, t: mn(x), anchor: 'middle' }); g.texts.push({ x: x + 0.3, y: f(x), t: dn(f(x)), c: '#d23' }); });
+  if (p < 0 && q > 0) g.dots.push({ x: 0, y: 0, c: '#d23', r: 5 });
+  return graph(g);
+}
+T('A5', 1, '変域（x の変域から y の変域）', 1, 1, function () {
+  var a = ra(), p, q, st = ri(0, 9) < 7;
+  if (st) { do { p = ri(-4, -1); q = ri(1, 4); } while ((a.n * p * p) % a.d || (a.n * q * q) % a.d); }
+  else { var xs = nicex(a, 1, 6); do { p = pick(xs); q = pick(xs); } while (p >= q); if (ri(0, 1)) { var t = -p; p = -q; q = t; } }
+  var yp = yv(a, p), yq = yv(a, q), vals = [fval(yp), fval(yq)]; if (st) vals.push(0);
+  var lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
+  return {
+    html: '関数 ' + yax(a) + ' について、' + v('x') + ' の変域が ' + mn(p) + ' ≦ ' + v('x') + ' ≦ ' + mn(q) + ' のときの ' + v('y') + ' の変域を求めなさい。',
+    parts: [nums('', [0, ' ≦ <i>y</i> ≦ ', 1], [lo, hi])],
+    expl: '<b>かんたんなグラフをかいて考える</b>（下の図の赤い部分）。<br>' + rangeSketch(a, p, q) + '<br>' + v('x') + ' = ' + mn(p) + ' のとき ' + v('y') + ' = ' + fh(yp) + '、　' + v('x') + ' = ' + mn(q) + ' のとき ' + v('y') + ' = ' + fh(yq) + '<br>' +
+      (st ? '<b>' + v('x') + ' の変域に 0 をふくむ</b>ので、頂点の ' + v('y') + ' = 0 が' + (a.n > 0 ? '最小' : '最大') + 'になる。両はしの値を並べるだけではまちがい。<br>' : v('x') + ' の変域に 0 をふくまないので、両はしの値がそのまま最小と最大になる。<br>') +
+      '答え　<b>' + dn(lo) + ' ≦ ' + v('y') + ' ≦ ' + dn(hi) + '</b>'
+  };
+});
+
+T('A6', 1, '変域から a を求める', 1, 1, function () {
+  var a = ra(), p, q, m;
+  do { p = ri(-5, -1); q = ri(1, 5); m = Math.max(-p, q); } while (-p === q || (a.n * m * m) % a.d);
+  var M = yv(a, m), up = a.n > 0, xm = (-p > q) ? p : q, xo = (-p > q) ? q : p;
+  return {
+    html: '関数 ' + v('y') + ' = ' + v('a') + X2 + ' について、' + v('x') + ' の変域が ' + mn(p) + ' ≦ ' + v('x') + ' ≦ ' + mn(q) + ' のとき、' + v('y') + ' の変域は ' + (up ? '0 ≦ ' + v('y') + ' ≦ ' + fh(M) : fh(M) + ' ≦ ' + v('y') + ' ≦ 0') + ' です。' + v('a') + ' の値を求めなさい。',
+    parts: [num('', '<i>a</i> = ', a)],
+    expl: v('y') + ' の変域が ' + (up ? '0 以上だから ' + v('a') + ' &gt; 0（上に開く）' : '0 以下だから ' + v('a') + ' &lt; 0（下に開く）') + '。<br>' + v('y') + ' = ' + fh(M) + ' になるのは、原点から<b>遠いほうのはし</b>。 ' + mn(p) + ' と ' + q + ' では、絶対値の大きい <b>' + v('x') + ' = ' + mn(xm) + '</b> のほう。<br>' +
+      fh(M) + ' = ' + v('a') + ' × ' + pn(xm) + '<sup>2</sup> = ' + (m * m) + v('a') + '　より　' + v('a') + ' = <b>' + fh(a) + '</b><br><b>よくあるまちがい</b>：' + v('x') + ' = ' + mn(xo) + ' を代入してしまう（' + v('a') + ' = ' + fh(fdiv(M, xo * xo)) + ' としてしまう）。'
+  };
+});
+
+function fnHtml(f) { if (f.k === 'q') return yax(f.a); if (f.k === 'l') return lin(f.m, f.b); return '<i>y</i> = ' + (f.c < 0 ? '−' : '') + frac(Math.abs(f.c), '<i>x</i>'); }
+T('A7', 1, '関数の特ちょうを選ぶ（すべて選ぶ）', 0, 1, function () {
+  var fs = shuffle([{ k: 'q', a: F(pick([2, 3, 1]), pick([1, 1, 2])) }, { k: 'q', a: F(-pick([1, 2, 3]), pick([1, 1, 3])) }, { k: 'l', m: -ri(1, 4), b: ri(1, 5) }, { k: 'l', m: ri(1, 4), b: 0 }, { k: 'i', c: pick([2, 4, 6, 12]) }, { k: 'l', m: ri(1, 3), b: -ri(1, 5) }]);
+  var props = [['グラフが ' + v('y') + ' 軸について対称となる関数', function (f) { return f.k === 'q'; }, v('y') + ' = ' + v('a') + X2 + ' の形のグラフ（放物線）は ' + v('y') + ' 軸について対称。'],
+    ['グラフが原点を通る関数', function (f) { return f.k === 'q' || (f.k === 'l' && f.b === 0); }, v('x') + ' = 0 を代入して ' + v('y') + ' = 0 になるもの。' + v('y') + ' = ' + v('a') + X2 + ' と比例 ' + v('y') + ' = ' + v('ax') + '。反比例のグラフは原点を通らない。'],
+    [v('x') + ' の値が増加するとき、' + v('y') + ' の値もつねに増加する関数', function (f) { return f.k === 'l' && f.m > 0; }, '傾きが正の直線だけ。' + v('y') + ' = ' + v('a') + X2 + ' は ' + v('x') + ' = 0 を境に増加と減少が入れかわるので「つねに」ではない。'],
+    ['変化の割合が一定でない関数', function (f) { return f.k !== 'l'; }, '変化の割合が一定なのは1次関数（比例もふくむ）だけ。' + v('y') + ' = ' + v('a') + X2 + ' と反比例は一定でない。'],
+    ['グラフが放物線になる関数', function (f) { return f.k === 'q'; }, v('y') + ' = ' + v('a') + X2 + ' のグラフが放物線。反比例のグラフは双曲線。'],
+    [v('x') + ' &gt; 0 の範囲で、' + v('x') + ' の値が増加すると ' + v('y') + ' の値が減少する関数', function (f) { return (f.k === 'q' && f.a.n < 0) || (f.k === 'l' && f.m < 0) || f.k === 'i'; }, v('a') + ' &lt; 0 の ' + v('y') + ' = ' + v('a') + X2 + '、傾きが負の直線、比例定数が正の反比例。'],
+    ['グラフが直線になる関数', function (f) { return f.k === 'l'; }, '1次関数（比例もふくむ）。'],
+    [v('x') + ' &lt; 0 の範囲で、' + v('x') + ' の値が増加すると ' + v('y') + ' の値が増加する関数', function (f) { return (f.k === 'q' && f.a.n < 0) || (f.k === 'l' && f.m > 0); }, v('a') + ' &lt; 0 の放物線は ' + v('x') + ' &lt; 0 で右上がり。傾きが正の直線も増加。']];
+  var pr = pick(props), ok = [], kana = 'アイウエオカ';
+  fs.forEach(function (f, i) { if (pr[1](f)) ok.push(i); });
+  return {
+    html: '次のア〜カの関数のうち、<b>' + pr[0] + '</b>をすべて選びなさい。',
+    parts: [multi('', fs.map(function (f, i) { return kana[i] + '　' + fnHtml(f); }), ok)],
+    expl: pr[2] + '<br>答え　<b>' + ok.map(function (i) { return kana[i]; }).join('、') + '</b>'
+  };
+});
+
+T('A8', 1, 'グラフをかく（点をとる）', 0, 1, function () {
+  var a = ra([[1, 1], [-1, 1], [1, 2], [-1, 2], [2, 1], [-2, 1], [1, 4], [-1, 4]]), up = a.n > 0, pts = [];
+  var g = { xmin: -5, xmax: 5, ymin: up ? -1 : -10, ymax: up ? 10 : 1, sx: 26, sy: 26, yt: 5, xt: 5 };
+  for (var x = -5; x <= 5; x++) { var y = a.n * x * x / a.d; if (Math.abs(y - Math.round(y)) < 1e-9 && y <= g.ymax && y >= g.ymin) pts.push([x, y]); }
+  return {
+    html: '関数 ' + yax(a) + ' のグラフをかきます。グラフが通る<b>方眼の交点</b>（' + v('x') + ' 座標も ' + v('y') + ' 座標も整数の点）を、図の中から<b>すべて</b>クリックしなさい。（全部で ' + pts.length + ' 個。もう一度クリックすると消えます）',
+    parts: [plotp('', g, pts, { f: fval(a) })],
+    expl: v('x') + ' に整数を入れて ' + v('y') + ' を計算する。<br>' + pts.map(function (p) { return '(' + mn(p[0]) + ', ' + mn(p[1]) + ')'; }).join('　') + '<br>点をとったら、<b>なめらかな曲線</b>で結ぶ（折れ線にしない。原点のところをとがらせない）。' + v('y') + ' 軸について左右対称になっているかもたしかめる。'
+  };
+});
+
+T('A9', 1, 'グラフから式を読みとる', 0, 1, function () {
+  var a = ra([[1, 1], [-1, 1], [1, 2], [-1, 2], [2, 1], [-2, 1], [1, 4], [-1, 4], [1, 3], [-1, 3]]), up = a.n > 0;
+  var xs = nicex(a, -5, 5).filter(function (x) { return Math.abs(a.n * x * x / a.d) <= 9 && Math.abs(x) > 1 || a.d === 1 && Math.abs(a.n * x * x) <= 9; }), x0 = pick(xs), y0 = a.n * x0 * x0 / a.d;
+  var g = { xmin: -5, xmax: 5, ymin: up ? -1 : -10, ymax: up ? 10 : 1, sx: 24, sy: 24, yt: 5, xt: 5, curves: [{ f: function (x) { return fval(a) * x * x; } }], dots: [{ x: x0, y: y0, c: '#d23' }] };
+  return {
+    html: '右の図は、関数 ' + v('y') + ' = ' + v('a') + X2 + ' のグラフです。グラフは赤い点を通っています。' + v('a') + ' の値を求めなさい。',
+    fig: graph(g),
+    parts: [num('', '<i>a</i> = ', a)],
+    expl: '赤い点の座標を読むと (' + mn(x0) + ', ' + mn(y0) + ')。<br>' + v('y') + ' = ' + v('a') + X2 + ' に代入すると　' + mn(y0) + ' = ' + v('a') + ' × ' + pn(x0) + '<sup>2</sup> = ' + (x0 * x0) + v('a') + '<br>' + v('a') + ' = <b>' + fh(a) + '</b><br>' + (up ? '上に開いているから ' + v('a') + ' &gt; 0。' : '下に開いているから ' + v('a') + ' &lt; 0。') + '符号をグラフの向きでたしかめる。'
+  };
+});
+
+T('A11', 1, 'ことばと性質の穴うめ', 0, 1, function () {
+  var k = ri(0, 2), n = pick([2, 3, 4, 5]);
+  if (k === 0) return {
+    html: '関数 ' + v('y') + ' = ' + v('a') + X2 + ' について、□にあてはまるものを選びなさい。',
+    parts: [fill('', [v('x') + ' の値が ' + n + ' 倍になると、' + v('y') + ' の値は ', 0, ' 倍になる。また、' + v('x') + ' ≠ 0 のとき、' + frac('<i>y</i>', X2) + ' の値は ', 1, '。'], [Bk(String(n * n), String(n), String(2 * n), String(n + 2)), Bk('一定で ' + v('a') + ' に等しい', '一定でない', v('x') + ' に比例する')])],
+    expl: v('y') + ' は ' + v('x') + ' の<b>2乗</b>に比例するから、' + v('x') + ' が ' + n + ' 倍になると ' + v('y') + ' は ' + n + '<sup>2</sup> = ' + n * n + ' 倍。<br>' + v('y') + ' = ' + v('a') + X2 + ' の両辺を ' + X2 + ' でわると ' + frac('<i>y</i>', X2) + ' = ' + v('a') + '（一定）。表から2乗に比例するかを調べるときに使う。'
+  };
+  if (k === 1) return {
+    html: '関数 ' + v('y') + ' = ' + v('a') + X2 + ' のグラフについて、□にあてはまるものを選びなさい。',
+    parts: [fill('', ['グラフは ', 0, ' とよばれる曲線で、', 1, ' について対称である。' + v('a') + ' &gt; 0 のときは ', 2, ' に開き、' + v('a') + ' の絶対値が大きいほど、グラフの開き方は ', 3, ' なる。'], [Bk('放物線', '双曲線', '直線'), Bk(v('y') + ' 軸', v('x') + ' 軸', '原点'), Bk('上', '下'), Bk('小さく', '大きく')])],
+    expl: v('y') + ' = ' + v('a') + X2 + ' のグラフは<b>放物線</b>。原点を通り、' + v('y') + ' 軸について対称。' + v('a') + ' &gt; 0 で上に開き、' + v('a') + ' &lt; 0 で下に開く。' + v('a') + ' の絶対値が大きいほど開き方は小さい（細くなる）。'
+  };
+  var up = ri(0, 1);
+  return {
+    html: '関数 ' + v('y') + ' = ' + v('a') + X2 + ' で ' + v('a') + (up ? ' &gt; 0' : ' &lt; 0') + ' のとき、□にあてはまるものを選びなさい。',
+    parts: [fill('', [v('x') + ' の値が増加すると、' + v('x') + ' &lt; 0 の範囲では ' + v('y') + ' の値は ', 0, ' し、' + v('x') + ' &gt; 0 の範囲では ', 1, ' する。' + v('x') + ' = 0 のとき ' + v('y') + ' は ', 2, ' の 0 をとる。'], [up ? Bk('減少', '増加') : Bk('増加', '減少'), up ? Bk('増加', '減少') : Bk('減少', '増加'), up ? Bk('最小値', '最大値') : Bk('最大値', '最小値')])],
+    expl: (up ? '上に開く放物線。左側（' + v('x') + ' &lt; 0）は右下がりで減少、右側は右上がりで増加。頂点の原点で最小値 0。' : '下に開く放物線。左側（' + v('x') + ' &lt; 0）は右上がりで増加、右側は右下がりで減少。頂点の原点で最大値 0。')
+  };
+});
+
+/* ---------- 単元2：関数の利用 ---------- */
+T('B1', 2, '制動距離（速さの2乗に比例）', 0, 1, function () {
+  var k, vs;
+  do { k = pick([100, 200, 160, 80, 50]); vs = [20, 30, 40, 50, 60, 80].filter(function (s) { return (2 * s * s) % k === 0; }); } while (vs.length < 3);
+  vs = shuffle(vs); var v0 = vs[0], v1 = vs[1], v2 = vs[2], a = F(1, k);
+  return {
+    html: '走っている自動車がブレーキをかけてから止まるまでに進む距離を制動距離といいます。時速 ' + v('x') + ' km で走る自動車の制動距離を ' + v('y') + ' m とすると、' + v('y') + ' は ' + v('x') + ' の2乗に比例します。ある自動車では、時速 ' + v0 + ' km のときの制動距離が ' + dn(yv(a, v0)) + ' m でした。',
+    parts: [nums('(1) ' + v('y') + ' を ' + v('x') + ' の式で表しなさい。', ['<i>y</i> = ', 0, ' ' + X2], [a]),
+      num('(2) 時速 ' + v1 + ' km で走っているときの制動距離を求めなさい。', '', yv(a, v1), ' m'),
+      num('(3) 制動距離が ' + dn(yv(a, v2)) + ' m になるのは、時速何 km で走っているときですか。', '時速 ', v2, ' km')],
+    expl: '(1) ' + v('y') + ' = ' + v('a') + X2 + ' に ' + v('x') + ' = ' + v0 + '、' + v('y') + ' = ' + dn(yv(a, v0)) + ' を代入。　' + dn(yv(a, v0)) + ' = ' + (v0 * v0) + v('a') + '　' + v('a') + ' = ' + fh(a) + '<br>(2) ' + v('y') + ' = ' + fh(a) + ' × ' + v1 + '<sup>2</sup> = ' + fh(a) + ' × ' + v1 * v1 + ' = <b>' + dn(yv(a, v1)) + '</b>（m）<br>(3) ' + dn(yv(a, v2)) + ' = ' + fh(a) + X2 + '　' + X2 + ' = ' + v2 * v2 + '　' + v('x') + ' &gt; 0 だから ' + v('x') + ' = <b>' + v2 + '</b><br><b>ポイント</b>：速さが2倍になると、制動距離は4倍になる。'
+  };
+});
+
+T('B2', 2, '落下・斜面（距離・時間・平均の速さ）', 0, 1, function () {
+  var fall = ri(0, 1), a = fall ? F(5) : F(pick([2, 3, 4, 1]), pick([1, 1, 2])), t0 = pick([2, 3, 4]), t1, t2, t3, t4;
+  do { t1 = ri(1, 6); t2 = ri(2, 8); t3 = ri(1, 4); t4 = ri(t3 + 1, 6); } while (t1 === t0 || t2 === t0 || t2 === t1);
+  var what = fall ? '高い所からボールを落とすとき、手をはなしてから ' + v('x') + ' 秒間に落ちる距離を ' + v('y') + ' m とすると' : '斜面にボールを置いて手をはなすとき、ころがり始めてから ' + v('x') + ' 秒間に進む距離を ' + v('y') + ' m とすると';
+  var vb = fall ? '落ち' : '進み';
+  return {
+    html: what + '、' + v('y') + ' は ' + v('x') + ' の2乗に比例し、' + t0 + ' 秒間に ' + fh(yv(a, t0)) + ' m ' + vb + 'ました。',
+    parts: [nums('(1) ' + v('y') + ' を ' + v('x') + ' の式で表しなさい。' + NOTE1, ['<i>y</i> = ', 0, ' ' + X2], [a]),
+      num('(2) ' + t1 + ' 秒間では何 m ' + vb + 'ますか。', '', yv(a, t1), ' m'),
+      num('(3) ' + fh(yv(a, t2)) + ' m ' + (fall ? '落ちる' : '進む') + 'のは、何秒後ですか。', '', t2, ' 秒後'),
+      num('(4) ' + t3 + ' 秒後から ' + t4 + ' 秒後までの間の平均の速さを求めなさい。', '秒速 ', fmul(a, t3 + t4), ' m')],
+    expl: '(1) ' + fh(yv(a, t0)) + ' = ' + v('a') + ' × ' + t0 + '<sup>2</sup>　' + v('a') + ' = ' + fh(a) + '　' + yax(a) + '<br>(2) ' + v('y') + ' = ' + pn(a) + ' × ' + t1 + '<sup>2</sup> = <b>' + fh(yv(a, t1)) + '</b><br>(3) ' + fh(yv(a, t2)) + ' = ' + co(a) + X2 + '　' + X2 + ' = ' + t2 * t2 + '　' + v('x') + ' &gt; 0 だから ' + v('x') + ' = <b>' + t2 + '</b><br>(4) <b>平均の速さ = 進んだ距離 ÷ かかった時間 = 変化の割合</b><br>' + frac(fh(yv(a, t4)) + ' − ' + fh(yv(a, t3)), t4 + ' − ' + t3) + ' = ' + frac(fh(fsub(yv(a, t4), yv(a, t3))), t4 - t3) + ' = <b>' + fh(fmul(a, t3 + t4)) + '</b>（m/秒）'
+  };
+});
+
+T('B3', 2, 'ふりこ（長さと周期）', 0, 1, function () {
+  var t1 = pick([2, 4, 6, 3, 5]), t2 = pick([1, 2, 3, 4, 6].filter(function (t) { return t !== t1; })), n = pick([2, 3]);
+  return {
+    html: '1往復するのに ' + v('x') + ' 秒かかるふりこの長さを ' + v('y') + ' m とすると、' + v('y') + ' = ' + frac(1, 4) + X2 + ' の関係があります。',
+    parts: [num('(1) 1往復するのに ' + t1 + ' 秒かかるふりこの長さを求めなさい。', '', F(t1 * t1, 4), ' m'),
+      num('(2) 長さが ' + dn(t2 * t2 / 4) + ' m のふりこが1往復するのにかかる時間を求めなさい。', '', t2, ' 秒'),
+      num('(3) 1往復にかかる時間を ' + n + ' 倍にするには、ふりこの長さを何倍にすればよいですか。', '', n * n, ' 倍')],
+    expl: '(1) ' + v('y') + ' = ' + frac(1, 4) + ' × ' + t1 + '<sup>2</sup> = <b>' + fh(F(t1 * t1, 4)) + '</b><br>(2) ' + dn(t2 * t2 / 4) + ' = ' + frac(1, 4) + X2 + '　' + X2 + ' = ' + t2 * t2 + '　' + v('x') + ' &gt; 0 だから ' + v('x') + ' = <b>' + t2 + '</b><br>(3) ' + v('y') + ' は ' + v('x') + ' の2乗に比例するから、' + v('x') + ' が ' + n + ' 倍 → ' + v('y') + ' は ' + n + '<sup>2</sup> = <b>' + n * n + '</b> 倍'
+  };
+});
+
+function chaseParams() { var a, vv, m; do { a = F(1, pick([4, 2, 3, 5])); vv = pick([5, 10, 15, 8, 6, 12, 4]); m = vv * a.d; } while (m > 60 || m < 8); return { a: a, v: vv, m: m }; }
+T('B4', 2, '追いつく問題（放物線と直線）', 0, 1, function () {
+  var c = chaseParams(), a = c.a, vv = c.v, m = c.m, t;
+  do { t = ri(2, 12) * (a.d === 3 ? 3 : (a.d === 5 ? 5 : 2)); } while (t === m || t > 60);
+  var dt = fval(yv(a, t)), dc = vv * t, front = dt > dc ? 0 : 1;
+  return {
+    html: 'まっすぐな線路と、それに平行な道路があります。電車が駅を出発してから ' + v('x') + ' 秒間に進む距離を ' + v('y') + ' m とすると、0 ≦ ' + v('x') + ' ≦ 60 の範囲では ' + yax(a) + ' の関係があります。電車が駅を出発すると同時に、秒速 ' + vv + ' m の一定の速さで走る自動車が駅の横を通りすぎました。',
+    parts: [num('(1) 電車が自動車に追いつくのは、駅を出発してから何秒後ですか。', '', m, ' 秒後'),
+      num('(2) 追いつくのは、駅から何 m の地点ですか。', '', vv * m, ' m'),
+      num('(3) 駅を出発してから ' + t + ' 秒後、電車と自動車は何 m はなれていますか。', '', Math.abs(dt - dc), ' m'),
+      choiceFixed('(4) (3)のとき、前を走っているのはどちらですか。', ['電車', '自動車'], front)],
+    expl: '自動車は ' + v('y') + ' = ' + vv + v('x') + '。<br>(1) 追いつく ＝ <b>進んだ距離が等しい</b> ＝ グラフの交点。<br>' + fh(a) + X2 + ' = ' + vv + v('x') + '　両辺を ' + a.d + ' 倍して　' + X2 + ' − ' + vv * a.d + v('x') + ' = 0　' + v('x') + '(' + v('x') + ' − ' + m + ') = 0<br>' + v('x') + ' = 0（出発のとき）, ' + m + '　よって <b>' + m + ' 秒後</b><br>(2) ' + vv + ' × ' + m + ' = <b>' + vv * m + '</b>（m）<br>(3) 電車：' + fh(a) + ' × ' + t + '<sup>2</sup> = ' + dn(dt) + '（m）、自動車：' + vv + ' × ' + t + ' = ' + dc + '（m）　差は <b>' + dn(Math.abs(dt - dc)) + '</b> m<br>(4) ' + m + ' 秒より' + (t < m ? '前なので、まだ自動車が前。' : 'あとなので、電車が前。')
+  };
+});
+
+T('B10', 2, 'グラフを読む（追いつく・速さ）', 0, 1, function () {
+  var a = F(1, pick([4, 2])), vv = a.d === 4 ? pick([1, 1.5, 2]) : pick([1, 2, 3]), m = vv * a.d, t = pick([2, 4, 6, 8].filter(function (x) { return x !== m; }));
+  var g = { xmin: 0, xmax: 8, ymin: 0, ymax: 18, sx: 30, sy: 15, gy: 1, yt: 2, xt: 2, xl: '<tspan font-style="italic">x</tspan>(秒)', yl: '<tspan font-style="italic">y</tspan>(m)', curves: [{ f: function (x) { return fval(a) * x * x; }, c: '#d23' }, { f: function (x) { return vv * x; } }], texts: [{ x: 6.2, y: Math.min(fval(a) * 49 + 1.5, 17), t: '兄', c: '#d23' }, { x: 7.2, y: Math.min(vv * 7.2 - 1.5, 16), t: '弟', c: '#1f4e9c' }] };
+  var d1 = fval(a) * t * t, d2 = vv * t;
+  return {
+    html: '坂の上から兄と弟が同時に下り始めました。下り始めてから ' + v('x') + ' 秒間に進む道のりを ' + v('y') + ' m として、2人が進むようすをグラフに表しました。兄（赤）は ' + v('y') + ' が ' + v('x') + ' の2乗に比例し、弟（青）は一定の速さで走っています。',
+    fig: graph(g),
+    parts: [num('(1) 弟の走る速さを求めなさい。', '秒速 ', vv, ' m'),
+      nums('(2) 兄について、' + v('y') + ' を ' + v('x') + ' の式で表しなさい。', ['<i>y</i> = ', 0, ' ' + X2], [a]),
+      num('(3) 兄が弟に追いつくのは、下り始めてから何秒後ですか。', '', m, ' 秒後'),
+      num('(4) 下り始めてから ' + t + ' 秒後、2人は何 m はなれていますか。', '', Math.abs(d1 - d2), ' m')],
+    expl: '(1) 青い直線は (2, ' + dn(vv * 2) + ') を通る。' + dn(vv * 2) + ' ÷ 2 = <b>' + dn(vv) + '</b>（m/秒）。直線の<b>傾きが速さ</b>。<br>(2) 赤いグラフは (' + (a.d) + ', ' + a.d + ') などを通る。' + v('y') + ' = ' + v('a') + X2 + ' に代入して ' + v('a') + ' = ' + fh(a) + '<br>(3) 追いつく ＝ <b>2つのグラフの交点</b>。交点は (' + m + ', ' + dn(vv * m) + ') だから <b>' + m + ' 秒後</b>。<br>(4) ' + v('x') + ' = ' + t + ' のとき、兄 ' + dn(d1) + ' m、弟 ' + dn(d2) + ' m。差は <b>' + dn(Math.abs(d1 - d2)) + '</b> m（グラフの縦のはなれ）'
+  };
+});
+
+function parabLine() {
+  var a, p, q, ok;
+  do {
+    a = ra([[1, 1], [1, 2], [-1, 2], [-1, 1], [2, 1], [-2, 1], [1, 4], [-1, 4], [1, 3], [-1, 3]]);
+    var xs = nicex(a, -6, 6).filter(function (x) { return Math.abs(a.n * x * x / a.d) <= 18; });
+    p = pick(xs); q = pick(xs); ok = p < 0 && q > 0 && p !== -q;
+  } while (!ok);
+  var m = fmul(a, p + q), n = fmul(a, -p * q), ya = fval(yv(a, p)), yb = fval(yv(a, q));
+  var lo = Math.min(ya, yb, 0, fval(n)), hi = Math.max(ya, yb, 0, fval(n)), yr = hi - lo + 2;
+  var g = { xmin: p - 1, xmax: q + 1, ymin: lo - 1, ymax: hi + 1, sx: 24, sy: Math.min(24, 220 / yr), gy: yr > 24 ? 5 : (yr > 12 ? 2 : 1), noticks: 1 };
+  g.curves = [{ f: function (x) { return fval(a) * x * x; } }, { f: function (x) { return fval(m) * x + fval(n); }, c: '#333', w: 1.8 }];
+  g.dots = [{ x: p, y: ya, label: 'A', c: '#d23', dx: -16, dy: a.n > 0 ? -6 : 16 }, { x: q, y: yb, label: 'B', c: '#d23', dx: 8, dy: a.n > 0 ? 4 : 14 }];
+  g.segs = [{ a: [p, 0], b: [p, ya], c: '#888', dash: 1, w: 1 }, { a: [q, 0], b: [q, yb], c: '#888', dash: 1, w: 1 }];
+  g.texts = [{ x: p, y: a.n > 0 ? -0.6 * (yr / 12 + 0.4) : 0.6 * (yr / 12 + 0.4), t: mn(p), anchor: 'middle' }, { x: q, y: a.n > 0 ? -0.6 * (yr / 12 + 0.4) : 0.6 * (yr / 12 + 0.4), t: String(q), anchor: 'middle' }];
+  return { a: a, p: p, q: q, m: m, n: n, ya: ya, yb: yb, g: g, area: fmul(fmul(F(1, 2), fabs(n)), q - p) };
+}
+var NOTE2 = '<span class="note">※ 切片が負のときは、右の□に −3 のように負の数を入れます。</span>';
+function areaExpl(o) {
+  return '直線ABと ' + v('y') + ' 軸の交点をCとすると、C(0, ' + fh(o.n) + ')。OC = ' + fh(fabs(o.n)) + ' を底辺とみて、△OABを ' + v('y') + ' 軸で2つに分ける。<br>△OAB = △OAC + △OBC = ' + frac(1, 2) + ' × ' + fh(fabs(o.n)) + ' × ' + (-o.p) + ' + ' + frac(1, 2) + ' × ' + fh(fabs(o.n)) + ' × ' + o.q + ' = <b>' + fh(o.area) + '</b><br>（高さは A, B の <b>' + v('x') + ' 座標の絶対値</b>。まとめて ' + frac(1, 2) + ' × ' + fh(fabs(o.n)) + ' × (' + (-o.p) + ' + ' + o.q + ') でもよい）';
+}
+T('B5', 2, '放物線と直線（a・直線の式・三角形の面積）', 0, 1, function () {
+  var o = parabLine(), k = ri(0, 2), a = o.a, p = o.p, q = o.q, parts, html, ex;
+  var lineE = '2点 A(' + mn(p) + ', ' + mn(o.ya) + ')、B(' + q + ', ' + mn(o.yb) + ') を通る直線。<br>傾き = ' + frac(mn(o.yb) + ' − ' + pn(o.ya), q + ' − ' + pn(p)) + ' = ' + frac(mn(o.yb - o.ya), q - p) + ' = ' + fh(o.m) + '<br>' + v('y') + ' = ' + co(o.m) + v('x') + ' + ' + v('b') + ' に B を代入して ' + v('b') + ' = ' + fh(o.n) + '　よって <b>' + lin(o.m, o.n) + '</b>';
+  if (k === 0) {
+    html = '右の図のように、関数 ' + yax(a) + ' のグラフ上に2点 A, B があります。A, B の ' + v('x') + ' 座標は、それぞれ ' + mn(p) + '、' + q + ' です。';
+    parts = [nums('(1) 2点 A, B の ' + v('y') + ' 座標をそれぞれ求めなさい。', ['A の <i>y</i> 座標 ', 0, ' ，　B の <i>y</i> 座標 ', 1], [o.ya, o.yb]),
+      nums('(2) 2点 A, B を通る直線の式を求めなさい。' + NOTE2, ['<i>y</i> = ', 0, ' <i>x</i> + ', 1], [o.m, o.n]),
+      num('(3) △OAB の面積を求めなさい。', '', o.area)];
+    ex = '(1) A：' + v('y') + ' = ' + pn(a) + ' × ' + pn(p) + '<sup>2</sup> = ' + mn(o.ya) + '、　B：' + v('y') + ' = ' + pn(a) + ' × ' + q + '<sup>2</sup> = ' + mn(o.yb) + '<br>(2) ' + lineE + '<br>(3) ' + areaExpl(o);
+  } else if (k === 1) {
+    html = '右の図のように、関数 ' + v('y') + ' = ' + v('a') + X2 + ' のグラフと、関数 ' + lin(o.m, o.n) + ' のグラフが、2点 A, B で交わっています。A, B の ' + v('x') + ' 座標は、それぞれ ' + mn(p) + '、' + q + ' です。';
+    parts = [num('(1) ' + v('a') + ' の値を求めなさい。', '<i>a</i> = ', a), num('(2) △OAB の面積を求めなさい。', '', o.area)];
+    ex = '(1) 点Aは直線 ' + lin(o.m, o.n) + ' 上の点だから、' + v('x') + ' = ' + mn(p) + ' を代入して ' + v('y') + ' = ' + mn(o.ya) + '。A(' + mn(p) + ', ' + mn(o.ya) + ')<br>点Aは放物線上の点でもあるから　' + mn(o.ya) + ' = ' + v('a') + ' × ' + pn(p) + '<sup>2</sup>　' + v('a') + ' = <b>' + fh(a) + '</b><br>(2) ' + areaExpl(o);
+  } else {
+    html = '右の図のように、関数 ' + v('y') + ' = ' + v('a') + X2 + ' のグラフ上に2点 A, B があります。点Bの座標は (' + q + ', ' + mn(o.yb) + ') で、点Aの ' + v('x') + ' 座標は ' + mn(p) + ' です。';
+    parts = [num('(1) ' + v('a') + ' の値を求めなさい。', '<i>a</i> = ', a),
+      nums('(2) 直線ABの式を求めなさい。' + NOTE2, ['<i>y</i> = ', 0, ' <i>x</i> + ', 1], [o.m, o.n]),
+      num('(3) △OAB の面積を求めなさい。', '', o.area)];
+    ex = '(1) B を代入　' + mn(o.yb) + ' = ' + v('a') + ' × ' + q + '<sup>2</sup>　' + v('a') + ' = <b>' + fh(a) + '</b><br>(2) A の ' + v('y') + ' 座標は ' + pn(a) + ' × ' + pn(p) + '<sup>2</sup> = ' + mn(o.ya) + '。' + lineE + '<br>(3) ' + areaExpl(o);
+  }
+  return { html: html, fig: graph(o.g), parts: parts, expl: ex };
+});
+
+T('B6', 2, '放物線と直線（面積を半分にする点・直線）', 0, 1, function () {
+  var o, k = ri(0, 1);
+  do { o = parabLine(); } while (o.a.n < 0);
+  var a = o.a, p = o.p, q = o.q, half = F(q - p, 2);
+  var head = '右の図のように、関数 ' + yax(a) + ' のグラフ上に、' + v('x') + ' 座標がそれぞれ ' + mn(p) + '、' + q + ' となる点 A, B をとり、直線ABと ' + v('y') + ' 軸との交点をCとします。';
+  if (k === 0) return {
+    html: head + '点Pは ' + yax(a) + ' のグラフ上の点です。',
+    fig: graph(o.g),
+    parts: [num('(1) △OAB の面積を求めなさい。', '', o.area),
+      nums('(2) △OCP の面積が △OAB の面積の ' + frac(1, 2) + ' になるときの、点Pの ' + v('x') + ' 座標をすべて求めなさい。', ['<i>x</i> = ', 0, ' ， ', 1], [half, fneg(half)], { anyOrder: true })],
+    expl: '直線ABは ' + lin(o.m, o.n) + ' だから C(0, ' + fh(o.n) + ')。<br>(1) ' + areaExpl(o) + '<br>(2) △OCP は、OC = ' + fh(o.n) + ' を底辺とすると、高さは <b>点Pの ' + v('x') + ' 座標の絶対値</b>。Pの ' + v('x') + ' 座標を ' + v('t') + ' とすると<br>' + frac(1, 2) + ' × ' + fh(o.n) + ' × |' + v('t') + '| = ' + fh(o.area) + ' × ' + frac(1, 2) + '　より　|' + v('t') + '| = ' + fh(half) + '<br>' + v('t') + ' = <b>' + fh(half) + ' ， ' + fh(fneg(half)) + '</b>（' + v('y') + ' 軸の右と左に1つずつ。「すべて」と聞かれたら2つ答える）'
+  };
+  var mx = F(p + q, 2), my = fdiv(fadd(o.ya, o.yb), 2), sl = fdiv(my, mx);
+  return {
+    html: head,
+    fig: graph(o.g),
+    parts: [num('(1) △OAB の面積を求めなさい。', '', o.area),
+      nums('(2) 原点Oを通り、△OAB の面積を2等分する直線の式を求めなさい。', ['<i>y</i> = ', 0, ' <i>x</i>'], [sl])],
+    expl: '(1) ' + areaExpl(o) + '<br>(2) 頂点Oを通って面積を2等分する直線は、<b>向かい合う辺ABの中点</b>を通る。<br>ABの中点M：(' + frac(mn(p) + ' + ' + q, 2) + ', ' + frac(mn(o.ya) + ' + ' + mn(o.yb), 2) + ') = (' + fh(mx) + ', ' + fh(my) + ')<br>原点とMを通るから、傾きは ' + fh(my) + ' ÷ ' + pn(mx) + ' = ' + fh(sl) + '　よって <b>' + lin(sl, 0) + '</b>'
+  };
+});
+
+T('B7', 2, '動く点と面積（直角三角形）', 0, 1, function () {
+  var L = pick([4, 5, 6, 8]), k = pick([2, 2, 1, 3]), a = F(k, 2), x0 = ri(1, L - 1);
+  var pts = { A: [0, 0], B: [L, 0], C: [L, Math.min(k * L, L * 1.6)] };
+  pts.P = [L - L * 0.4, 0]; pts.Q = [L, pts.C[1] * 0.4];
+  var fig = geo({ pts: pts, segs: ['AB', 'BC', 'CA', 'PQ'], fill: ['PBQ'], rights: [['B', 'A', 'C']], lens: [['AB', L + 'cm', 1, 30], ['PB', '<tspan font-style="italic">x</tspan>cm', -1, 10]], lab: { P: [0, -12], Q: [14, 0] }, w: 280, hmax: 280, pad: 50 });
+  return {
+    html: '右の図のような、∠B = 90° の直角三角形ABCがあります。AB = ' + L + ' cm、BC = ' + k * L + ' cm です。点PはBを出発して辺AB上をAまで動き、点Qは点Pと同時にBを出発して、辺BC上をCまで、点Pの ' + (k === 1 ? '同じ' : k + ' 倍の') + '速さで動きます。BPの長さが ' + v('x') + ' cm のときの △PBQ の面積を ' + v('y') + ' cm² とします。',
+    fig: fig,
+    parts: [nums('(1) ' + v('y') + ' を ' + v('x') + ' の式で表しなさい。' + NOTE1, ['<i>y</i> = ', 0, ' ' + X2], [a]),
+      nums('(2) ' + v('x') + ' の変域を求めなさい。', [0, ' ≦ <i>x</i> ≦ ', 1], [0, L]),
+      nums('(3) ' + v('y') + ' の変域を求めなさい。', [0, ' ≦ <i>y</i> ≦ ', 1], [0, yv(a, L)]),
+      num('(4) △PBQ の面積が ' + fh(yv(a, x0)) + ' cm² になるときの BP の長さを求めなさい。', '', x0, ' cm')],
+    expl: '(1) BP = ' + v('x') + '、BQ = ' + (k === 1 ? '' : k) + v('x') + '（Qは' + (k === 1 ? '同じ速さ' : k + '倍の速さ') + '）。<br>' + v('y') + ' = ' + frac(1, 2) + ' × BP × BQ = ' + frac(1, 2) + ' × ' + v('x') + ' × ' + (k === 1 ? '' : k) + v('x') + ' = <b>' + co(a) + X2 + '</b><br>(2) PはBからAまで動くから <b>0 ≦ ' + v('x') + ' ≦ ' + L + '</b>（このときQもちょうどCに着く）<br>(3) ' + v('x') + ' = ' + L + ' のとき ' + v('y') + ' = ' + fh(yv(a, L)) + '　よって <b>0 ≦ ' + v('y') + ' ≦ ' + fh(yv(a, L)) + '</b><br>(4) ' + fh(yv(a, x0)) + ' = ' + co(a) + X2 + '　' + X2 + ' = ' + x0 * x0 + '　' + v('x') + ' &gt; 0 より <b>' + x0 + '</b> cm'
+  };
+});
+
+function miniG(s, ymax, items) {
+  var g = { xmin: 0, xmax: s, ymin: 0, ymax: ymax, sx: 120 / s, sy: 90 / ymax, nogrid: 1, noticks: 1, padL: 18, padB: 18, curves: [], segs: [] };
+  items.forEach(function (it) { if (it.f) g.curves.push({ f: it.f, a: it.a, b: it.b }); else g.segs.push({ a: it.p, b: it.q }); });
+  return graph(g);
+}
+T('B8', 2, '動く点と面積（辺が変わると式が変わる）', 1, 1, function () {
+  var s = pick([4, 6, 8, 10]), h = s / 2, vb = ri(0, 1), k = ri(1, h - 1) || 1;
+  var sq = { A: [0, s], B: [0, 0], C: [s, 0], D: [s, s] };
+  if (!vb) {
+    /* P: A→B→C 毎秒2cm、Q: B→C 毎秒1cm */
+    var S = k * k, x2 = F(s * s - 2 * S, s);
+    var f1 = geo({ pts: { A: sq.A, B: sq.B, C: sq.C, D: sq.D, P: [0, s * 0.45], Q: [s * 0.28, 0] }, segs: ['AB', 'BC', 'CD', 'DA', 'AQ', 'PQ'], fill: ['APQ'], lab: { P: [-13, 0], Q: [0, 15] }, w: 200, hmax: 200 });
+    var f2 = geo({ pts: { A: sq.A, B: sq.B, C: sq.C, D: sq.D, P: [s * 0.4, 0], Q: [s * 0.7, 0] }, segs: ['AB', 'BC', 'CD', 'DA', 'AQ', 'AP'], fill: ['APQ'], lab: { P: [0, 15], Q: [0, 15] }, w: 200, hmax: 200 });
+    return {
+      html: '1辺が ' + s + ' cm の正方形ABCDがあります。点PはAを出発して、辺AB, BC上を毎秒 2 cm の速さでCまで動きます。点Qは点Pと同時にBを出発して、辺BC上を毎秒 1 cm の速さでCまで動きます。点PがAを出発してから ' + v('x') + ' 秒後の △APQ の面積を ' + v('y') + ' cm² とします。',
+      fig: figs(cap('Pが辺AB上', f1), cap('Pが辺BC上', f2)),
+      parts: [nums('(1) 点Pが辺AB上を動くとき、' + v('x') + ' の変域と式を求めなさい。' + NOTE1, [0, ' ≦ <i>x</i> ≦ ', 1, '　のとき　<i>y</i> = ', 2, ' ' + X2], [0, h, 1]),
+        nums('(2) 点Pが辺BC上を動くとき、' + v('x') + ' の変域と式を求めなさい。', [0, ' ≦ <i>x</i> ≦ ', 1, '　のとき　<i>y</i> = ', 2, ' <i>x</i> + ', 3], [h, s, -h, s * h]),
+        choice('(3) ' + v('x') + ' と ' + v('y') + ' の関係を表すグラフを選びなさい。', miniG(s, h * h * 1.15, [{ f: function (x) { return x * x; }, a: 0, b: h }, { p: [h, h * h], q: [s, 0] }]), [miniG(s, h * h * 1.15, [{ p: [0, 0], q: [h, h * h] }, { p: [h, h * h], q: [s, 0] }]), miniG(s, h * h * 1.15, [{ f: function (x) { return x * x; }, a: 0, b: h }, { p: [h, h * h], q: [s, h * h] }]), miniG(s, h * h * 1.15, [{ f: function (x) { return h * h - (x - h) * (x - h); }, a: 0, b: s }])]),
+        nums('(4) △APQ の面積が ' + S + ' cm² になるのは、出発してから何秒後と何秒後ですか。', [0, ' 秒後 と ', 1, ' 秒後'], [k, x2], { anyOrder: true })],
+      expl: '<b>まず、Pがどの辺にいるかで場合を分ける。</b>PがBに着くのは ' + s + ' ÷ 2 = ' + h + ' 秒後、Cに着くのは ' + s + ' 秒後。<br>(1) 0 ≦ ' + v('x') + ' ≦ ' + h + '：AP = 2' + v('x') + '、BQ = ' + v('x') + '。底辺AP、高さBQ とみて　' + v('y') + ' = ' + frac(1, 2) + ' × 2' + v('x') + ' × ' + v('x') + ' = <b>' + X2 + '</b><br>(2) ' + h + ' ≦ ' + v('x') + ' ≦ ' + s + '：PもQも辺BC上。BP = 2' + v('x') + ' − ' + s + '、BQ = ' + v('x') + ' だから　PQ = ' + v('x') + ' − (2' + v('x') + ' − ' + s + ') = ' + s + ' − ' + v('x') + '<br>底辺PQ、高さAB = ' + s + ' とみて　' + v('y') + ' = ' + frac(1, 2) + ' × (' + s + ' − ' + v('x') + ') × ' + s + ' = <b>' + lin(-h, s * h) + '</b><br>(3) はじめは放物線、' + v('x') + ' = ' + h + ' で ' + v('y') + ' = ' + h * h + ' になり、そのあとは右下がりの直線で ' + v('x') + ' = ' + s + ' のとき 0。<br>(4) (1)の式で　' + X2 + ' = ' + S + ' → ' + v('x') + ' = ' + k + '（0 ≦ ' + v('x') + ' ≦ ' + h + ' に合う）<br>(2)の式で　' + lin(-h, s * h).replace('<i>y</i> = ', '') + ' = ' + S + ' → ' + v('x') + ' = ' + fh(x2) + '（' + h + ' ≦ ' + v('x') + ' ≦ ' + s + ' に合う）<br><b>求めた値が、その式の変域に入っているか必ずたしかめる。</b>'
+    };
+  }
+  /* P: A→B 毎秒1cm、Q: A→D→C 毎秒2cm */
+  var S2 = h * (s - 1);
+  var g1 = geo({ pts: { A: sq.A, B: sq.B, C: sq.C, D: sq.D, P: [0, s * 0.7], Q: [s * 0.6, s] }, segs: ['AB', 'BC', 'CD', 'DA', 'PQ'], fill: ['APQ'], lab: { P: [-13, 0], Q: [0, -12] }, w: 200, hmax: 200 });
+  var g2 = geo({ pts: { A: sq.A, B: sq.B, C: sq.C, D: sq.D, P: [0, s * 0.3], Q: [s, s * 0.6] }, segs: ['AB', 'BC', 'CD', 'DA', 'PQ', 'AQ'], fill: ['APQ'], lab: { P: [-13, 0], Q: [13, 0] }, w: 200, hmax: 200 });
+  return {
+    html: '1辺が ' + s + ' cm の正方形ABCDがあります。点PはAを出発して、辺AB上を毎秒 1 cm の速さでBまで動きます。点Qは点Pと同時にAを出発して、辺AD, DC上を毎秒 2 cm の速さでCまで動きます。出発してから ' + v('x') + ' 秒後の △APQ の面積を ' + v('y') + ' cm² とします。',
+    fig: figs(cap('Qが辺AD上', g1), cap('Qが辺DC上', g2)),
+    parts: [nums('(1) 点Qが辺AD上を動くとき、' + v('x') + ' の変域と式を求めなさい。' + NOTE1, [0, ' ≦ <i>x</i> ≦ ', 1, '　のとき　<i>y</i> = ', 2, ' ' + X2], [0, h, 1]),
+      nums('(2) 点Qが辺DC上を動くとき、' + v('x') + ' の変域と式を求めなさい。', [0, ' ≦ <i>x</i> ≦ ', 1, '　のとき　<i>y</i> = ', 2, ' <i>x</i>'], [h, s, h]),
+      choice('(3) ' + v('x') + ' と ' + v('y') + ' の関係を表すグラフを選びなさい。', miniG(s, h * s * 1.1, [{ f: function (x) { return x * x; }, a: 0, b: h }, { p: [h, h * h], q: [s, h * s] }]), [miniG(s, h * s * 1.1, [{ f: function (x) { return x * x; }, a: 0, b: h }, { p: [h, h * h], q: [s, 0] }]), miniG(s, h * s * 1.1, [{ p: [0, 0], q: [s, h * s] }]), miniG(s, h * s * 1.1, [{ f: function (x) { return x * x; }, a: 0, b: h }, { p: [h, h * h], q: [s, h * h] }])]),
+      num('(4) △APQ の面積が ' + S2 + ' cm² になるのは、出発してから何秒後ですか。', '', s - 1, ' 秒後')],
+    expl: '<b>Qがどの辺にいるかで場合を分ける。</b>QがDに着くのは ' + s + ' ÷ 2 = ' + h + ' 秒後、Cに着くのは ' + s + ' 秒後。<br>(1) 0 ≦ ' + v('x') + ' ≦ ' + h + '：AP = ' + v('x') + '、AQ = 2' + v('x') + '、∠A = 90° だから　' + v('y') + ' = ' + frac(1, 2) + ' × ' + v('x') + ' × 2' + v('x') + ' = <b>' + X2 + '</b><br>(2) ' + h + ' ≦ ' + v('x') + ' ≦ ' + s + '：底辺AP = ' + v('x') + '、高さは辺ABから点Qまでの距離で、いつも AD = ' + s + '。　' + v('y') + ' = ' + frac(1, 2) + ' × ' + v('x') + ' × ' + s + ' = <b>' + h + v('x') + '</b><br>(3) 放物線のあと、右上がりの直線になる。<br>(4) ' + S2 + ' は ' + v('x') + ' = ' + h + ' のときの ' + h * h + ' より大きいので(2)の式を使う。' + h + v('x') + ' = ' + S2 + '　' + v('x') + ' = <b>' + (s - 1) + '</b>'
+  };
+});
+
+T('B9', 2, '図形の移動と重なる面積', 1, 1, function () {
+  if (ri(0, 1)) {
+    var h = pick([2, 4, 6]);
+    var base = { A: [0, h], B: [0, 0], C: [2 * h, 0], D: [h, h], E: [2 * h, h], F: [2 * h, 0], G: [4 * h, 0], H: [4 * h, h] };
+    var f1 = geo({ pts: base, segs: ['AB', 'BC', 'CD', 'DA', 'EF', 'FG', 'GH', 'HE'], hide: 'F', lens: [['AD', h + 'cm'], ['AB', h + 'cm'], ['BC', 2 * h + 'cm'], ['FG', 2 * h + 'cm']], lab: { C: [0, 15], E: [0, -12] }, w: 330, hmax: 170 });
+    var d = h * 0.6, mv = { A: [d, h], B: [d, 0], C: [2 * h + d, 0], D: [h + d, h], E: [2 * h, h], F: [2 * h, 0], G: [4 * h, 0], H: [4 * h, h], K: [2 * h, d] };
+    var f2 = geo({ pts: mv, segs: ['AB', 'BC', 'CD', 'DA', 'EF', 'FG', 'GH', 'HE'], fill: ['FCK'], hide: 'K', lens: [['FC', '<tspan font-style="italic">x</tspan>cm']], lab: { F: [-4, 15], C: [4, 15], E: [0, -12], D: [0, -12] }, w: 330, hmax: 170 });
+    var tot = F(3 * h * h, 2);
+    return {
+      html: '図1のように、直線 ℓ 上に台形ABCDと長方形EFGHがあります。台形ABCDは AD ∥ BC、∠A = ∠B = 90°、AD = AB = ' + h + ' cm、BC = ' + 2 * h + ' cm です。長方形EFGHは EF = ' + h + ' cm、FG = ' + 2 * h + ' cm です。長方形を固定し、台形を ℓ にそって、点Cが点Gに重なるまで右へ動かします。図2はそのとちゅうのようすです。FCの長さを ' + v('x') + ' cm、2つの図形が重なる部分の面積を ' + v('y') + ' cm² とします。',
+      fig: figs(cap('図1（はじめ。CとFは同じ位置）', f1), cap('図2', f2)),
+      parts: [nums('(1) 0 ≦ ' + v('x') + ' ≦ ' + h + ' のとき、' + v('y') + ' を ' + v('x') + ' の式で表しなさい。', ['<i>y</i> = ', 0, ' ' + X2], [F(1, 2)]),
+        nums('(2) ' + h + ' ≦ ' + v('x') + ' ≦ ' + 2 * h + ' のとき、' + v('y') + ' を ' + v('x') + ' の式で表しなさい。' + NOTE2, ['<i>y</i> = ', 0, ' <i>x</i> + ', 1], [h, F(-h * h, 2)]),
+        num('(3) 台形ABCDで、重なる部分と重ならない部分の面積が等しくなるのは、点Cを何 cm 動かしたときですか。', '', F(5 * h, 4), ' cm')],
+      expl: '辺CDは、横に ' + h + ' cm 進むと縦に ' + h + ' cm 上がる（45°のかたむき）。<br>(1) 0 ≦ ' + v('x') + ' ≦ ' + h + '：重なる部分は、底辺 ' + v('x') + '、高さ ' + v('x') + ' の<b>直角二等辺三角形</b>。　' + v('y') + ' = ' + frac(1, 2) + ' × ' + v('x') + ' × ' + v('x') + ' = <b>' + frac(1, 2) + X2 + '</b><br>(2) ' + h + ' ≦ ' + v('x') + ' ≦ ' + 2 * h + '：重なる部分は、三角形（' + frac(1, 2) + ' × ' + h + ' × ' + h + ' = ' + fh(F(h * h, 2)) + '）＋ 長方形（横 ' + v('x') + ' − ' + h + '、縦 ' + h + '）。<br>' + v('y') + ' = ' + fh(F(h * h, 2)) + ' + ' + h + '(' + v('x') + ' − ' + h + ') = <b>' + lin(h, F(-h * h, 2)) + '</b><br>(3) 台形の面積は ' + frac(1, 2) + ' × (' + h + ' + ' + 2 * h + ') × ' + h + ' = ' + fh(tot) + '。半分は ' + fh(fdiv(tot, 2)) + '。<br>(1)の式では最大でも ' + fh(F(h * h, 2)) + ' なので足りない → (2)の式を使う。<br>' + h + v('x') + ' − ' + fh(F(h * h, 2)) + ' = ' + fh(fdiv(tot, 2)) + '　' + v('x') + ' = <b>' + fh(F(5 * h, 4)) + '</b>（' + h + ' ≦ ' + v('x') + ' ≦ ' + 2 * h + ' に合う）'
+    };
+  }
+  var c = pick([[4, 6], [3, 5], [2, 6], [4, 8], [3, 7]]), s = c[0], hh = c[1], w = s + hh, x1 = ri(1, s - 1), x3 = ri(hh + 1, w - 1);
+  var f1b = geo({ pts: { P: [-w, hh], Q: [-w, 0], R: [0, 0], S: [0, hh], A: [0, 0], B: [0, -s], C: [s, -s], D: [s, 0], m: [0, hh + 2], n: [0, -s - 1.5], l: [s + 3, 0], k: [-w - 1, 0] }, segs: ['PQ', 'QR', 'RS', 'SP', 'AB', 'BC', 'CD', 'DA'], thin: ['mn', 'kl'], hide: 'kARn', names: { l: 'ℓ', m: 'm' }, lens: [['PS', w + 'cm'], ['PQ', hh + 'cm'], ['BC', s + 'cm']], txt: [[-w / 16, -w / 14, 'O', 'gpt'], [-w / 16, w / 16, 'R', 'gpt'], [w / 16, w / 16, 'A', 'gpt']], lab: { D: [8, -10], S: [10, -4], B: [-12, 4] }, w: 300, hmax: 240, pad: 30 });
+  var xx = s * 0.6;
+  var f2b = geo({ pts: { P: [-w + xx, hh], Q: [-w + xx, 0], R: [xx, 0], S: [xx, hh], A: [0, xx], B: [0, xx - s], C: [s, xx - s], D: [s, xx], m: [0, hh + 2], n: [0, -s - 1.5], l: [s + 3, 0], k: [-w - 1, 0], O: [0, 0], Z: [xx, xx] }, segs: ['PQ', 'QR', 'RS', 'SP', 'AB', 'BC', 'CD', 'DA'], thin: ['mn', 'kl'], fill: ['OAZR'], hide: 'knZ', names: { l: 'ℓ', m: 'm' }, lab: { O: [-12, -9], R: [8, 15], A: [-12, -6], D: [10, -6], S: [10, -4], B: [-12, 8], C: [10, 10] }, w: 300, hmax: 240, pad: 30 });
+  return {
+    html: '図1のように、1辺が ' + s + ' cm の正方形ABCDと、縦 ' + hh + ' cm、横 ' + w + ' cm の長方形PQRSがあり、直線 ℓ と直線 m は点Oで垂直に交わっています。はじめ、辺ADと辺QRは ℓ 上にあり、頂点Aと頂点Rは点Oと同じ位置にあります。いま、正方形を m にそって上へ、長方形を ℓ にそって右へ、どちらも同じ速さで動かします。図2のように OA = OR = ' + v('x') + ' cm となったとき、2つの図形が重なっている部分の面積を ' + v('y') + ' cm² とします（0 ≦ ' + v('x') + ' ≦ ' + w + '）。',
+    fig: figs(cap('図1', f1b), cap('図2', f2b)),
+    parts: [num('(1) ' + v('x') + ' = ' + x1 + ' のときの ' + v('y') + ' の値を求めなさい。', '<i>y</i> = ', x1 * x1),
+      nums('(2) 0 ≦ ' + v('x') + ' ≦ ' + s + ' のとき、' + v('y') + ' を ' + v('x') + ' の式で表しなさい。' + NOTE1, ['<i>y</i> = ', 0, ' ' + X2], [1]),
+      nums('(3) 重なる部分の面積が ' + s * s + ' cm² のまま変わらないのは、' + v('x') + ' がどの範囲のときですか。', [0, ' ≦ <i>x</i> ≦ ', 1], [s, hh]),
+      nums('(4) ' + hh + ' ≦ ' + v('x') + ' ≦ ' + w + ' のとき、' + v('y') + ' を ' + v('x') + ' の式で表しなさい。', ['<i>y</i> = ', 0, ' <i>x</i> + ', 1], [-s, s * w]),
+      num('(5) ' + v('x') + ' = ' + x3 + ' のときの ' + v('y') + ' の値を求めなさい。', '<i>y</i> = ', s * (w - x3))],
+    expl: '重なる部分はいつも長方形。<b>横</b>と<b>縦</b>を別々に考える。<br>横：正方形は横に動かないので、重なる横の長さは ' + v('x') + '（' + v('x') + ' ≦ ' + s + ' のあいだ）、そのあとは ' + s + ' で一定。<br>縦：0 ≦ ' + v('x') + ' ≦ ' + s + ' では ' + v('x') + '。' + s + ' ≦ ' + v('x') + ' ≦ ' + hh + ' では正方形がすっぽり入って ' + s + '。' + hh + ' ≦ ' + v('x') + ' では正方形の上が長方形からはみ出し、' + hh + ' − (' + v('x') + ' − ' + s + ') = ' + w + ' − ' + v('x') + '。<br>(1)(2) ' + v('y') + ' = ' + v('x') + ' × ' + v('x') + ' = <b>' + X2 + '</b>　' + v('x') + ' = ' + x1 + ' のとき ' + x1 * x1 + '<br>(3) <b>' + s + ' ≦ ' + v('x') + ' ≦ ' + hh + '</b> のとき ' + v('y') + ' = ' + s + ' × ' + s + ' = ' + s * s + '<br>(4) ' + v('y') + ' = ' + s + ' × (' + w + ' − ' + v('x') + ') = <b>' + lin(-s, s * w).replace('<i>y</i> = ', '') + '</b><br>(5) ' + v('x') + ' = ' + x3 + ' は(4)の範囲。' + s + ' × (' + w + ' − ' + x3 + ') = <b>' + s * (w - x3) + '</b><br><b>変域ごとに式が変わる問題は、変わり目の ' + v('x') + '（' + s + ' と ' + hh + '）を先に見つける。</b>'
+  };
+});
+
+T('B11', 2, '2乗に比例するとみなして予想する', 0, 1, function () {
+  var v0 = pick([20, 30, 40, 50]), kk = pick([2, 3, v0 % 20 === 0 ? 1.5 : 2]), d0 = pick([4, 6, 8, 9, 12, 16]), v1 = v0 * kk, d1 = d0 * kk * kk;
+  return {
+    html: '雨の日に、ある自動車が時速 ' + v0 + ' km で走っているときに急ブレーキをかけたところ、' + d0 + ' m のブレーキのあとが残りました。ブレーキのあとの長さは、走っていた速さの2乗に比例するとみなします。',
+    parts: [num('(1) 同じ条件で時速 ' + v1 + ' km で走っているときに急ブレーキをかけると、ブレーキのあとは何 m になると考えられますか。', '', d1, ' m'),
+      choice('(2) 速さ ' + v('x') + ' とブレーキのあとの長さ ' + v('y') + ' の表があるとき、「' + v('y') + ' は ' + v('x') + ' の2乗に比例するとみなしてよいか」を調べる方法として正しいものを選びなさい。', frac('<i>y</i>', X2) + ' の値がほぼ一定になるかを調べる', [frac('<i>y</i>', '<i>x</i>') + ' の値がほぼ一定になるかを調べる', v('x') + ' × ' + v('y') + ' の値がほぼ一定になるかを調べる', v('y') + ' − ' + v('x') + ' の値がほぼ一定になるかを調べる'])],
+    expl: '(1) 速さが ' + v0 + ' → ' + v1 + ' で <b>' + dn(kk) + ' 倍</b>。2乗に比例するから、長さは ' + dn(kk) + '<sup>2</sup> = ' + dn(kk * kk) + ' 倍。<br>' + d0 + ' × ' + dn(kk * kk) + ' = <b>' + dn(d1) + '</b>（m）<br>（' + v('y') + ' = ' + v('a') + X2 + ' から ' + v('a') + ' = ' + fh(F(d0, v0 * v0)) + ' を求めて代入してもよい）<br>(2) ' + v('y') + ' = ' + v('a') + X2 + ' なら ' + frac('<i>y</i>', X2) + ' = ' + v('a') + '（一定）。' + frac('<i>y</i>', '<i>x</i>') + ' が一定なのは比例、' + v('xy') + ' が一定なのは反比例。グラフの形だけでは判断できないので、表で ' + v('x') + ' が2倍、3倍のときの ' + v('y') + ' や ' + frac('<i>y</i>', X2) + ' を調べる。'
+  };
+});
+
+/* ---------- 単元3：いろいろな関数 ---------- */
+function feeTable() {
+  var L0 = pick([60, 50]), f0 = pick([700, 800, 900, 600]), df = pick([150, 200, 250, 300]), rows = [];
+  for (var i = 0; i < 6; i++) rows.push([L0 + 20 * i, f0 + df * i]);
+  return { L0: L0, f0: f0, df: df, rows: rows, max: L0 + 100, fee: function (x) { var k = Math.max(0, Math.ceil((x - L0) / 20)); return f0 + df * k; } };
+}
+function tblHtml(t, title) { return '<table class="tb"><tr><th>長さの合計</th><th>料金</th></tr>' + t.rows.map(function (r) { return '<tr><td>' + r[0] + ' cm まで</td><td>' + r[1] + ' 円</td></tr>'; }).join('') + '</table>'; }
+T('C1', 3, '料金表（とびとびの値をとる関数）', 1, 1, function () {
+  var t = feeTable(), i1 = ri(1, 4), xb = t.rows[i1][0], xn = t.rows[ri(0, 4)][0] + pick([5, 10, 15]), i3 = ri(1, 5);
+  return {
+    html: 'ある運送会社では、箱の縦・横・高さの合計によって、料金が右の表のように決まっています。長さの合計を ' + v('x') + ' cm、料金を ' + v('y') + ' 円とします。',
+    fig: tblHtml(t),
+    parts: [num('(1) 長さの合計がちょうど ' + xb + ' cm の品物を送るときの料金を求めなさい。', '', t.fee(xb), ' 円'),
+      num('(2) 長さの合計が ' + xn + ' cm の品物を送るときの料金を求めなさい。', '', t.fee(xn), ' 円'),
+      nums('(3) 料金が ' + t.rows[i3][1] + ' 円になるときの ' + v('x') + ' の範囲を求めなさい。', [0, ' &lt; <i>x</i> ≦ ', 1], [t.rows[i3 - 1][0], t.rows[i3][0]]),
+      choice('(4) 正しいものを選びなさい。', v('y') + ' は ' + v('x') + ' の関数であるが、' + v('x') + ' は ' + v('y') + ' の関数ではない', [v('y') + ' は ' + v('x') + ' の関数ではないが、' + v('x') + ' は ' + v('y') + ' の関数である', 'どちらも、たがいの関数である', 'どちらも関数ではない'])],
+    expl: '(1) 「' + xb + ' cm <b>まで</b>」は ' + xb + ' cm ちょうどを<b>ふくむ</b>。　<b>' + t.fee(xb) + '</b> 円（1つ上の段にしない）<br>(2) ' + xn + ' cm は「' + (Math.ceil((xn - t.L0) / 20) * 20 + t.L0) + ' cm まで」の段。　<b>' + t.fee(xn) + '</b> 円<br>(3) ' + t.rows[i3 - 1][0] + ' cm <b>をこえて</b> ' + t.rows[i3][0] + ' cm <b>まで</b>。　<b>' + t.rows[i3 - 1][0] + ' &lt; ' + v('x') + ' ≦ ' + t.rows[i3][0] + '</b><br>(4) ' + v('x') + ' を決めると ' + v('y') + ' は<b>ただ1つ</b>に決まるから、' + v('y') + ' は ' + v('x') + ' の関数。逆に、料金を決めても長さは1つに決まらないから、' + v('x') + ' は ' + v('y') + ' の関数ではない。'
+  };
+});
+
+T('C2', 3, '2つの料金をくらべる', 0, 1, function () {
+  var t = feeTable(), Lb = pick([50, 60, 40]), sb = pick([30, 40]), fb, db, feeB, xs, tries = 0;
+  do {
+    fb = t.f0 - pick([100, 200, 0]); db = t.df + pick([100, 150, 200, 50]);
+    feeB = function (x) { return x <= Lb ? fb : fb + db * Math.ceil((x - Lb) / sb); };
+    xs = shuffle([70, 80, 90, 100, 110, 120, 130, 140, 150].filter(function (x) { return x <= t.max; })).slice(0, 3).sort(function (a, b) { return a - b; });
+    tries++;
+  } while (tries < 40 && xs.every(function (x) { return t.fee(x) < feeB(x); }) || xs.every(function (x) { return t.fee(x) > feeB(x); }));
+  function cmp(x) { var a = t.fee(x), b = feeB(x); return a < b ? 0 : (a > b ? 1 : 2); }
+  return {
+    html: '品物を箱に入れて送ります。A社の料金は、箱の縦・横・高さの合計によって右の表のように決まっています。B社は、長さの合計が ' + Lb + ' cm までの料金が ' + fb + ' 円で、そのあとは ' + sb + ' cm ごとに ' + db + ' 円ずつ高くなります。次の長さの品物を送るとき、料金が安いのはどちらですか。',
+    fig: cap('A社', tblHtml(t)),
+    parts: xs.map(function (x, i) { return choiceFixed('(' + (i + 1) + ') ' + x + ' cm', ['A社', 'B社', '同じ'], cmp(x)); }),
+    expl: 'B社の料金を表にする：' + Lb + ' cm まで ' + fb + ' 円、' + (Lb + sb) + ' cm まで ' + (fb + db) + ' 円、' + (Lb + 2 * sb) + ' cm まで ' + (fb + 2 * db) + ' 円、' + (Lb + 3 * sb) + ' cm まで ' + (fb + 3 * db) + ' 円、…<br>' + xs.map(function (x, i) { return '(' + (i + 1) + ') ' + x + ' cm：A社 ' + t.fee(x) + ' 円、B社 ' + feeB(x) + ' 円　→ <b>' + ['A社', 'B社', '同じ'][cmp(x)] + '</b>'; }).join('<br>') + '<br><b>ポイント</b>：「○cmまで」の段を1つずつ書き出して、どの段に入るかを見る。境目の長さは下の段。'
+  };
+});
+
+function parking() {
+  var t0 = pick([1, 2, 3]), f0 = pick([200, 300, 400]), d = pick([100, 200]), steps = [[0, t0, f0]];
+  for (var t = t0; t < 8; t++) steps.push([t, t + 1, f0 + d * (t - t0 + 1)]);
+  var ymax = Math.ceil((f0 + d * (8 - t0)) / 200) * 200 + 200;
+  return { t0: t0, f0: f0, d: d, steps: steps, g: { xmin: 0, xmax: 8, ymin: 0, ymax: ymax, sx: 30, sy: 150 / ymax, gy: 100, yt: 200, xt: 1, padL: 44, xl: '<tspan font-style="italic">x</tspan>(時間)', yl: '<tspan font-style="italic">y</tspan>(円)' }, fee: function (x) { return x <= t0 ? f0 : f0 + d * Math.ceil(x - t0); } };
+}
+T('C3', 3, '階段のグラフを読む（● と ○）', 0, 1, function () {
+  var p = parking(), k = ri(p.t0, 6), k2 = ri(p.t0, 6), i3 = ri(1, 4), s3 = p.steps[i3];
+  return {
+    html: '右の図は、ある駐車場の利用時間 ' + v('x') + ' 時間と料金 ' + v('y') + ' 円の関係をグラフに表したものです。',
+    fig: stepGraph(p.g, p.steps),
+    parts: [num('(1) ちょうど ' + k + ' 時間利用したときの料金を求めなさい。', '', p.fee(k), ' 円'),
+      num('(2) ' + k2 + ' 時間 30 分利用したときの料金を求めなさい。', '', p.fee(k2 + 0.5), ' 円'),
+      choice('(3) グラフのはしの ● と ○ の意味として正しいものを選びなさい。', '● はその点をふくみ、○ はその点をふくまない', ['● はその点をふくまず、○ はその点をふくむ', 'どちらもその点をふくむ', 'どちらもその点をふくまない']),
+      nums('(4) 料金が ' + s3[2] + ' 円になるときの ' + v('x') + ' の範囲を求めなさい。', [0, ' &lt; <i>x</i> ≦ ', 1], [s3[0], s3[1]])],
+    expl: '(1) ' + v('x') + ' = ' + k + ' のところを縦に見ると、● と ○ がある。<b>●（ふくむ）のほう</b>を読む。　<b>' + p.fee(k) + '</b> 円<br>(2) ' + v('x') + ' = ' + (k2 + 0.5) + ' のところの線分の高さを読む。　<b>' + p.fee(k2 + 0.5) + '</b> 円<br>(3) ● はふくむ、○ はふくまない。<br>(4) 高さ ' + s3[2] + ' の線分は、左はしが ○（' + s3[0] + ' をふくまない）、右はしが ●（' + s3[1] + ' をふくむ）。　<b>' + s3[0] + ' &lt; ' + v('x') + ' ≦ ' + s3[1] + '</b>'
+  };
+});
+
+T('C4', 3, '2倍、2倍…とふえる関数（分裂・紙を切る）', 1, 1, function () {
+  if (ri(0, 2)) {
+    var Tm = pick([20, 30, 15, 10]), n1 = ri(3, 6), k2 = ri(2, 5), t2 = Tm * k2 + pick([5, Tm / 2, Tm - 5]), N = pick([50, 100, 200, 500, 1000]), kN = 0;
+    while (Math.pow(2, kN) < N) kN++;
+    return {
+      html: Tm + ' 分ごとに1回分裂して、1個が2個になる細菌があります。分裂してできた細菌も、それぞれ ' + Tm + ' 分ごとに2個に分裂します。はじめ（0分後）に1個あった細菌が、' + v('x') + ' 分後に ' + v('y') + ' 個になっているとします。ただし、' + Tm + ' 分後に1回目の分裂が起こるものとします。',
+      parts: [num('(1) ' + Tm * n1 + ' 分後には、細菌は何個になっていますか。', '', Math.pow(2, n1), ' 個'),
+        num('(2) ' + t2 + ' 分後には、細菌は何個になっていますか。', '', Math.pow(2, k2), ' 個'),
+        num('(3) 細菌がはじめて ' + N + ' 個以上になるのは、何分後ですか。', '', kN * Tm, ' 分後'),
+        choiceFixed('(4) ' + v('y') + ' は ' + v('x') + ' の関数であるといえますか。', ['いえる', 'いえない'], 0)],
+      expl: '表にする：0分 1個、' + Tm + '分 2個、' + 2 * Tm + '分 4個、' + 3 * Tm + '分 8個、' + 4 * Tm + '分 16個、…（' + Tm + ' 分ごとに2倍）<br>(1) ' + Tm * n1 + ' ÷ ' + Tm + ' = ' + n1 + ' 回分裂。2<sup>' + n1 + '</sup> = <b>' + Math.pow(2, n1) + '</b> 個<br>(2) ' + t2 + ' 分後は、' + Tm * k2 + ' 分後の分裂（' + k2 + ' 回目）は終わっているが、' + Tm * (k2 + 1) + ' 分後の分裂は<b>まだ起きていない</b>。' + Tm * k2 + ' ≦ ' + v('x') + ' &lt; ' + Tm * (k2 + 1) + ' のあいだは 2<sup>' + k2 + '</sup> = <b>' + Math.pow(2, k2) + '</b> 個のまま。<br>（時間に比例してふえるわけではない。とちゅうの時刻では個数は変わらない）<br>(3) 2<sup>' + (kN - 1) + '</sup> = ' + Math.pow(2, kN - 1) + '、2<sup>' + kN + '</sup> = ' + Math.pow(2, kN) + '。はじめて ' + N + ' 以上になるのは ' + kN + ' 回目の分裂。' + Tm + ' × ' + kN + ' = <b>' + kN * Tm + '</b> 分後<br>(4) ' + v('x') + ' を決めると ' + v('y') + ' がただ1つ決まるから、関数であるといえる。'
+    };
+  }
+  var c1 = ri(4, 8), M = pick([100, 500, 1000, 2000]), km = 0;
+  while (Math.pow(2, km) <= M) km++;
+  return {
+    html: '1枚の紙を2等分に切り、切ってできた2枚を重ねて、また2等分に切ります。この操作をくり返し、' + v('x') + ' 回切ったときにできる紙の枚数を ' + v('y') + ' 枚とします。',
+    parts: [num('(1) ' + c1 + ' 回切ったとき、紙は何枚になりますか。', '', Math.pow(2, c1), ' 枚'),
+      num('(2) 紙の枚数がはじめて ' + M + ' 枚をこえるのは、何回切ったときですか。', '', km, ' 回'),
+      choice('(3) ' + v('x') + ' が 1 ふえると、' + v('y') + ' はどうなりますか。', '2倍になる', ['2ふえる', v('x') + ' の2乗になる', '変わらない'])],
+    expl: '1回 2枚、2回 4枚、3回 8枚、4回 16枚、…（切るたびに2倍。' + v('y') + ' = 2<sup><i>x</i></sup>）<br>(1) 2<sup>' + c1 + '</sup> = <b>' + Math.pow(2, c1) + '</b> 枚<br>(2) 2<sup>' + (km - 1) + '</sup> = ' + Math.pow(2, km - 1) + '、2<sup>' + km + '</sup> = ' + Math.pow(2, km) + '。はじめて ' + M + ' をこえるのは <b>' + km + '</b> 回。<br>（2<sup>10</sup> = 1024 を覚えておくと速い）<br>(3) ' + v('y') + ' = ' + X2 + ' とはちがう関数。' + v('y') + ' = ' + X2 + ' よりもずっと速くふえる。'
+  };
+});
+
+T('C5', 3, '関数といえるもの（すべて選ぶ）', 0, 1, function () {
+  var pool = [['半径 ' + v('x') + ' cm の円の面積 ' + v('y') + ' cm²', 1], ['身長 ' + v('x') + ' cm の人の体重 ' + v('y') + ' kg', 0], ['料金表で決まる、荷物の長さの合計 ' + v('x') + ' cm と送料 ' + v('y') + ' 円', 1], ['料金表で決まる、送料 ' + v('x') + ' 円と荷物の長さの合計 ' + v('y') + ' cm', 0], ['紙を ' + v('x') + ' 回切ったときの枚数 ' + v('y') + ' 枚（毎回、全部を重ねて2等分する）', 1], ['自然数 ' + v('x') + ' の約数の個数 ' + v('y') + ' 個', 1], ['絶対値が ' + v('x') + ' である数 ' + v('y') + '（' + v('x') + ' &gt; 0）', 0], ['1辺が ' + v('x') + ' cm の正方形の周の長さ ' + v('y') + ' cm', 1], ['年齢 ' + v('x') + ' 歳の人の50 m 走の記録 ' + v('y') + ' 秒', 0], ['駐車場の利用時間 ' + v('x') + ' 分と、料金表で決まる料金 ' + v('y') + ' 円', 1], ['周の長さが ' + v('x') + ' cm の長方形の面積 ' + v('y') + ' cm²', 0]];
+  var sel, ok;
+  do { sel = shuffle(pool).slice(0, 5); ok = []; sel.forEach(function (s, i) { if (s[1]) ok.push(i); }); } while (ok.length === 0 || ok.length === 5);
+  return {
+    html: '次のうち、' + v('y') + ' が ' + v('x') + ' の関数であるものを<b>すべて</b>選びなさい。',
+    parts: [multi('', sel.map(function (s) { return s[0]; }), ok)],
+    expl: '<b>' + v('x') + ' の値を決めると、' + v('y') + ' の値がただ1つ決まる</b>とき、' + v('y') + ' は ' + v('x') + ' の関数。式で表せなくても、とびとびの値でも関数。<br>' + sel.map(function (s) { return (s[1] ? '○ ' : '× ') + s[0] + (s[1] ? '' : '（1つに決まらない）'); }).join('<br>')
+  };
+});
+
+T('C6', 3, '正しい階段のグラフを選ぶ', 0, 1, function () {
+  var p = parking(), g = {}, k;
+  for (k in p.g) g[k] = p.g[k];
+  g.sx = 20; g.sy = 110 / g.ymax; g.xt = 2; g.yt = 400; g.padL = 40;
+  var ok = stepGraph(g, p.steps);
+  var sw = stepGraph(g, p.steps, { swap: 1, first: 'closed' });
+  var sh = stepGraph(g, p.steps.map(function (s, i) { return [s[0], s[1], s[2] + p.d]; }));
+  var ln = (function () { var o = {}; for (var kk in g) o[kk] = g[kk]; o.segs = []; o.segs.push({ a: [0, p.f0], b: [p.t0, p.f0] }); o.segs.push({ a: [p.t0, p.f0], b: [8, p.f0 + p.d * (8 - p.t0)] }); return graph(o); })();
+  return {
+    html: 'ある駐車場の料金は、はじめの ' + p.t0 + ' 時間までは ' + p.f0 + ' 円で、' + p.t0 + ' 時間をこえると、1時間ごとに ' + p.d + ' 円ずつ加算されます。利用時間を ' + v('x') + ' 時間、料金を ' + v('y') + ' 円として、' + v('x') + ' と ' + v('y') + ' の関係を正しく表したグラフを選びなさい。',
+    parts: [choice('', ok, [sw, sh, ln])],
+    expl: '・' + p.t0 + ' 時間<b>まで</b>は ' + p.f0 + ' 円 → ' + v('x') + ' = ' + p.t0 + ' は ' + p.f0 + ' 円の段にふくむ（右はしが ●）。<br>・' + p.t0 + ' 時間を<b>こえると</b>加算 → 次の段の左はしは ○。<br>・料金はとびとびの値なので、階段の形になる（ななめの線にはならない）。<br>正しいグラフは、どの段も「左はし ○、右はし ●」で、' + (p.t0 + 1) + ' 時間のとき ' + (p.f0 + p.d) + ' 円。'
+  };
+});
+
+T('C7', 3, '紙を切って重ねる（厚さ）', 0, 1, function () {
+  var c = pick([[1, 'cm', 100], [10, 'cm', 1000], [1, 'm', 10000], [100, 'm', 1000000], [634, 'm', 6340000]]), need = c[2], k = 0;
+  while (Math.pow(2, k) <= need) k++;
+  return {
+    html: '厚さ 0.1 mm の紙を2等分に切り、切ってできた紙を全部重ねて、また2等分に切ります。この操作をくり返します（何回でも切ることができるとします）。',
+    parts: [num('(1) 10 回切ったとき、紙は何枚になりますか。', '', 1024, ' 枚'),
+      num('(2) 10 回切ってできた紙を全部重ねると、厚さは何 cm になりますか。', '', 10.24, ' cm'),
+      num('(3) 重ねた紙の厚さが ' + c[0] + ' ' + c[1] + ' をこえるのは、何回以上切ったときですか。', '', k, ' 回以上')],
+    expl: '(1) 2<sup>10</sup> = <b>1024</b> 枚<br>(2) 0.1 mm × 1024 = 102.4 mm = <b>10.24</b> cm<br>(3) ' + c[0] + ' ' + c[1] + ' = ' + need / 10 + ' mm。0.1 mm × (枚数) &gt; ' + need / 10 + ' mm より、枚数が ' + need + ' 枚をこえればよい。<br>2<sup>' + (k - 1) + '</sup> = ' + Math.pow(2, k - 1) + '、2<sup>' + k + '</sup> = ' + Math.pow(2, k) + '　だから <b>' + k + '</b> 回以上。<br>（2<sup>10</sup> = 1024 ≒ 1000 を使うと見当がつく。2<sup>20</sup> ≒ 100万）'
+  };
+});
+
+/* ===== 単元4〜6：相似な図形 ===== */
+var CONDS = ['3組の辺の比がすべて等しい', '2組の辺の比とその間の角がそれぞれ等しい', '2組の角がそれぞれ等しい'];
+var T3 = [[4, 5, 6], [5, 6, 8], [6, 7, 9], [4, 6, 7], [5, 7, 8], [3, 5, 6], [6, 8, 9]];
+function cm(x) { return dn(x) + 'cm'; }
+function ratioInt(a, b) { var f = F(a, b); return [f.n, f.d]; }
+function triFig(pts, names, o) {
+  o = o || {}; var m = {}; m.A = names[0]; m.B = names[1]; m.C = names[2];
+  var P = rename(pts, m); if (o.mir) P = mirror(P); if (o.rot) P = rot(P, o.rot);
+  var A = names[0], B = names[1], C = names[2], g = { pts: P, segs: [A + B, B + C, C + A], lens: [], angs: [], w: o.w || 210, hmax: o.hmax || 190 };
+  if (o.a !== undefined) g.lens.push([B + C, o.a]); if (o.b !== undefined) g.lens.push([C + A, o.b]); if (o.c !== undefined) g.lens.push([A + B, o.c]);
+  if (o.angA) g.angs.push([A, B, C, o.angA]); if (o.angB) g.angs.push([B, A, C, o.angB]); if (o.angC) g.angs.push([C, A, B, o.angC]);
+  return geo(g);
+}
+
+T('D1', 4, '対応する頂点・辺・角', 0, 1, function () {
+  var n1 = 'ABCD', base = 'EFGH', r = ri(0, 3), dir = pick([1, -1]), s2 = '', i;
+  for (i = 0; i < 4; i++) s2 += base[((i * dir + r) % 4 + 4) % 4];
+  var a = ri(0, 3), b = ri(0, 3), c = ri(0, 3), others = function (x) { return s2.split('').filter(function (t) { return t !== x; }); };
+  var edges = [0, 1, 2, 3].map(function (k) { return '辺' + s2[k] + s2[(k + 1) % 4]; });
+  return {
+    html: '四角形' + n1 + ' ∽ 四角形' + s2 + ' です。次のものに対応する頂点・辺・角を選びなさい。',
+    parts: [choice('(1) 頂点' + n1[a] + ' に対応する頂点', '頂点' + s2[a], others(s2[a]).map(function (t) { return '頂点' + t; })),
+      choice('(2) 辺' + n1[b] + n1[(b + 1) % 4] + ' に対応する辺', edges[b], edges.filter(function (e, k) { return k !== b; })),
+      choice('(3) ∠' + n1[c] + ' に対応する角', '∠' + s2[c], others(s2[c]).map(function (t) { return '∠' + t; }))],
+    expl: '記号 ∽ を使うときは、<b>対応する頂点を同じ順に書く</b>きまり。<br>四角形 A B C D<br>四角形 ' + s2.split('').join(' ') + '<br>上下に並べると、A↔' + s2[0] + '、B↔' + s2[1] + '、C↔' + s2[2] + '、D↔' + s2[3] + '。<br>(1) ' + n1[a] + ' → <b>' + s2[a] + '</b>　(2) 辺' + n1[b] + n1[(b + 1) % 4] + ' → <b>' + edges[b] + '</b>　(3) ∠' + n1[c] + ' → <b>∠' + s2[c] + '</b>'
+  };
+});
+
+function twoScales() { var k1, k2; do { k1 = pick([1, 2, 3, 1.5, 4, 2.5]); k2 = pick([1, 2, 3, 1.5, 4, 2.5, 0.5]); } while (k1 === k2); return [k1, k2]; }
+T('D2', 4, '相似比を求める', 0, 1, function () {
+  var t = pick(T3), k = twoScales(), r = ratioInt(k[0], k[1]), pts = triSSS(t[0], t[1], t[2]), mir = ri(0, 1);
+  var f1 = triFig(pts, 'ABC', { a: cm(t[0] * k[0]), b: cm(t[1] * k[0]), c: cm(t[2] * k[0]), w: k[0] >= k[1] ? 230 : 170 });
+  var f2 = triFig(pts, 'DEF', { a: cm(t[0] * k[1]), c: cm(t[2] * k[1]), mir: mir, w: k[1] > k[0] ? 230 : 170 });
+  return {
+    html: '右の図で、△ABC ∽ △DEF です。△ABC と △DEF の相似比を、もっとも簡単な整数の比で求めなさい。',
+    fig: figs(f1, f2),
+    parts: [nums('', [0, ' : ', 1], [r[0], r[1]], { ratio: 1 })],
+    expl: '相似比 ＝ <b>対応する辺の長さの比</b>。△ABC ∽ △DEF だから、BC と EF、AB と DE が対応する。<br>BC : EF = ' + dn(t[0] * k[0]) + ' : ' + dn(t[0] * k[1]) + ' = <b>' + r[0] + ' : ' + r[1] + '</b><br>（AB : DE = ' + dn(t[2] * k[0]) + ' : ' + dn(t[2] * k[1]) + ' でも同じになる）<br><b>注意</b>：「△ABC と △DEF の」の順に書く。逆にしない。' + (mir ? '図が裏返しになっているので、記号の順で対応を見る。' : '')
+  };
+});
+
+T('D3', 4, '相似な図形の辺の長さ', 0, 1, function () {
+  var t = pick(T3), k = twoScales(), pts = triSSS(t[0], t[1], t[2]), mir = ri(0, 1), r = ratioInt(k[0], k[1]);
+  var x = t[0] * k[1], y = t[1] * k[0];
+  var f1 = triFig(pts, 'ABC', { a: cm(t[0] * k[0]), b: '<tspan font-style="italic">y</tspan>cm', c: cm(t[2] * k[0]), w: k[0] >= k[1] ? 230 : 170 });
+  var f2 = triFig(pts, 'DEF', { a: '<tspan font-style="italic">x</tspan>cm', b: cm(t[1] * k[1]), c: cm(t[2] * k[1]), mir: mir, w: k[1] > k[0] ? 230 : 170 });
+  return {
+    html: '右の図で、△ABC ∽ △DEF です。' + v('x') + '、' + v('y') + ' の値を求めなさい。',
+    fig: figs(f1, f2),
+    parts: [nums('', ['<i>x</i> = ', 0, ' ，　<i>y</i> = ', 1], [x, y])],
+    expl: '対応する辺の比はすべて等しい。相似比は AB : DE = ' + dn(t[2] * k[0]) + ' : ' + dn(t[2] * k[1]) + ' = ' + r[0] + ' : ' + r[1] + '<br>BC : EF = ' + r[0] + ' : ' + r[1] + ' より　' + dn(t[0] * k[0]) + ' : ' + v('x') + ' = ' + r[0] + ' : ' + r[1] + '　' + r[0] + v('x') + ' = ' + dn(t[0] * k[0] * r[1]) + '　' + v('x') + ' = <b>' + fh(F(x)) + '</b><br>CA : FD = ' + r[0] + ' : ' + r[1] + ' より　' + v('y') + ' : ' + dn(t[1] * k[1]) + ' = ' + r[0] + ' : ' + r[1] + '　' + r[1] + v('y') + ' = ' + dn(t[1] * k[1] * r[0]) + '　' + v('y') + ' = <b>' + fh(F(y)) + '</b><br><b>' + v('a') + ' : ' + v('b') + ' = ' + v('c') + ' : ' + v('d') + ' ならば ' + v('ad') + ' = ' + v('bc') + '</b>（外側どうし、内側どうしをかける）'
+  };
+});
+
+T('D4', 4, '相似な四角形の辺と角', 0, 1, function () {
+  var be = pick([70, 75, 80, 85]), ga = pick([60, 65, 70, 80]), rad = Math.PI / 180, p = 3, q = pick([2.2, 2.6, 3]);
+  var B = [0, 0], C = [4, 0], A = [p * Math.cos(be * rad), p * Math.sin(be * rad)], D = [4 - q * Math.cos(ga * rad), q * Math.sin(ga * rad)];
+  var angA = Math.round(Math.acos(((B[0] - A[0]) * (D[0] - A[0]) + (B[1] - A[1]) * (D[1] - A[1])) / (Math.hypot(B[0] - A[0], B[1] - A[1]) * Math.hypot(D[0] - A[0], D[1] - A[1]))) / rad), angD = 360 - be - ga - angA;
+  var k = twoScales(), r = ratioInt(k[0], k[1]), u = pick([2, 3, 4]), ab = 3 * u / 2 * k[0], ef = 3 * u / 2 * k[1], bc = 2 * u * k[0], fg = 2 * u * k[1];
+  var f1 = geo({ pts: { A: A, B: B, C: C, D: D }, segs: ['AB', 'BC', 'CD', 'DA'], lens: [['AB', cm(ab)], ['BC', cm(bc)]], angs: [['A', 'B', 'D', angA + '°'], ['B', 'A', 'C', be + '°']], w: 200, hmax: 190 });
+  var f2 = geo({ pts: { E: A, F: B, G: C, H: D }, segs: ['EF', 'FG', 'GH', 'HE'], lens: [['EF', cm(ef)], ['FG', '<tspan font-style="italic">x</tspan>cm']], angs: [['G', 'F', 'H', ga + '°']], w: 200, hmax: 190 });
+  return {
+    html: '右の図で、四角形ABCD ∽ 四角形EFGH です。',
+    fig: figs(f1, f2),
+    parts: [nums('(1) 四角形ABCD と 四角形EFGH の相似比を求めなさい。', [0, ' : ', 1], [r[0], r[1]], { ratio: 1 }),
+      num('(2) ' + v('x') + ' の値を求めなさい。', '<i>x</i> = ', fg),
+      num('(3) ∠H の大きさを求めなさい。', '∠H = ', angD, '°')],
+    expl: '(1) AB と EF が対応。' + dn(ab) + ' : ' + dn(ef) + ' = <b>' + r[0] + ' : ' + r[1] + '</b><br>(2) BC : FG = ' + r[0] + ' : ' + r[1] + '　' + dn(bc) + ' : ' + v('x') + ' = ' + r[0] + ' : ' + r[1] + '　' + v('x') + ' = <b>' + fh(F(fg)) + '</b><br>(3) 相似な図形では<b>対応する角の大きさは等しい</b>。∠H = ∠D、∠C = ∠G = ' + ga + '°。<br>四角形の内角の和は 360° だから　∠D = 360° − (' + angA + '° + ' + be + '° + ' + ga + '°) = <b>' + angD + '°</b>'
+  };
+});
+
+T('D5', 4, '相似の位置・相似の中心', 0, 1, function () {
+  var k = pick([2, 3, 1.5, 0.5]), ab = pick([4, 6, 8]), oa = pick([4, 6, 10]), big = k > 1;
+  var A = [3, 2.2], B = [2.4, 0.6], C = [4.4, 1], sc = function (p) { return [p[0] * k, p[1] * k]; };
+  if (!big) { A = [6, 4.4]; B = [4.8, 1.2]; C = [8.8, 2]; }
+  var fig = geo({ pts: { O: [0, 0], A: A, B: B, C: C, D: sc(A), E: sc(B), F: sc(C) }, segs: ['AB', 'BC', 'CA', 'DE', 'EF', 'FD'], thin: big ? ['OD', 'OE', 'OF'] : ['OA', 'OB', 'OC'], dots: 'O', w: 330, hmax: 230, lab: { O: [-10, 8] } });
+  var r = ratioInt(1, k), kt = big ? dn(k) : frac(1, 2);
+  return {
+    html: '右の図は、点Oをもとにして、OD = ' + kt + 'OA、OE = ' + kt + 'OB、OF = ' + kt + 'OC となるように点D, E, F をとり、△DEF をかいたものです。',
+    fig: fig,
+    parts: [choice('(1) このとき、△ABC と △DEF はどんな関係にあるといいますか。また、点Oを何といいますか。', '相似の位置にあるといい、Oを相似の中心という', ['合同の位置にあるといい、Oを対称の中心という', '相似の位置にあるといい、Oを対称の中心という', '平行の位置にあるといい、Oを相似の中心という']),
+      nums('(2) △ABC と △DEF の相似比を求めなさい。', [0, ' : ', 1], [r[0], r[1]], { ratio: 1 }),
+      num('(3) AB = ' + ab + ' cm のとき、DE の長さを求めなさい。', '', ab * k, ' cm'),
+      num('(4) OA = ' + oa + ' cm のとき、AD の長さを求めなさい。', '', Math.abs(oa * k - oa), ' cm')],
+    expl: '(1) 対応する点どうしを通る直線がすべて1点Oに集まり、Oから対応する点までの距離の比がすべて等しいとき、<b>相似の位置にある</b>といい、Oを<b>相似の中心</b>という。<br>(2) OA : OD = ' + r[0] + ' : ' + r[1] + ' が、そのまま相似比になる。<b>' + r[0] + ' : ' + r[1] + '</b><br>(3) AB : DE = ' + r[0] + ' : ' + r[1] + '　' + ab + ' : DE = ' + r[0] + ' : ' + r[1] + '　DE = <b>' + dn(ab * k) + '</b> cm<br>(4) OD = ' + kt + ' × ' + oa + ' = ' + dn(oa * k) + ' cm。AD = ' + (big ? 'OD − OA = ' + dn(oa * k) + ' − ' + oa : 'OA − OD = ' + oa + ' − ' + dn(oa * k)) + ' = <b>' + dn(Math.abs(oa * k - oa)) + '</b> cm（OD と AD をまちがえない）'
+  };
+});
+
+T('D6', 4, '相似条件を見分ける', 0, 1, function () {
+  var kind = ri(0, 4), t = pick(T3), k = pick([[2, 3], [1, 2], [2, 1], [3, 2], [1, 1.5], [2, 5]]), f1, f2, ans, ex, mir = ri(0, 1);
+  if (kind === 0) {
+    var pts = triSSS(t[0], t[1], t[2]);
+    f1 = triFig(pts, 'ABC', { a: cm(t[0] * k[0]), b: cm(t[1] * k[0]), c: cm(t[2] * k[0]) }); f2 = triFig(pts, 'DEF', { a: cm(t[0] * k[1]), b: cm(t[1] * k[1]), c: cm(t[2] * k[1]), mir: mir });
+    ans = 0; ex = 'AB : DE = ' + dn(t[2] * k[0]) + ' : ' + dn(t[2] * k[1]) + '、BC : EF = ' + dn(t[0] * k[0]) + ' : ' + dn(t[0] * k[1]) + '、CA : FD = ' + dn(t[1] * k[0]) + ' : ' + dn(t[1] * k[1]) + '。どれも ' + ratioInt(k[0], k[1]).join(' : ') + ' で等しい。';
+  } else if (kind === 1 || kind === 4) {
+    var be = pick([40, 50, 60, 70, 35]), c = pick([3, 4, 5]), a = pick([5, 6, 7]), bad = kind === 4, a2 = bad ? a * k[1] + pick([1, 2, -1]) : a * k[1];
+    f1 = triFig(triSAS(c, a, be), 'ABC', { a: cm(a * k[0]), c: cm(c * k[0]), angB: be + '°' }); f2 = triFig(triSAS(c * k[1], a2, be), 'DEF', { a: cm(a2), c: cm(c * k[1]), angB: be + '°', mir: mir });
+    ans = bad ? 3 : 1;
+    ex = 'AB : DE = ' + dn(c * k[0]) + ' : ' + dn(c * k[1]) + ' = ' + ratioInt(c * k[0], c * k[1]).join(' : ') + '、　BC : EF = ' + dn(a * k[0]) + ' : ' + dn(a2) + ' = ' + ratioInt(a * k[0], a2).join(' : ') + '。' + (bad ? '<b>2組の辺の比が等しくない</b>ので、角が等しくても相似とはいえない。' : '2組の辺の比が等しく、その<b>間の角</b> ∠B = ∠E = ' + be + '° も等しい。');
+  } else if (kind === 2) {
+    var b2 = pick([40, 50, 35, 45]), g2 = pick([60, 70, 80, 65]), al = 180 - b2 - g2, p2 = triAA(b2, g2);
+    f1 = triFig(p2, 'ABC', { angB: b2 + '°', angC: g2 + '°' }); f2 = triFig(p2, 'DEF', { angA: al + '°', angB: b2 + '°', mir: mir });
+    ans = 2; ex = '△DEF の残りの角は ∠F = 180° − (' + al + '° + ' + b2 + '°) = ' + g2 + '°。∠B = ∠E = ' + b2 + '°、∠C = ∠F = ' + g2 + '°。<b>かいていない角は、三角形の内角の和 180° から計算する。</b>';
+  } else {
+    var b3 = pick([40, 50, 35, 45]), g3 = pick([60, 70, 80, 65]), a3 = 180 - b3 - g3, g4 = g3 + pick([5, 10, -5]), a4 = 180 - b3 - g4;
+    f1 = triFig(triAA(b3, g3), 'ABC', { angB: b3 + '°', angC: g3 + '°' }); f2 = triFig(triAA(b3, g4), 'DEF', { angA: a4 + '°', angB: b3 + '°', mir: mir });
+    ans = 3; ex = '△DEF の残りの角は ∠F = 180° − (' + a4 + '° + ' + b3 + '°) = ' + g4 + '°。△ABC の角は ' + b3 + '°、' + g3 + '°、' + a3 + '°、△DEF の角は ' + b3 + '°、' + g4 + '°、' + a4 + '°。等しい角は1組だけなので、相似とはいえない。';
+  }
+  return {
+    html: '右の図の △ABC と △DEF は相似であるといえますか。いえる場合は、その根拠となる相似条件を選び、いえない場合は「相似とはいえない」を選びなさい。',
+    fig: figs(f1, f2),
+    parts: [choiceFixed('', CONDS.concat(['相似とはいえない']), ans)],
+    expl: ex + '<br>答え　<b>' + CONDS.concat(['相似とはいえない'])[ans] + '</b><br><b>三角形の相似条件</b>：① 3組の辺の比がすべて等しい　② 2組の辺の比とその間の角がそれぞれ等しい　③ 2組の角がそれぞれ等しい'
+  };
+});
+
+T('D7', 4, '相似な三角形を見つける（すべて選ぶ）', 0, 1, function () {
+  var kana = 'アイウエ', opts = [], ok = [], base, exs = [];
+  if (ri(0, 1)) {
+    var t = pick(T3), pts = triSSS(t[0], t[1], t[2]);
+    base = triFig(pts, 'ABC', { a: dn(t[0] * 2), b: dn(t[1] * 2), c: dn(t[2] * 2), w: 200 });
+    for (var i = 0; i < 4; i++) {
+      var good = ri(0, 1), k = pick([1, 3, 1.5, 0.5, 4]), s = [t[0] * k, t[1] * k, t[2] * k];
+      if (!good) s[ri(0, 2)] += pick([1, 2]) * (k < 1 ? 0.5 : 1);
+      var per = shuffle([0, 1, 2]), ss = [s[per[0]], s[per[1]], s[per[2]]];
+      if (ss[0] + ss[1] <= ss[2] || ss[1] + ss[2] <= ss[0] || ss[0] + ss[2] <= ss[1]) { i--; continue; }
+      opts.push(kana[i] + triFig(triSSS(ss[0], ss[1], ss[2]), 'PQR', { a: dn(ss[0]), b: dn(ss[1]), c: dn(ss[2]), w: 190, hmax: 150, rot: pick([0, 0, 180]) }).replace(/>[PQR]</g, '><'));
+      var so = s.slice().sort(function (x, y) { return x - y; });
+      if (good) ok.push(i);
+      exs.push(kana[i] + '：短い順に ' + so.map(dn).join(', ') + ' → ' + (good ? '比はすべて ' + ratioInt(t[0] * 2, t[0] * k).join(' : ') + '。<b>相似</b>' : '比がそろわない。相似でない'));
+    }
+    if (ok.length === 0) return typeById('D7').gen();
+    return {
+      html: '次のア〜エの三角形のうち、△ABC と相似なものを<b>すべて</b>選びなさい。（数字は辺の長さ）',
+      fig: base,
+      parts: [multi('', opts, ok)],
+      expl: '△ABC の辺は短い順に ' + [t[0] * 2, t[1] * 2, t[2] * 2].sort(function (x, y) { return x - y; }).join(', ') + '。<b>3組の辺の比がすべて等しい</b>かを調べる。向きがちがうので、<b>辺を短い順に並べて</b>くらべる。<br>' + exs.join('<br>')
+    };
+  }
+  var be = pick([30, 40, 50, 35]), ga = pick([60, 70, 80, 75]), al = 180 - be - ga, three = [al, be, ga];
+  base = triFig(triAA(be, ga), 'ABC', { angB: be + '°', angC: ga + '°', w: 200 });
+  for (var j = 0; j < 4; j++) {
+    var gd = ri(0, 1), pr = shuffle([0, 1, 2]), x1 = three[pr[0]], x2 = three[pr[1]];
+    if (!gd) { x2 = x2 + pick([5, 10, -5]); if (x1 + x2 >= 170 || x2 <= 10 || three.indexOf(180 - x1 - x2) >= 0 && three.indexOf(x2) >= 0) { j--; continue; } }
+    opts.push(kana[j] + triFig(triAA(x1, x2), 'PQR', { angB: x1 + '°', angC: x2 + '°', w: 210, hmax: 170, mir: ri(0, 1) }).replace(/>[PQR]</g, '><'));
+    var third = 180 - x1 - x2, isok = [x1, x2, third].slice().sort().join() === three.slice().sort().join();
+    if (isok) ok.push(j);
+    exs.push(kana[j] + '：' + x1 + '°、' + x2 + '°、残りは ' + third + '° → ' + (isok ? '<b>相似</b>' : '相似でない'));
+  }
+  if (ok.length === 0) return typeById('D7').gen();
+  return {
+    html: '次のア〜エの三角形のうち、△ABC と相似なものを<b>すべて</b>選びなさい。',
+    fig: base,
+    parts: [multi('', opts, ok)],
+    expl: '△ABC の3つの角は ' + be + '°、' + ga + '°、残りは 180° − ' + (be + ga) + '° = ' + al + '°。<b>2組の角がそれぞれ等しい</b>かを調べる。かいていない角は 180° からひいて求める。<br>' + exs.join('<br>')
+  };
+});
+
+T('D8', 4, '図形の中の相似な三角形（向きがちがう）', 0, 1, function () {
+  var d, e, k, AB, AC, BC, tries = 0;
+  do { d = ri(2, 6); e = ri(2, 6); k = pick([2, 1.5, 2.5]); AB = k * e; AC = k * d; tries++; } while (d === e || d / AB < 0.3 || e / AC < 0.3 || AB <= d + 0.9 || AC <= e + 0.9 || AB !== Math.round(AB) || AC !== Math.round(AC));
+  BC = Math.round(Math.sqrt(AB * AB + AC * AC - AB * AC) / k) * k; if (BC >= AB + AC - 1) BC = k * Math.floor((AB + AC - 2) / k); if (BC <= Math.abs(AB - AC)) BC = k * Math.ceil((Math.abs(AB - AC) + 1) / k);
+  var P = triSSS(BC, AC, AB); P.D = between(P.A, P.B, d / AB); P.E = between(P.A, P.C, e / AC);
+  var fig = geo({ pts: P, segs: ['AB', 'BC', 'CA', 'DE'], lens: [['AD', dn(d)], ['DB', dn(AB - d)], ['AE', dn(e)], ['EC', dn(AC - e)], ['BC', dn(BC)]], w: 280, hmax: 230 });
+  return {
+    html: '右の図の △ABC で、点D, E はそれぞれ辺AB, AC上の点です。（数字は長さ。単位は cm）',
+    fig: fig,
+    parts: [choice('(1) 相似な三角形の組を、記号 ∽ を使って正しく表したものを選びなさい。', '△ABC ∽ △AED', ['△ABC ∽ △ADE', '△ABC ∽ △DAE', '△ABC ∽ △EDA']),
+      choiceFixed('(2) そのときに使った相似条件を選びなさい。', CONDS, 1),
+      num('(3) DE の長さを求めなさい。', '', F(BC, k), ' cm')],
+    expl: '∠A は2つの三角形に共通。∠A をはさむ辺の比を調べる。<br>AB = ' + dn(d) + ' + ' + dn(AB - d) + ' = ' + AB + '、AC = ' + dn(e) + ' + ' + dn(AC - e) + ' = ' + AC + '<br>AB : AE = ' + AB + ' : ' + e + ' = ' + ratioInt(AB, e).join(' : ') + '、　AC : AD = ' + AC + ' : ' + d + ' = ' + ratioInt(AC, d).join(' : ') + '<br>2組の辺の比とその間の角がそれぞれ等しいから <b>△ABC ∽ △AED</b><br><b>注意</b>：AB に対応するのは AD ではなく <b>AE</b>（小さい三角形は裏返しになっている）。対応する頂点の順に A→A、B→E、C→D と書く。<br>(3) BC : ED = ' + ratioInt(AB, e).join(' : ') + '　' + BC + ' : DE = ' + ratioInt(AB, e).join(' : ') + '　DE = <b>' + fh(F(BC, k)) + '</b> cm'
+  };
+});
+
+T('D9', 4, '直角三角形と垂線', 0, 1, function () {
+  var t = pick([[5, 4, 3], [10, 8, 6], [13, 12, 5], [15, 12, 9], [5, 3, 4], [10, 6, 8], [20, 16, 12], [17, 15, 8]]), a = t[0], b = t[1], c = t[2];
+  var P = triSSS(a, b, c); P.D = [c * c / a, 0];
+  var fig = geo({ pts: P, segs: ['AB', 'BC', 'CA', 'AD'], rights: [['A', 'B', 'C'], ['D', 'A', 'C']], lens: [['AB', cm(c)], ['CA', cm(b)], ['BC', cm(a), 1, 30]], w: 290, hmax: 210, lab: { D: [0, 15] } });
+  return {
+    html: '右の図のような、∠A = 90° の直角三角形ABCで、頂点Aから辺BCに垂線ADをひきます。',
+    fig: fig,
+    parts: [choice('(1) △ABC と相似な三角形を、記号 ∽ を使って正しく表したものを選びなさい。', '△ABC ∽ △DBA', ['△ABC ∽ △DAB', '△ABC ∽ △ADB', '△ABC ∽ △BDA']),
+      num('(2) AD の長さを求めなさい。', '', F(b * c, a), ' cm'),
+      num('(3) BD の長さを求めなさい。', '', F(c * c, a), ' cm')],
+    expl: '(1) △ABC と △DBA で、∠BAC = ∠BDA = 90°、∠B は共通。2組の角がそれぞれ等しいから <b>△ABC ∽ △DBA</b>（A→D、B→B、C→A の順）。同じようにして △ABC ∽ △DAC もいえる。<br>(2) 対応する辺は　BC ↔ BA、CA ↔ AD。　BC : BA = CA : AD　' + a + ' : ' + c + ' = ' + b + ' : AD　' + a + ' × AD = ' + b * c + '　AD = <b>' + fh(F(b * c, a)) + '</b> cm<br>(3) BC : BA = AB : DB　' + a + ' : ' + c + ' = ' + c + ' : BD　BD = <b>' + fh(F(c * c, a)) + '</b> cm<br><b>コツ</b>：相似な三角形を<b>同じ向きに並べてかき直す</b>と、対応する辺をまちがえない。'
+  };
+});
+
+T('D12', 4, '比例式を解く', 0, 1, function () {
+  var a = ri(2, 9), b = ri(2, 9), c = ri(2, 12), k = ri(2, 6), m, n;
+  do { m = ri(1, 5); n = ri(2, 7); } while (m >= n || gcd(m, n) > 1);
+  return {
+    html: '次の比例式で、' + v('x') + ' の値を求めなさい。',
+    parts: [num('(1) ' + a + ' : ' + b + ' = ' + c + ' : ' + v('x'), '<i>x</i> = ', F(b * c, a)),
+      num('(2) ' + v('x') + ' : ' + a * 2 + ' = ' + b + ' : ' + c, '<i>x</i> = ', F(2 * a * b, c)),
+      num('(3) ' + v('x') + ' : (' + v('x') + ' + ' + k + ') = ' + m + ' : ' + n, '<i>x</i> = ', F(k * m, n - m))],
+    expl: '<b>' + v('a') + ' : ' + v('b') + ' = ' + v('c') + ' : ' + v('d') + ' ならば ' + v('ad') + ' = ' + v('bc') + '</b><br>(1) ' + a + v('x') + ' = ' + b + ' × ' + c + ' = ' + b * c + '　' + v('x') + ' = <b>' + fh(F(b * c, a)) + '</b><br>(2) ' + c + v('x') + ' = ' + a * 2 + ' × ' + b + ' = ' + 2 * a * b + '　' + v('x') + ' = <b>' + fh(F(2 * a * b, c)) + '</b><br>(3) ' + n + v('x') + ' = ' + m + '(' + v('x') + ' + ' + k + ')　' + n + v('x') + ' = ' + m + v('x') + ' + ' + m * k + '　' + (n - m) + v('x') + ' = ' + m * k + '　' + v('x') + ' = <b>' + fh(F(k * m, n - m)) + '</b>（かっこを忘れない）'
+  };
+});
+
+T('D13', 4, '相似の知識（いつでも相似・性質）', 0, 1, function () {
+  if (ri(0, 1)) {
+    var pool = [['2つの円', 1], ['2つの正方形', 1], ['2つの正三角形', 1], ['2つの直角二等辺三角形', 1], ['2つの長方形', 0], ['2つのひし形', 0], ['2つの二等辺三角形', 0], ['2つの直角三角形', 0], ['2つの正五角形', 1], ['2つの平行四辺形', 0], ['2つの台形', 0]], sel, ok;
+    do { sel = shuffle(pool).slice(0, 5); ok = []; sel.forEach(function (s, i) { if (s[1]) ok.push(i); }); } while (!ok.length || ok.length === 5);
+    return {
+      html: '次のうち、<b>いつでも</b>相似であるといえるものをすべて選びなさい。',
+      parts: [multi('', sel.map(function (s) { return s[0]; }), ok)],
+      expl: '形が1つに決まっている図形（大きさだけがちがう図形）は、いつでも相似。円、正多角形（正三角形・正方形・正五角形…）、直角二等辺三角形など。<br>長方形・ひし形・二等辺三角形などは、形（辺の比や角）がいろいろあるので、いつでも相似とはいえない。<br>' + sel.map(function (s) { return (s[1] ? '○ ' : '× ') + s[0]; }).join('　')
+    };
+  }
+  var r = pick([[2, 3], [1, 2], [3, 5], [3, 4]]);
+  return {
+    html: '相似な図形について、□にあてはまるものを選びなさい。',
+    parts: [fill('', ['相似な図形では、対応する部分の ', 0, ' はすべて等しく、対応する ', 1, ' はそれぞれ等しい。△ABC ∽ △DEF で相似比が 1 : 1 のとき、2つの三角形は ', 2, ' である。また、半径が ' + r[0] + ' cm の円と半径が ' + r[1] + ' cm の円の相似比は ', 3, ' である。'], [Bk('長さの比', '長さ', '角の比'), Bk('角の大きさ', '辺の長さ', '面積'), Bk('合同', '対称', '平行'), Bk(r[0] + ' : ' + r[1], r[0] * r[0] + ' : ' + r[1] * r[1], r[1] + ' : ' + r[0])])],
+    expl: '<b>相似な図形の性質</b>：対応する部分の<b>長さの比</b>はすべて等しく、対応する<b>角の大きさ</b>はそれぞれ等しい。<br>相似比が 1 : 1 なら、形も大きさも同じ → <b>合同</b>。<br>2つの円はいつでも相似で、相似比は<b>半径の比</b>に等しい。'
+  };
+});
+
+/* ---------- 単元5：相似の証明 ---------- */
+function foot(p, a, b) { var t = ((p[0] - a[0]) * (b[0] - a[0]) + (p[1] - a[1]) * (b[1] - a[1])) / ((b[0] - a[0]) * (b[0] - a[0]) + (b[1] - a[1]) * (b[1] - a[1])); return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t]; }
+function cross(p1, p2, p3, p4) { var d = (p1[0] - p2[0]) * (p3[1] - p4[1]) - (p1[1] - p2[1]) * (p3[0] - p4[0]); var a = p1[0] * p2[1] - p1[1] * p2[0], b = p3[0] * p4[1] - p3[1] * p4[0]; return [(a * (p3[0] - p4[0]) - (p1[0] - p2[0]) * b) / d, (a * (p3[1] - p4[1]) - (p1[1] - p2[1]) * b) / d]; }
+var REASONS = ['仮定から', '共通な角だから', '対頂角は等しいから', '平行線の錯角は等しいから', '平行線の同位角は等しいから'];
+function PROOFS() {
+  var list = [];
+  (function () {
+    var A = [2.2, 3.2], B = [0, 0], C = [6, 0], D = [(A[0] * A[0] + A[1] * A[1]) / 6, 0];
+    list.push({ fig: geo({ pts: { A: A, B: B, C: C, D: D }, segs: ['AB', 'BC', 'CA', 'AD'], angs: [['C', 'A', 'B', '●', 22], ['A', 'B', 'D', '●', 22]], w: 280, hmax: 200, lab: { D: [0, 15] } }), stmt: '右の図の △ABC で、点Dは辺BC上の点で、∠ACB = ∠DAB です。', t1: 'ABC', t2: 'DBA', w2: ['DAB', 'ABD'], cond: 2, steps: [['仮定から', '∠ACB = ', '∠DAB', ['∠ADB', '∠ABD']], ['共通な角だから', '∠ABC = ', '∠DBA', ['∠DAB', '∠BDA']]] });
+  })();
+  (function () {
+    var P = triSSS(10, 8, 6); P.D = [3.6, 0];
+    var f = geo({ pts: P, segs: ['AB', 'BC', 'CA', 'AD'], rights: [['A', 'B', 'C'], ['D', 'A', 'C']], w: 280, hmax: 200, lab: { D: [0, 15] } }), st = '右の図のような、∠A = 90° の直角三角形ABCで、頂点Aから辺BCに垂線ADをひきます。';
+    list.push({ fig: f, stmt: st, t1: 'ABC', t2: 'DBA', w2: ['DAB', 'ADB'], cond: 2, steps: [['仮定から', '∠BAC = ', '∠BDA', ['∠BAD', '∠ABD'], ' = 90°'], ['共通な角だから', '∠ABC = ', '∠DBA', ['∠DAB', '∠BAD']]] });
+    list.push({ fig: f, stmt: st, t1: 'ABC', t2: 'DAC', w2: ['DCA', 'ADC'], cond: 2, steps: [['仮定から', '∠BAC = ', '∠ADC', ['∠DAC', '∠ACD'], ' = 90°'], ['共通な角だから', '∠ACB = ', '∠DCA', ['∠DAC', '∠CAD']]] });
+  })();
+  (function () {
+    var A = [2.6, 5], B = [0, 0], C = [6, 0], D = foot(B, A, C), E = foot(C, A, B);
+    list.push({ fig: geo({ pts: { A: A, B: B, C: C, D: D, E: E }, segs: ['AB', 'BC', 'CA', 'BD', 'CE'], rights: [['D', 'B', 'A'], ['E', 'C', 'A']], w: 270, hmax: 230 }), stmt: '右の図の △ABC で、頂点B, C から辺AC, AB にそれぞれ垂線BD, CE をひきます。', t1: 'ABD', t2: 'ACE', w2: ['AEC', 'CAE'], cond: 2, steps: [['仮定から', '∠ADB = ', '∠AEC', ['∠ACE', '∠ECB'], ' = 90°'], ['共通な角だから', '∠BAD = ', '∠CAE', ['∠ACE', '∠AEC']]] });
+  })();
+  (function () {
+    var m = pick([1, 2, 1.5]), u = [0.89, -0.45], w = [0.8, 0.6], q = pick([[4, 6, 6, 9], [3, 6, 4, 8], [2, 3, 4, 6], [6, 4, 9, 6]]);
+    var A = [-q[0] * u[0], -q[0] * u[1]], Bp = [q[3] * u[0], q[3] * u[1]], C = [-q[2] * w[0] * 0.9, -q[2] * w[1] * 0.9], D = [q[1] * w[0] * 0.9, q[1] * w[1] * 0.9], r = ratioInt(q[0], q[1]);
+    list.push({ fig: geo({ pts: { A: A, B: Bp, C: C, D: D, E: [0, 0] }, segs: ['AB', 'CD', 'AC', 'DB'], lens: [['AE', dn(q[0] * m), 1, 10], ['ED', dn(q[1] * m), 1, 10], ['CE', dn(q[2] * m), 1, 10], ['EB', dn(q[3] * m), 1, 10]], w: 300, hmax: 230, lab: { E: [0, -14] } }), stmt: '右の図で、線分ABと線分CDは点Eで交わっています。AE = ' + dn(q[0] * m) + ' cm、DE = ' + dn(q[1] * m) + ' cm、CE = ' + dn(q[2] * m) + ' cm、BE = ' + dn(q[3] * m) + ' cm です。', t1: 'ACE', t2: 'DBE', w2: ['BDE', 'DEB'], cond: 1, steps: [['仮定から', 'AE : DE = CE : BE = ', r[0] + ' : ' + r[1], [r[1] + ' : ' + r[0], q[0] + ' : ' + q[3]]], ['対頂角は等しいから', '∠AEC = ', '∠DEB', ['∠DBE', '∠EDB']]] });
+  })();
+  (function () {
+    var A = [0, 3], B = [2.6, 3], C = [0.4, 0], D = [5.4, 0], E = cross(A, D, B, C);
+    list.push({ fig: geo({ pts: { A: A, B: B, C: C, D: D, E: E }, segs: ['AB', 'CD', 'AD', 'BC'], par: ['AB', 'CD'], w: 290, hmax: 200, lab: { E: [14, 0] } }), stmt: '右の図で、AB ∥ CD で、線分ADと線分BCは点Eで交わっています。', t1: 'ABE', t2: 'DCE', w2: ['CDE', 'DEC'], cond: 2, steps: [['平行線の錯角は等しいから', '∠EAB = ', '∠EDC', ['∠ECD', '∠DEC']], ['対頂角は等しいから', '∠AEB = ', '∠DEC', ['∠DCE', '∠EDC']]] });
+  })();
+  (function () {
+    var q = pick([[25, 10, 4, 8], [16, 8, 4, 5], [18, 12, 8, 10], [27, 18, 12, 12]]), AB = q[3] * q[0] / q[1], P = triSSS(q[0], q[1], AB); P.D = [q[0] - q[2], 0];
+    var r = ratioInt(q[0], q[1]);
+    list.push({ fig: geo({ pts: P, segs: ['AB', 'BC', 'CA', 'AD'], lens: [['BD', cm(q[0] - q[2])], ['DC', cm(q[2])], ['CA', cm(q[1])]], w: 300, hmax: 200, lab: { D: [-4, 15] } }), stmt: '右の図の △ABC で、点Dは辺BC上の点です。BD = ' + (q[0] - q[2]) + ' cm、DC = ' + q[2] + ' cm、AC = ' + q[1] + ' cm です。', t1: 'ABC', t2: 'DAC', w2: ['ADC', 'DCA'], cond: 1, steps: [['仮定から', 'BC : AC = AC : DC = ', r[0] + ' : ' + r[1], [r[1] + ' : ' + r[0], q[0] + ' : ' + q[2]]], ['共通な角だから', '∠ACB = ', '∠DCA', ['∠DAC', '∠ADC']]], extra: { q: q, AB: AB, r: r } });
+  })();
+  (function () {
+    var A = [5, 5], B = [0, 0], C = [4.4, 0], t = 4.4 * 4.4 / 50, D = [5 * t, 5 * t];
+    list.push({ fig: geo({ pts: { A: A, B: B, C: C, D: D }, segs: ['AB', 'BC', 'CA', 'CD'], angs: [['A', 'B', 'C', '●', 22], ['C', 'B', 'D', '●', 22]], w: 260, hmax: 230 }), stmt: '右の図の △ABC で、点Dは辺AB上の点で、∠A = ∠BCD です。', t1: 'ABC', t2: 'CBD', w2: ['CDB', 'BCD'], cond: 2, steps: [['仮定から', '∠BAC = ', '∠BCD', ['∠BDC', '∠CBD']], ['共通な角だから', '∠ABC = ', '∠CBD', ['∠BCD', '∠BDC']]] });
+  })();
+  (function () {
+    var A = [2.5, 4.6], B = [0, 0], C = [6, 0], D = between(A, B, 0.45), E = between(A, C, 0.45);
+    list.push({ fig: geo({ pts: { A: A, B: B, C: C, D: D, E: E }, segs: ['AB', 'BC', 'CA', 'DE'], par: ['DE', 'BC'], w: 260, hmax: 210 }), stmt: '右の図の △ABC で、点D, E はそれぞれ辺AB, AC上の点で、DE ∥ BC です。', t1: 'ADE', t2: 'ABC', w2: ['ACB', 'BAC'], cond: 2, steps: [['平行線の同位角は等しいから', '∠ADE = ', '∠ABC', ['∠ACB', '∠BAC']], ['共通な角だから', '∠DAE = ', '∠BAC', ['∠ABC', '∠ACB']]] });
+  })();
+  return list;
+}
+function proofModel(p) {
+  return '△' + p.t1 + ' と △' + p.t2 + ' において<br>' + p.steps.map(function (s, i) { return s[0] + '　' + s[1] + s[2] + (s[4] || '') + '　……' + '①②'[i]; }).join('<br>') + '<br>①、②より、' + CONDS[p.cond] + 'から<br>△' + p.t1 + ' ∽ △' + p.t2;
+}
+T('D10', 5, '相似の証明（穴うめ）', 0, 1, function () {
+  var p = pick(PROOFS()), tpl = ['△' + p.t1 + ' と △' + p.t2 + ' において<br>'], bl = [], n = 0;
+  p.steps.forEach(function (s, i) {
+    var others = shuffle(REASONS.filter(function (r) { return r !== s[0]; })).slice(0, 2);
+    tpl.push(n++); bl.push(Bk.apply(null, [s[0]].concat(others)));
+    tpl.push('　' + s[1]); tpl.push(n++); bl.push(Bk.apply(null, [s[2]].concat(s[3])));
+    tpl.push((s[4] || '') + '　……' + '①②'[i] + '<br>');
+  });
+  tpl.push('①、②より、'); tpl.push(n++); bl.push({ opts: CONDS, ans: p.cond });
+  tpl.push(' から<br>△' + p.t1 + ' ∽ △'); tpl.push(n++); bl.push(Bk.apply(null, [p.t2].concat(p.w2)));
+  return {
+    html: p.stmt + '<br>このとき、△' + p.t1 + ' と、3点 ' + p.t2.split('').sort().join(', ') + ' を頂点とする三角形が相似であることを証明します。□にあてはまるものを選んで、証明を完成させなさい。',
+    fig: p.fig,
+    parts: [fill('', tpl, bl)],
+    expl: '<div class="proof">' + proofModel(p) + '</div><b>証明の型</b>：①「△○○と△○○において」　② 等しい角・辺の比を、<b>根拠（仮定・共通・対頂角・平行線の同位角や錯角）をそえて</b>書く　③ 使った相似条件を書く　④ 結論は<b>対応する頂点の順</b>に。'
+  };
+});
+T('D11', 5, '相似の証明（全文をノートに書く）', 0, 0, function () {
+  var p = pick(PROOFS());
+  return {
+    html: p.stmt + '<br>このとき、<b>△' + p.t1 + ' ∽ △' + p.t2 + '</b> となることを証明しなさい。<br><span class="note">ノートに証明を全部書いてから、「見本を見る」を押して自分で丸つけをします。</span>',
+    fig: p.fig,
+    parts: [selfp('', '<div class="proof">' + proofModel(p) + '</div>', ['「△' + p.t1 + ' と △' + p.t2 + ' において」から書き始めた', '等しいものを2つ、根拠（' + p.steps.map(function (s) { return s[0].replace('から', '').replace('だ', ''); }).join('・') + '）をつけて書いた', '相似条件「' + CONDS[p.cond] + '」を正しく書いた', '結論を、対応する頂点の順（△' + p.t1 + ' ∽ △' + p.t2 + '）で書いた'])],
+    expl: '言い回しが少しちがっていても、4つのチェックがすべてそろっていれば正解です。根拠の書きもれ（「共通」「仮定から」など）は、テストで減点されやすいところです。'
+  };
+});
+T('D14', 5, '相似を利用して長さを求める（証明のあと）', 0, 1, function () {
+  var p = PROOFS().filter(function (z) { return z.extra; })[0], e = p.extra, q = e.q;
+  return {
+    html: p.stmt + ' また、AD = ' + q[3] + ' cm です。',
+    fig: p.fig,
+    parts: [choice('(1) 相似な三角形の組を正しく表したものを選びなさい。', '△ABC ∽ △DAC', ['△ABC ∽ △ADC', '△ABC ∽ △DCA', '△ABD ∽ △ADC']),
+      choiceFixed('(2) そのときに使った相似条件を選びなさい。', CONDS, 1),
+      num('(3) 辺ABの長さを求めなさい。', '', e.AB, ' cm')],
+    expl: '(1)(2) BC = ' + (q[0] - q[2]) + ' + ' + q[2] + ' = ' + q[0] + '。∠C をはさむ辺の比は　BC : AC = ' + q[0] + ' : ' + q[1] + ' = ' + e.r.join(' : ') + '、　AC : DC = ' + q[1] + ' : ' + q[2] + ' = ' + e.r.join(' : ') + '。∠C は共通。<br>2組の辺の比とその間の角がそれぞれ等しいから <b>△ABC ∽ △DAC</b><br>(3) 相似な図形の対応する辺の比は等しいから　AB : DA = ' + e.r.join(' : ') + '<br>AB : ' + q[3] + ' = ' + e.r.join(' : ') + '　' + e.r[1] + ' × AB = ' + q[3] * e.r[0] + '　AB = <b>' + fh(F(e.AB)) + '</b> cm<br><b>注意</b>：BD = ' + (q[0] - q[2]) + ' ではなく、<b>BC = ' + q[0] + '</b>（辺全体）を使う。'
+  };
+});
+T('D15', 5, '正三角形を使った相似の証明（穴うめ）', 0, 1, function () {
+  var B = [0, 0], C = [6, 0], A = [3, 5.196], D = [2.1, 0], r = Math.PI / 3, dx = D[0] - A[0], dy = D[1] - A[1], E = [A[0] + dx * Math.cos(r) - dy * Math.sin(r), A[1] + dx * Math.sin(r) + dy * Math.cos(r)], Fp = cross(A, C, D, E);
+  var fig = geo({ pts: { A: A, B: B, C: C, D: D, E: E, F: Fp }, segs: ['AB', 'BC', 'CA', 'AD', 'DE', 'EA'], w: 290, hmax: 240, lab: { F: [-4, -14], D: [0, 15] } });
+  return {
+    html: '右の図で、△ABC と △ADE はどちらも正三角形で、点Dは辺BC上にあります。辺ACと辺DEの交点をFとするとき、△ABD ∽ △AEF であることを証明します。□にあてはまるものを選びなさい。',
+    fig: fig,
+    parts: [fill('', ['△ABD と △AEF において<br>△ABC と △ADE は正三角形だから　∠ABD = ', 0, ' = 60°　……①<br>また、∠BAC = ∠DAE = 60° だから<br>　∠BAD = ∠BAC − ∠DAF = 60° − ∠DAF<br>　∠EAF = ∠DAE − ', 1, ' = 60° − ∠DAF<br>よって　∠BAD = ', 2, '　……②<br>①、②より、', 3, ' から<br>△ABD ∽ △AEF'], [Bk('∠AEF', '∠AFE', '∠EAF'), Bk('∠DAF', '∠ADF', '∠AFD'), Bk('∠EAF', '∠AEF', '∠AFE'), { opts: CONDS, ans: 2 }])],
+    expl: '<div class="proof">△ABD と △AEF において<br>正三角形の角だから　∠ABD = ∠AEF = 60°　……①<br>∠BAD = 60° − ∠DAF、∠EAF = 60° − ∠DAF<br>よって　∠BAD = ∠EAF　……②<br>①、②より、2組の角がそれぞれ等しいから<br>△ABD ∽ △AEF</div><b>ポイント</b>：「60° から同じ角（∠DAF）をひいた残りどうしは等しい」という形は、正三角形や正方形が2つ出てくる証明でよく使う。'
+  };
+});
+
+/* ---------- 単元6：相似の利用・有効数字 ---------- */
+T('E1', 6, '縮図を使って距離を求める', 0, 1, function () {
+  var n = pick([500, 800, 1000, 200, 400]), a2 = pick([3.5, 4, 2.5, 3, 4.5]), b2 = pick([5, 6, 5.5, 4.5]), c2 = pick([4.5, 5.2, 3.8, 6.1, 4.2]), ang = pick([61, 55, 70, 48]);
+  var P = triSAS(a2, b2, ang), fig = geo({ pts: rename(P, { A: 'A', B: 'O', C: 'B' }), segs: ['AO', 'OB', 'BA'], lens: [['AO', dn(a2 * n / 100) + 'm'], ['OB', dn(b2 * n / 100) + 'm']], angs: [['O', 'A', 'B', ang + '°']], w: 250, hmax: 200 });
+  return {
+    html: '池をはさんだ2地点 A, B 間の距離を求めるために、地点Oを決めて調べたところ、OA = ' + dn(a2 * n / 100) + ' m、OB = ' + dn(b2 * n / 100) + ' m、∠AOB = ' + ang + '° でした。そこで、O′A′ = ' + a2 + ' cm となるように △AOB の縮図 △A′O′B′ をかきました。',
+    fig: fig,
+    parts: [num('(1) この縮図は、△AOB の何分の1の縮図ですか。', frac(1, '□') + ' の □ = ', n),
+      num('(2) 縮図で O′B′ は何 cm にかけばよいですか。', '', b2, ' cm'),
+      num('(3) 縮図で辺A′B′の長さをはかると ' + c2 + ' cm でした。A, B 間の距離を求めなさい。', 'およそ ', c2 * n / 100, ' m')],
+    expl: '(1) <b>単位をそろえる</b>。OA = ' + dn(a2 * n / 100) + ' m = ' + dn(a2 * n) + ' cm。' + a2 + ' cm ÷ ' + dn(a2 * n) + ' cm = ' + frac(1, n) + '　<b>' + n + '分の1</b><br>(2) ' + dn(b2 * n) + ' cm × ' + frac(1, n) + ' = <b>' + b2 + '</b> cm<br>(3) ' + c2 + ' cm × ' + n + ' = ' + dn(c2 * n) + ' cm = <b>' + dn(c2 * n / 100) + '</b> m<br>縮図は、2組の辺の比とその間の角がそれぞれ等しい三角形（相似な三角形）をかいている。'
+  };
+});
+
+T('E2', 6, '影の長さで高さを求める', 0, 1, function () {
+  var h = pick([1.5, 1.6, 1.2, 1.8]), s = pick([0.8, 1.2, 2, 1, 0.6]), k = pick([5, 8, 10, 12, 15, 7.5]), S = Math.round(s * k * 10) / 10;
+  return {
+    html: '身長 ' + h + ' m の人の影の長さが ' + s + ' m のとき、同じ時刻に、木の影の長さは ' + S + ' m でした。木の高さを求めなさい。',
+    parts: [num('', '', Math.round(h * k * 100) / 100, ' m')],
+    expl: '同じ時刻なら太陽の光は平行だから、「人と影」「木と影」でできる2つの直角三角形は相似（2組の角がそれぞれ等しい）。<br>身長 : 木の高さ = 人の影 : 木の影<br>' + h + ' : ' + v('x') + ' = ' + s + ' : ' + S + '　' + s + v('x') + ' = ' + dn(h * S) + '　' + v('x') + ' = <b>' + dn(h * k) + '</b>（m）<br>（影は ' + S + ' ÷ ' + s + ' = ' + dn(k) + ' 倍だから、高さも ' + dn(k) + ' 倍、と考えてもよい）'
+  };
+});
+
+T('E3', 6, '見上げる角度と縮図（目の高さをたす）', 0, 1, function () {
+  var sc = pick([50, 100, 200]), bcm = pick([30, 20, 15, 10]), d = bcm * sc / 100, ang = pick([30, 35, 40]), eye = pick([1.3, 1.5, 1.6, 1.4]);
+  var ccm = Math.round(bcm * Math.tan(ang * Math.PI / 180) * 10) / 10, hh = Math.round((ccm * sc / 100 + eye) * 100) / 100;
+  var fig = geo({ pts: { B: [0, 0], C: [5, 0], A: [5, 5 * Math.tan(ang * Math.PI / 180)] }, segs: ['BC', 'CA', 'AB'], rights: [['C', 'B', 'A']], angs: [['B', 'C', 'A', ang + '°', 26]], lens: [['BC', d + 'm']], w: 260, hmax: 180 });
+  return {
+    html: '木から ' + d + ' m はなれた地点から木の先端Aを見上げたら、水平の方向に対して ' + ang + '° 上に見えました。目の位置をB、木の幹のうち目と同じ高さの点をCとして、△ABC の縮図 △A′B′C′ を B′C′ = ' + bcm + ' cm としてかいたところ、A′C′ = ' + ccm + ' cm でした。目の高さは ' + eye + ' m です。',
+    fig: fig,
+    parts: [num('(1) この縮図は、何分の1の縮図ですか。', frac(1, '□') + ' の □ = ', sc),
+      num('(2) 木の高さを求めなさい。', 'およそ ', hh, ' m')],
+    expl: '(1) ' + d + ' m = ' + d * 100 + ' cm。' + bcm + ' ÷ ' + d * 100 + ' = ' + frac(1, sc) + '　<b>' + sc + '分の1</b><br>(2) AC = ' + ccm + ' cm × ' + sc + ' = ' + dn(ccm * sc) + ' cm = ' + dn(ccm * sc / 100) + ' m<br>これは<b>目の高さから上</b>の長さ。木の高さは、目の高さをたして　' + dn(ccm * sc / 100) + ' + ' + eye + ' = <b>' + dn(hh) + '</b>（m）<br><b>よくあるまちがい</b>：目の高さ ' + eye + ' m をたし忘れる。'
+  };
+});
+
+T('E4', 6, '真の値の範囲と誤差', 0, 1, function () {
+  var k = ri(0, 2), lo, hi, val, html, unit, er;
+  if (k === 0) { var dec = pick([1, 2]), st = dec === 1 ? 0.1 : 0.01; val = dec === 1 ? ri(21, 989) / 10 + 100 * ri(0, 1) : ri(101, 999) / 100; val = Math.round(val * 100) / 100; unit = pick(['cm', 'kg', 'm']); er = st / 2; lo = val - er; hi = val + er; html = '最小の目もりが ' + st + ' ' + unit + ' のはかりで、ある量をはかったら ' + val.toFixed(dec) + ' ' + unit + ' でした。'; }
+  else if (k === 1) { val = ri(12, 98) * 10; unit = 'g'; er = 5; lo = val - 5; hi = val + 5; html = 'ある重さを測定し、10 g 未満を四捨五入して、測定値 ' + val + ' g を得ました。'; }
+  else { val = ri(12, 98) * 100; unit = 'm'; er = 50; lo = val - 50; hi = val + 50; html = 'ある距離を測定し、100 m 未満を四捨五入して、測定値 ' + val + ' m を得ました。'; }
+  lo = Math.round(lo * 1000) / 1000; hi = Math.round(hi * 1000) / 1000;
+  return {
+    html: html + ' 真の値を ' + v('a') + ' ' + unit + ' とします。',
+    parts: [nums('(1) ' + v('a') + ' の範囲を、不等号を使って表しなさい。', [0, ' ≦ <i>a</i> &lt; ', 1], [lo, hi]),
+      num('(2) 誤差の絶対値は、もっとも大きくていくらですか。', '', er, ' ' + unit),
+      choice('(3) 誤差の求め方として正しいものを選びなさい。', '（誤差）＝（近似値）−（真の値）', ['（誤差）＝（真の値）−（近似値）', '（誤差）＝（近似値）÷（真の値）', '（誤差）＝（近似値）＋（真の値）'])],
+    expl: '(1) 四捨五入して ' + dn(val) + ' になる数は、' + dn(lo) + ' <b>以上</b> ' + dn(hi) + ' <b>未満</b>。　<b>' + dn(lo) + ' ≦ ' + v('a') + ' &lt; ' + dn(hi) + '</b><br>（' + dn(hi) + ' は四捨五入すると1つ上になるので、ふくまない。右側は ≦ ではなく &lt;）<br>(2) 測定値 ' + dn(val) + ' から、いちばんはなれていても ' + dn(er) + '。　<b>' + dn(er) + '</b> ' + unit + '<br>(3) （誤差）＝（近似値）−（真の値）'
+  };
+});
+
+function sigNumber() {
+  var k = pick([2, 3, 3, 4]), e = ri(Math.max(2, k - 1), 5), ds = [ri(1, 9)];
+  for (var i = 1; i < k; i++) ds.push(i === k - 1 ? pick([0, 0, ri(1, 9)]) : ri(0, 9));
+  var N = 0; ds.forEach(function (d, i) { N += d * Math.pow(10, e - i); });
+  return { k: k, e: e, ds: ds, N: Math.round(N), m: ds[0] + (k > 1 ? '.' + ds.slice(1).join('') : '') };
+}
+T('E6', 6, '有効数字（a × 10ⁿ の形）', 0, 1, function () {
+  var s = sigNumber(), u = pick(['m', 'g', '秒', 'km']), s2;
+  do { s2 = sigNumber(); } while (s2.N === s.N);
+  function P(i, x) { return nums('(' + i + ') 測定値 ' + x.N + ' ' + u + '（有効数字 ' + x.k + ' けた）', [0, ' × 10 の ', 1, ' 乗　' + u], [{ s: x.m }, x.e]); }
+  function E(i, x) { return '(' + i + ') 有効数字は ' + x.ds.join(', ') + ' の ' + x.k + ' けた。<b>' + x.m + ' × 10<sup>' + x.e + '</sup></b>（' + x.N + ' = ' + x.ds[0] + '.… × ' + Math.pow(10, x.e) + '）' + (x.ds[x.k - 1] === 0 ? '　<b>最後の 0 も有効数字なので省かない</b>。' : ''); }
+  return {
+    html: '次の測定値を、有効数字のけた数がわかるように、（整数部分が1けたの数）×（10 の累乗）の形で表しなさい。<br><span class="note">※ 左の□には 2.10 のように、0 も省かずに入れます。</span>',
+    parts: [P(1, s), P(2, s2)],
+    expl: E(1, s) + '<br>' + E(2, s2) + '<br><b>手順</b>：① 上の位から、有効数字のけた数だけ数字をとる　② 最初の数字のあとに小数点を打つ　③ 小数点を何けた動かしたかが 10 の指数。'
+  };
+});
+
+T('E7', 6, '有効数字と誤差', 0, 1, function () {
+  var s = sigNumber(), unit = Math.pow(10, s.e - s.k + 1), u = pick(['g', 'm']);
+  return {
+    html: 'ある量の測定値が ' + s.m + ' × 10<sup>' + s.e + '</sup> ' + u + ' と表されています。',
+    parts: [choice('(1) この測定値の有効数字は何けたですか。', s.k + ' けた', [1, 2, 3, 4, 5].filter(function (x) { return x !== s.k; }).slice(0, 3).map(function (x) { return x + ' けた'; })),
+      num('(2) この測定値は、何 ' + u + ' の位まで測定したものですか。', '', unit, ' ' + u + ' の位'),
+      num('(3) 誤差の絶対値は、もっとも大きくていくらですか。', '', unit / 2, ' ' + u)],
+    expl: s.m + ' × 10<sup>' + s.e + '</sup> = ' + s.N + ' ' + u + '。<br>(1) ' + s.m + ' の数字の個数が有効数字のけた数。<b>' + s.k + ' けた</b>' + (s.ds[s.k - 1] === 0 ? '（最後の 0 も数える）' : '') + '<br>(2) 有効数字の最後の数字は、' + s.N + ' の <b>' + unit + ' の位</b>。<br>(3) ' + unit + ' の位までを四捨五入で求めているから、誤差はその半分まで。　' + unit + ' ÷ 2 = <b>' + dn(unit / 2) + '</b> ' + u
+  };
+});
+
+T('E8', 6, '近似値と有効数字の知識', 0, 1, function () {
+  var a = ri(2, 9), b = ri(1, 9);
+  return {
+    html: '測定値について、次の問いに答えなさい。',
+    parts: [choice('(1) 測定値 ' + a + '.' + b + '0 kg の有効数字を選びなさい。', a + ', ' + b + ', 0', [a + ', ' + b, a + ' だけ', b + ', 0']),
+      choice('(2) 測定値 ' + a + '.' + b + ' kg と ' + a + '.' + b + '0 kg のちがいとして正しいものを選びなさい。', a + '.' + b + '0 kg のほうが、0.01 kg の位まで測定していて、より細かい', ['2つはまったく同じ意味である', a + '.' + b + ' kg のほうが、より細かく測定している', a + '.' + b + '0 kg は ' + a + '.' + b + ' kg の 10 倍である']),
+      fill('(3) □にあてはまることばを選びなさい。', ['測定値のように、真の値に近い値を ', 0, ' という。また、近似値を表す数字のうち、信頼できる数字を ', 1, ' という。'], [Bk('近似値', '誤差', '平均値'), Bk('有効数字', '近似値', '測定値')])],
+    expl: '(1) 小数点以下の最後の 0 は「そこまで測った」ことを表すので有効数字。<b>' + a + ', ' + b + ', 0</b>（3けた）<br>(2) ' + a + '.' + b + ' kg は 0.1 kg の位まで（真の値は ' + a + '.' + b + ' ± 0.05）、' + a + '.' + b + '0 kg は 0.01 kg の位まで（± 0.005）測っている。<br>(3) 真の値に近い値が<b>近似値</b>、信頼できる数字が<b>有効数字</b>。'
+  };
+});
+
+/* ===== 単元7〜8：平行線と比 ===== */
+var IX = '<tspan font-style="italic">x</tspan>', IY = '<tspan font-style="italic">y</tspan>';
+var SH = [[2, 5, 7], [3.5, 5, 7], [5, 5, 7], [1.2, 4.6, 6.5]];
+function baseTri() { var s = pick(SH); return { A: [s[0], s[1]], B: [0, 0], C: [s[2], 0] }; }
+function clampT(t) { return Math.min(Math.max(t, 0.3), 0.7); }
+function cop() { var m, n; do { m = ri(1, 5); n = ri(1, 5); } while (m === n || gcd(m, n) > 1); return [m, n]; }
+function sc() { return pick([1, 2, 3, 1.5, 2.5, 4]); }
+/* 3つの倍率（図が変な形に見えないよう、たがいに2倍以内） */
+function sc3() { var a, b, c; do { a = sc(); b = sc(); c = sc(); } while (Math.max(a, b, c) / Math.min(a, b, c) > 2); return [a, b, c]; }
+function deFig(t, lens, o) {
+  var P = baseTri(); P.D = between(P.A, P.B, clampT(t)); P.E = between(P.A, P.C, clampT(t));
+  return geo({ pts: P, segs: ['AB', 'BC', 'CA', 'DE'], par: (o && o.nopar) ? [] : ['DE', 'BC'], lens: lens, w: 290, hmax: 230, lab: { D: [-13, 0], E: [13, 0] } });
+}
+
+T('F1', 7, '三角形と比①（AD : AB = AE : AC = DE : BC）', 0, 1, function () {
+  var r = cop(), m = Math.min(r[0], r[1]), n = m + Math.max(r[0], r[1]) - m, ss = sc3(), s1 = ss[0], s2 = ss[1], s3 = ss[2];
+  n = Math.max(r[0], r[1]); if (m === n) n = m + 1;
+  var AD = m * s1, AB = n * s1, AE = m * s2, AC = n * s2, DE = m * s3, BC = n * s3, k = ri(0, 1);
+  var lens = [['AD', dn(AD), 1, 9], ['AB', dn(AB), 1, 36], ['BC', dn(BC)]];
+  if (k) { lens.push(['AE', dn(AE), 1, 9]); lens.push(['AC', IX, 1, 36]); } else { lens.push(['AE', IX, 1, 9]); lens.push(['AC', dn(AC), 1, 36]); }
+  lens.push(['DE', IY, -1, 8]);
+  var x = k ? AC : AE;
+  return {
+    html: '右の図で、DE ∥ BC とするとき、' + v('x') + '、' + v('y') + ' の値を求めなさい。（数字は長さ。AB や AC にかかる弧は、辺全体の長さを表します）',
+    fig: deFig(m / n, lens),
+    parts: [nums('', ['<i>x</i> = ', 0, ' ，　<i>y</i> = ', 1], [x, DE])],
+    expl: 'DE ∥ BC だから　<b>AD : AB = AE : AC = DE : BC</b>（小さい三角形ADEと大きい三角形ABCの辺の比）<br>AD : AB = ' + dn(AD) + ' : ' + dn(AB) + ' = ' + m + ' : ' + n + '<br>' + (k ? 'AE : AC = ' + m + ' : ' + n + '　' + dn(AE) + ' : ' + v('x') + ' = ' + m + ' : ' + n + '　' + m + v('x') + ' = ' + dn(AE * n) : 'AE : AC = ' + m + ' : ' + n + '　' + v('x') + ' : ' + dn(AC) + ' = ' + m + ' : ' + n + '　' + n + v('x') + ' = ' + dn(AC * m)) + '　' + v('x') + ' = <b>' + fh(F(x)) + '</b><br>DE : BC = ' + m + ' : ' + n + '　' + v('y') + ' : ' + dn(BC) + ' = ' + m + ' : ' + n + '　' + n + v('y') + ' = ' + dn(BC * m) + '　' + v('y') + ' = <b>' + fh(F(DE)) + '</b>'
+  };
+});
+
+function f2setup() { var r = cop(), p = r[0], q = r[1], ss = sc3(), s1 = ss[0], s2 = ss[1], s3 = ss[2]; return { p: p, q: q, AD: p * s1, DB: q * s1, AE: p * s2, EC: q * s2, DE: p * s3, BC: (p + q) * s3 }; }
+T('F2', 7, '三角形と比②（AD : DB = AE : EC と使い分ける）', 1, 1, function () {
+  var o = f2setup(), p = o.p, q = o.q;
+  return {
+    html: '右の図で、DE ∥ BC とするとき、' + v('x') + '、' + v('y') + ' の値を求めなさい。',
+    fig: deFig(p / (p + q), [['AD', dn(o.AD)], ['DB', dn(o.DB)], ['AE', dn(o.AE)], ['EC', IX], ['BC', dn(o.BC)], ['DE', IY, -1, 8]]),
+    parts: [nums('', ['<i>x</i> = ', 0, ' ，　<i>y</i> = ', 1], [o.EC, o.DE])],
+    expl: '<b>' + v('x') + '（EC）</b>：辺を上下に分けた比どうしを使う。<b>AD : DB = AE : EC</b><br>' + dn(o.AD) + ' : ' + dn(o.DB) + ' = ' + dn(o.AE) + ' : ' + v('x') + '　' + dn(o.AD) + v('x') + ' = ' + dn(o.DB * o.AE) + '　' + v('x') + ' = <b>' + fh(F(o.EC)) + '</b><br><b>' + v('y') + '（DE）</b>：DE と BC は、<b>三角形ADEと三角形ABCの辺</b>。だから <b>AD : AB = DE : BC</b> を使う。<br>AB = ' + dn(o.AD) + ' + ' + dn(o.DB) + ' = ' + dn(o.AD + o.DB) + '<br>' + dn(o.AD) + ' : ' + dn(o.AD + o.DB) + ' = ' + v('y') + ' : ' + dn(o.BC) + '　' + dn(o.AD + o.DB) + v('y') + ' = ' + dn(o.AD * o.BC) + '　' + v('y') + ' = <b>' + fh(F(o.DE)) + '</b><br><b>よくあるまちがい</b>：AD : DB = DE : BC としてしまう（' + dn(o.AD) + ' : ' + dn(o.DB) + ' = ' + v('y') + ' : ' + dn(o.BC) + ' は×）。<b>DE : BC が出てきたら、必ず AD : AB</b>。'
+  };
+});
+
+T('F3', 7, '三角形と比③（砂時計の形）', 0, 1, function () {
+  var r = cop(), m = r[0], n = r[1], ss = sc3(), s1 = ss[0], s2 = ss[1], s3 = ss[2], t = Math.min(Math.max(m / n, 0.45), 1.3);
+  var A = [3, 3], B = [0.4, 0], C = [6, 0], D = [A[0] + (A[0] - B[0]) * t, A[1] + (A[1] - B[1]) * t], E = [A[0] + (A[0] - C[0]) * t, A[1] + (A[1] - C[1]) * t];
+  var AD = m * s1, AB = n * s1, AE = m * s2, AC = n * s2, DE = m * s3, BC = n * s3;
+  var fig = geo({ pts: { A: A, B: B, C: C, D: D, E: E }, segs: ['BD', 'CE', 'DE', 'BC'], par: ['DE', 'BC'], lens: [['AD', dn(AD), 1, 10], ['AB', dn(AB), 1, 10], ['AE', IX, 1, 10], ['AC', dn(AC), 1, 10], ['DE', dn(DE)], ['BC', IY]], w: 290, hmax: 250, lab: { A: [16, 0] } });
+  return {
+    html: '右の図で、DE ∥ BC とするとき、' + v('x') + '、' + v('y') + ' の値を求めなさい。（線分BDと線分CEは点Aで交わっています）',
+    fig: fig,
+    parts: [nums('', ['<i>x</i> = ', 0, ' ，　<i>y</i> = ', 1], [AE, BC])],
+    expl: '点D, E が辺BA, CAの<b>延長上</b>にあっても、DE ∥ BC なら同じ定理が成り立つ。<b>AD : AB = AE : AC = DE : BC</b><br>対応に注意：A をはさんで<b>反対側</b>どうしが対応する（D ↔ B、E ↔ C）。<br>AD : AB = ' + dn(AD) + ' : ' + dn(AB) + ' = ' + m + ' : ' + n + '<br>AE : AC = ' + m + ' : ' + n + '　' + v('x') + ' : ' + dn(AC) + ' = ' + m + ' : ' + n + '　' + v('x') + ' = <b>' + fh(F(AE)) + '</b><br>DE : BC = ' + m + ' : ' + n + '　' + dn(DE) + ' : ' + v('y') + ' = ' + m + ' : ' + n + '　' + v('y') + ' = <b>' + fh(F(BC)) + '</b>'
+  };
+});
+
+T('F4', 7, 'どの比を使うか選んで求める', 1, 1, function () {
+  var o = f2setup(), AB = o.AD + o.DB;
+  return {
+    html: '右の図で、DE ∥ BC です。',
+    fig: deFig(o.p / (o.p + o.q), [['AD', dn(o.AD)], ['DB', dn(o.DB)], ['AE', dn(o.AE)], ['EC', IY], ['BC', dn(o.BC)], ['DE', IX, -1, 8]]),
+    parts: [choice('(1) DE の長さ ' + v('x') + ' を求めるための比例式として正しいものを選びなさい。', dn(o.AD) + ' : ' + dn(AB) + ' = ' + v('x') + ' : ' + dn(o.BC), [dn(o.AD) + ' : ' + dn(o.DB) + ' = ' + v('x') + ' : ' + dn(o.BC), dn(o.DB) + ' : ' + dn(AB) + ' = ' + v('x') + ' : ' + dn(o.BC), dn(o.AD) + ' : ' + dn(o.BC) + ' = ' + v('x') + ' : ' + dn(AB)]),
+      num('(2) ' + v('x') + ' の値を求めなさい。', '<i>x</i> = ', o.DE),
+      choice('(3) EC の長さ ' + v('y') + ' を求めるための比例式として正しいものを選びなさい。', dn(o.AD) + ' : ' + dn(o.DB) + ' = ' + dn(o.AE) + ' : ' + v('y'), [dn(o.AD) + ' : ' + dn(AB) + ' = ' + dn(o.AE) + ' : ' + v('y'), dn(o.AD) + ' : ' + dn(o.DB) + ' = ' + v('y') + ' : ' + dn(o.AE), dn(o.AD) + ' : ' + dn(o.AE) + ' = ' + v('y') + ' : ' + dn(o.DB)]),
+      num('(4) ' + v('y') + ' の値を求めなさい。', '<i>y</i> = ', o.EC)],
+    expl: '定理は2つある。<b>どちらを使うかは、求めたい線分で決まる。</b><br>① AD : AB = AE : AC = <b>DE : BC</b>　…… 平行な線分 DE, BC が出てくるときは必ずこちら（AB は辺全体）<br>② AD : DB = AE : EC　…… 辺を分けた部分どうし<br>(1)(2) DE は平行な線分 → ①。AB = ' + dn(o.AD) + ' + ' + dn(o.DB) + ' = ' + dn(AB) + '。　' + dn(o.AD) + ' : ' + dn(AB) + ' = ' + v('x') + ' : ' + dn(o.BC) + '　' + v('x') + ' = <b>' + fh(F(o.DE)) + '</b><br>(3)(4) EC は辺ACを分けた部分 → ②。　' + dn(o.AD) + ' : ' + dn(o.DB) + ' = ' + dn(o.AE) + ' : ' + v('y') + '　' + v('y') + ' = <b>' + fh(F(o.EC)) + '</b>'
+  };
+});
+
+T('F5', 7, '三角形と比の定理の逆（DE ∥ BC か）', 0, 1, function () {
+  function one(good) {
+    var r = cop(), s1 = pick([1, 2, 3, 1.5]), s2 = pick([1, 2, 3, 1.5, 2.5]), AD = r[0] * s1, DB = r[1] * s1, AE = r[0] * s2, EC = r[1] * s2;
+    if (!good) { EC += pick([1, -1, 0.5]); if (EC <= 0) EC += 2; }
+    var P = baseTri(); P.D = between(P.A, P.B, clampT(AD / (AD + DB))); P.E = between(P.A, P.C, clampT(AE / (AE + EC)));
+    return { fig: geo({ pts: P, segs: ['AB', 'BC', 'CA', 'DE'], lens: [['AD', dn(AD)], ['DB', dn(DB)], ['AE', dn(AE)], ['EC', dn(EC)]], w: 230, hmax: 200, lab: { D: [-13, 0], E: [13, 0] } }), ok: Math.abs(AD * EC - DB * AE) < 1e-9, t: 'AD : DB = ' + dn(AD) + ' : ' + dn(DB) + ' = ' + ratioInt(AD, DB).join(' : ') + '、　AE : EC = ' + dn(AE) + ' : ' + dn(EC) + ' = ' + ratioInt(AE, EC).join(' : ') };
+  }
+  var a = one(ri(0, 1)), b = one(ri(0, 1));
+  return {
+    html: '次の(1), (2)の図で、DE ∥ BC であれば ○ を、そうでなければ × を選びなさい。',
+    fig: figs(cap('(1)', a.fig), cap('(2)', b.fig)),
+    parts: [choiceFixed('(1)', ['○（平行である）', '×（平行でない）'], a.ok ? 0 : 1), choiceFixed('(2)', ['○（平行である）', '×（平行でない）'], b.ok ? 0 : 1)],
+    expl: '<b>三角形と比の定理の逆</b>：AD : DB = AE : EC ならば DE ∥ BC（AD : AB = AE : AC でもよい）<br>(1) ' + a.t + '　→ ' + (a.ok ? '等しいので <b>○</b>' : '等しくないので <b>×</b>') + '<br>(2) ' + b.t + '　→ ' + (b.ok ? '等しいので <b>○</b>' : '等しくないので <b>×</b>') + '<br>比は、かならず<b>もっとも簡単な整数の比</b>になおしてくらべる。'
+  };
+});
+
+T('F6', 7, '平行な線分を見つける（理由も）', 0, 1, function () {
+  var RS = [[1, 2], [2, 3], [3, 4], [1, 1], [4, 3], [3, 2], [2, 1], [4, 5], [5, 4]], rA, rC, rB, sc2 = ri(0, 2), eq = function (a, b) { return a[0] * b[1] === a[1] * b[0]; }, inv = function (a) { return [a[1], a[0]]; };
+  /* rA = AF:FB, rC = AE:EC, rB = BD:DC */
+  do {
+    rA = pick(RS); rC = pick(RS); rB = pick(RS);
+    if (sc2 === 0) rC = rA; else if (sc2 === 1) rB = inv(rA); else rB = rC;
+  } while ((eq(rA, rC) ? 1 : 0) + (eq(inv(rA), rB) ? 1 : 0) + (eq(rB, rC) ? 1 : 0) !== 1);
+  var k1 = pick([1, 1.5, 2]), k2 = pick([1, 2, 1.5]), k3 = pick([1, 1.5, 2, 3]);
+  var AF = rA[0] * k1, FB = rA[1] * k1, AE = rC[0] * k2, EC = rC[1] * k2, BD = rB[0] * k3, DC = rB[1] * k3;
+  var P = { A: [3, 5], B: [0, 0], C: [7, 0] }; P.F = between(P.A, P.B, clampT(AF / (AF + FB))); P.E = between(P.A, P.C, clampT(AE / (AE + EC))); P.D = between(P.B, P.C, clampT(BD / (BD + DC)));
+  var fig = geo({ pts: P, segs: ['AB', 'BC', 'CA', 'DE', 'EF', 'FD'], lens: [['AF', dn(AF)], ['FB', dn(FB)], ['AE', dn(AE)], ['EC', dn(EC)], ['BD', dn(BD)], ['DC', dn(DC)]], w: 300, hmax: 240, lab: { F: [-13, 0], E: [13, 0], D: [0, 15] } });
+  var ok = [], tx = [];
+  var c1 = eq(rB, rC), c2 = eq(rA, rC), c3 = eq(inv(rA), rB);
+  if (c1) ok.push(0); if (c2) ok.push(1); if (c3) ok.push(2);
+  tx.push('DE と AB：CD : DB = ' + ratioInt(DC, BD).join(' : ') + '、CE : EA = ' + ratioInt(EC, AE).join(' : ') + ' → ' + (c1 ? '等しい。<b>DE ∥ AB</b>' : '等しくない'));
+  tx.push('EF と BC：AF : FB = ' + ratioInt(AF, FB).join(' : ') + '、AE : EC = ' + ratioInt(AE, EC).join(' : ') + ' → ' + (c2 ? '等しい。<b>EF ∥ BC</b>' : '等しくない'));
+  tx.push('FD と AC：BF : FA = ' + ratioInt(FB, AF).join(' : ') + '、BD : DC = ' + ratioInt(BD, DC).join(' : ') + ' → ' + (c3 ? '等しい。<b>FD ∥ AC</b>' : '等しくない'));
+  return {
+    html: '右の図で、線分 DE, EF, FD のうち、△ABC の辺に平行なものをすべて選びなさい。',
+    fig: fig,
+    parts: [multi('', ['線分DE（辺ABに平行）', '線分EF（辺BCに平行）', '線分FD（辺ACに平行）'], ok)],
+    expl: '<b>三角形と比の定理の逆</b>を使う。3本それぞれについて、線分がはさむ頂点から見た2辺の比をくらべる。<br>' + tx.join('<br>') + '<br>理由の書き方の例：「' + (c1 ? 'CD : DB = CE : EA' : (c2 ? 'AF : FB = AE : EC' : 'BF : FA = BD : DC')) + ' だから、三角形と比の定理の逆より平行」'
+  };
+});
+
+T('F18', 7, '三角形と比の定理の証明（穴うめ）', 0, 1, function () {
+  var P = { A: [3, 5], B: [0, 0], C: [7, 0] }; P.D = between(P.A, P.B, 0.5); P.E = between(P.A, P.C, 0.5); P.F = between(P.B, P.C, 0.5);
+  return {
+    html: '右の図の △ABC で、DE ∥ BC ならば AD : DB = AE : EC となることを証明します。点Dを通り辺ACに平行な直線をひき、辺BCとの交点をFとします。□にあてはまるものを選びなさい。',
+    fig: geo({ pts: P, segs: ['AB', 'BC', 'CA', 'DE', 'DF'], par: ['DE', 'BC'], w: 280, hmax: 230, lab: { D: [-13, 0], E: [13, 0], F: [0, 15] } }),
+    parts: [fill('', ['△ADE と △DBF において<br>DE ∥ BC より、', 0, ' は等しいから　∠ADE = ', 1, '　……①<br>DF ∥ AC より、同位角は等しいから　∠DAE = ', 2, '　……②<br>①、②より、', 3, ' から　△ADE ∽ △DBF<br>よって　AD : DB = AE : ', 4, '　……③<br>また、四角形DFCE は ', 5, ' から平行四辺形で、DF = ', 6, '　……④<br>③、④より　AD : DB = AE : EC'], [Bk('同位角', '錯角', '対頂角'), Bk('∠DBF', '∠BDF', '∠DFB'), Bk('∠BDF', '∠DBF', '∠DFB'), { opts: CONDS, ans: 2 }, Bk('DF', 'BF', 'DE'), Bk('2組の対辺がそれぞれ平行である', '1組の対辺が平行である', '4つの辺が等しい'), Bk('EC', 'AE', 'FC')])],
+    expl: '<div class="proof">△ADE と △DBF において<br>DE ∥ BC より、同位角は等しいから　∠ADE = ∠DBF　……①<br>DF ∥ AC より、同位角は等しいから　∠DAE = ∠BDF　……②<br>①、②より、2組の角がそれぞれ等しいから　△ADE ∽ △DBF<br>よって　AD : DB = AE : DF　……③<br>四角形DFCE は、2組の対辺がそれぞれ平行だから平行四辺形で　DF = EC　……④<br>③、④より　AD : DB = AE : EC</div><b>考え方</b>：平行線（補助線）をひいて、相似な三角形と平行四辺形をつくる。'
+  };
+});
+
+/* ---------- 単元8 ---------- */
+T('F7', 8, '中点連結定理（長さと角）', 0, 1, function () {
+  var be = pick([40, 50, 55, 60, 45]), ga = pick([60, 65, 70, 80, 75]), bc = pick([8, 10, 12, 14, 9, 7]), P = triAA(be, ga);
+  P.M = between(P.A, P.B, 0.5); P.N = between(P.A, P.C, 0.5);
+  return {
+    html: '右の図で、点M, N はそれぞれ △ABC の辺AB, AC の中点です。BC = ' + bc + ' cm、∠B = ' + be + '°、∠C = ' + ga + '° です。',
+    fig: geo({ pts: P, segs: ['AB', 'BC', 'CA', 'MN'], ticks: [['AM', 1], ['MB', 1], ['AN', 2], ['NC', 2]], lens: [['BC', bc + 'cm']], angs: [['B', 'A', 'C', be + '°'], ['C', 'A', 'B', ga + '°']], w: 280, hmax: 230, lab: { M: [-13, 0], N: [13, 0] } }),
+    parts: [num('(1) MN の長さを求めなさい。', '', F(bc, 2), ' cm'),
+      num('(2) ∠AMN の大きさを求めなさい。', '', be, '°'),
+      num('(3) ∠A の大きさを求めなさい。', '', 180 - be - ga, '°')],
+    expl: '<b>中点連結定理</b>：△ABC の2辺 AB, AC の中点を M, N とすると　<b>MN ∥ BC、MN = ' + frac(1, 2) + 'BC</b><br>(1) MN = ' + frac(1, 2) + ' × ' + bc + ' = <b>' + fh(F(bc, 2)) + '</b> cm<br>(2) MN ∥ BC だから、同位角は等しい。∠AMN = ∠B = <b>' + be + '°</b><br>(3) ∠A = 180° − (' + be + '° + ' + ga + '°) = <b>' + (180 - be - ga) + '°</b>'
+  };
+});
+
+T('F8', 8, '台形と中点連結定理', 0, 1, function () {
+  var a = pick([4, 6, 8, 5, 3]), b = a + pick([2, 4, 6, 3]), bd = ri(0, 1);
+  var P = { B: [0, 0], C: [7, 0], A: [1.4, 4], D: [1.4 + 7 * a / b, 4] }; P.E = between(P.A, P.B, 0.5); P.G = between(P.D, P.C, 0.5);
+  P.F = bd ? between(P.B, P.D, 0.5) : between(P.A, P.C, 0.5);
+  return {
+    html: '右の図で、四角形ABCDは AD ∥ BC の台形で、AD = ' + a + ' cm、BC = ' + b + ' cm です。辺ABの中点をEとし、Eから辺BCに平行な直線をひき、' + (bd ? '対角線BD' : '対角線AC') + '、辺CDとの交点をそれぞれ F, G とします。',
+    fig: geo({ pts: P, segs: ['AB', 'BC', 'CD', 'DA', 'EG', bd ? 'BD' : 'AC'], lens: [['AD', a + 'cm'], ['BC', b + 'cm']], ticks: [['AE', 1], ['EB', 1]], w: 290, hmax: 210, lab: { E: [-13, 0], G: [13, 0], F: [2, -13] } }),
+    parts: [num('(1) EF の長さを求めなさい。', '', F(bd ? a : b, 2), ' cm'), num('(2) FG の長さを求めなさい。', '', F(bd ? b : a, 2), ' cm'), num('(3) EG の長さを求めなさい。', '', F(a + b, 2), ' cm')],
+    expl: (bd ? '△ABD で、E は AB の中点、EF ∥ AD だから F は BD の中点。中点連結定理より　EF = ' + frac(1, 2) + 'AD = <b>' + fh(F(a, 2)) + '</b> cm<br>△DBC で、F は BD の中点、FG ∥ BC だから G は DC の中点。　FG = ' + frac(1, 2) + 'BC = <b>' + fh(F(b, 2)) + '</b> cm' : '△ABC で、E は AB の中点、EF ∥ BC だから F は AC の中点。中点連結定理より　EF = ' + frac(1, 2) + 'BC = <b>' + fh(F(b, 2)) + '</b> cm<br>△ACD で、F は AC の中点、FG ∥ AD だから G は CD の中点。　FG = ' + frac(1, 2) + 'AD = <b>' + fh(F(a, 2)) + '</b> cm') + '<br>EG = EF + FG = <b>' + fh(F(a + b, 2)) + '</b> cm<br><b>コツ</b>：対角線で台形を<b>2つの三角形に分けて</b>、それぞれに中点連結定理を使う。どちらの三角形の底辺かをまちがえない。'
+  };
+});
+
+T('F9', 8, '3辺の中点を結んだ三角形', 0, 1, function () {
+  var t = pick(T3), k = pick([2, 4, 6]), a = t[0] * k / 2 * 2, b = t[1] * k, c = t[2] * k, S = pick([8, 12, 20, 36, 48]);
+  a = t[0] * k;
+  var P = triSSS(t[0], t[1], t[2]); P.D = between(P.B, P.C, 0.5); P.E = between(P.C, P.A, 0.5); P.F = between(P.A, P.B, 0.5);
+  return {
+    html: '右の図の △ABC で、辺BC, CA, AB の中点をそれぞれ D, E, F とします。BC = ' + a + ' cm、CA = ' + b + ' cm、AB = ' + c + ' cm です。',
+    fig: geo({ pts: P, segs: ['AB', 'BC', 'CA', 'DE', 'EF', 'FD'], w: 280, hmax: 220, lab: { D: [0, 15], E: [13, 0], F: [-13, 0] } }),
+    parts: [nums('(1) △DEF と △ABC の相似比を求めなさい。', [0, ' : ', 1], [1, 2], { ratio: 1 }),
+      num('(2) △DEF の周の長さを求めなさい。', '', F(a + b + c, 2), ' cm'),
+      num('(3) △ABC の面積が ' + S + ' cm² のとき、△DEF の面積を求めなさい。', '', F(S, 4), ' cm²')],
+    expl: '(1) 中点連結定理より　EF = ' + frac(1, 2) + 'BC、FD = ' + frac(1, 2) + 'CA、DE = ' + frac(1, 2) + 'AB。3組の辺の比がすべて 1 : 2 で等しいから △DEF ∽ △ABC、相似比は <b>1 : 2</b><br>(2) (' + a + ' + ' + b + ' + ' + c + ') × ' + frac(1, 2) + ' = <b>' + fh(F(a + b + c, 2)) + '</b> cm<br>(3) △AFE、△FBD、△EDC、△DEF の4つは、3組の辺がそれぞれ等しいのですべて合同。△ABC は合同な4つの三角形に分けられるから　' + S + ' ÷ 4 = <b>' + fh(F(S, 4)) + '</b> cm²'
+  };
+});
+
+function quadMid() { var P = { A: [1, 3.3], B: [0, 0], C: [5.4, 0], D: [4.3, 4.6] }; P.E = between(P.A, P.B, 0.5); P.F = between(P.B, P.C, 0.5); P.G = between(P.C, P.D, 0.5); P.H = between(P.D, P.A, 0.5); return P; }
+function quadFig(diag) { return geo({ pts: quadMid(), segs: ['AB', 'BC', 'CD', 'DA', 'EF', 'FG', 'GH', 'HE'], thin: diag ? [diag] : [], fill: ['EFGH'], w: 280, hmax: 230, lab: { E: [-13, 0], F: [0, 15], G: [13, 0], H: [-6, -12] } }); }
+T('F10', 8, '四角形の各辺の中点を結ぶ（証明の穴うめ）', 1, 1, function () {
+  return {
+    html: '四角形ABCDの辺AB, BC, CD, DA の中点をそれぞれ E, F, G, H とします。このとき、四角形EFGHが平行四辺形になることを証明します。□にあてはまるものを選びなさい。',
+    fig: quadFig('AC'),
+    parts: [fill('', ['四角形ABCDの対角線 ', 0, ' をひく。<br>△ABC において、点E, F はそれぞれ辺AB, BC の中点だから、', 1, ' より<br>　EF ∥ AC、　EF = ', 2, '　……①<br>△ADC においても同様にして<br>　HG ∥ AC、　HG = ', 3, '　……②<br>①、②より　EF ∥ HG、　EF = HG<br>', 4, ' から、四角形EFGHは平行四辺形である。'], [Bk('AC', 'BD', 'EG'), Bk('中点連結定理', '三角形と比の定理の逆', '平行線と比の定理'), Bk(frac(1, 2) + 'AC', '2AC', frac(1, 2) + 'BC'), Bk(frac(1, 2) + 'AC', frac(1, 2) + 'BD', frac(1, 2) + 'DC'), Bk('1組の対辺が平行でその長さが等しい', '2組の対辺がそれぞれ平行である', '対角線がそれぞれの中点で交わる')])],
+    expl: '<div class="proof">対角線ACをひく。<br>△ABC において、E, F はそれぞれ辺AB, BC の中点だから、中点連結定理より<br>　EF ∥ AC、EF = ' + frac(1, 2) + 'AC　……①<br>△ADC においても同様にして<br>　HG ∥ AC、HG = ' + frac(1, 2) + 'AC　……②<br>①、②より　EF ∥ HG、EF = HG<br>1組の対辺が平行でその長さが等しいから、四角形EFGHは平行四辺形である。</div><b>流れを覚える</b>：① 対角線をひく → ② 2つの三角形で中点連結定理 → ③ 同じ対角線に平行で、長さがその半分 → ④ 平行四辺形になるための条件。'
+  };
+});
+T('F10s', 8, '四角形の各辺の中点を結ぶ（全文をノートに書く）', 1, 0, function () {
+  return {
+    html: '四角形ABCDの辺AB, BC, CD, DA の中点をそれぞれ E, F, G, H とします。このとき、<b>四角形EFGHは平行四辺形になる</b>ことを証明しなさい。<br><span class="note">ノートに証明を全部書いてから、「見本を見る」を押して自分で丸つけをします。</span>',
+    fig: quadFig(''),
+    parts: [selfp('', '<div class="proof">四角形ABCDの対角線ACをひく。<br>△ABC において、点E, F はそれぞれ辺AB, BC の中点だから、中点連結定理より<br>　EF ∥ AC、EF = ' + frac(1, 2) + 'AC　……①<br>△ADC においても同様にして<br>　HG ∥ AC、HG = ' + frac(1, 2) + 'AC　……②<br>①、②より　EF ∥ HG、EF = HG<br>1組の対辺が平行でその長さが等しいから、四角形EFGHは平行四辺形である。</div>（対角線BDをひいて、EH と FG について同じように示してもよい）', ['対角線（AC または BD）をひくことを書いた', '「中点だから、中点連結定理より」と根拠を書いた', '平行（∥）と長さ（半分）の両方を、2つの三角形について書いた', '「1組の対辺が平行でその長さが等しいから」と条件を書いて結論にした'])],
+    expl: '「2組の対辺がそれぞれ平行」を使う場合は、対角線ACとBDの両方をひいて、EF ∥ HG と EH ∥ FG を示します。それでも正解です。'
+  };
+});
+T('F10b', 8, '中点を結んだ四角形（長さ・特別な四角形）', 0, 1, function () {
+  var ac = pick([8, 10, 12, 14, 6]), bd = pick([6, 8, 10, 16, 12]), k = ri(0, 2);
+  var cnd = [['AC = BD', 'ひし形', 'EF = ' + frac(1, 2) + 'AC、EH = ' + frac(1, 2) + 'BD だから、AC = BD なら EF = EH。となり合う辺が等しい平行四辺形は<b>ひし形</b>。'], ['AC ⊥ BD', '長方形', 'EF ∥ AC、EH ∥ BD だから、AC ⊥ BD なら EF ⊥ EH。1つの角が直角の平行四辺形は<b>長方形</b>。'], ['AC = BD、AC ⊥ BD', '正方形', 'となり合う辺が等しく、角も直角になるから<b>正方形</b>。']][k];
+  return {
+    html: '四角形ABCDの辺AB, BC, CD, DA の中点をそれぞれ E, F, G, H とします。対角線の長さは AC = ' + ac + ' cm、BD = ' + bd + ' cm です。',
+    fig: quadFig('AC'),
+    parts: [num('(1) EF の長さを求めなさい。', '', F(ac, 2), ' cm'),
+      num('(2) 四角形EFGHの周の長さを求めなさい。', '', ac + bd, ' cm'),
+      choice('(3) 形のちがう別の四角形ABCDで、対角線が「' + cnd[0] + '」であるとき、各辺の中点を結んだ四角形EFGHはどんな四角形になりますか。もっともふさわしいものを選びなさい。', cnd[1], ['ひし形', '長方形', '正方形', '台形'].filter(function (x) { return x !== cnd[1]; }))],
+    expl: '(1) △ABC で中点連結定理。EF = ' + frac(1, 2) + 'AC = <b>' + fh(F(ac, 2)) + '</b> cm<br>(2) EF = HG = ' + frac(1, 2) + 'AC、EH = FG = ' + frac(1, 2) + 'BD。周の長さ = AC + BD = <b>' + (ac + bd) + '</b> cm<br>(3) ' + cnd[2] + '<br><b>まとめ</b>：EFGH の辺の長さは対角線の半分、辺の向きは対角線に平行。AC = BD → ひし形、AC ⊥ BD → 長方形、両方 → 正方形。'
+  };
+});
+
+function plFig(a, b, crossing, L1, L2, whole) {
+  var H = 4.2, y1 = H * (1 - clampT(a / (a + b))), f1, f2;
+  if (crossing) { f1 = function (s) { return 1 + 3 * s; }; f2 = function (s) { return 4.6 - 1.5 * s; }; }
+  else { f1 = function (s) { return 1.5 - 0.9 * s; }; f2 = function (s) { return 3.4 + 2 * s; }; }
+  var s1 = 1 - y1 / H, P = { l: [-0.5, H], m: [-0.5, y1], n: [-0.5, 0], r: [6.4, H], s: [6.4, y1], t: [6.4, 0] };
+  P.a = [f1(0), H]; P.b = [f1(s1), y1]; P.c = [f1(1), 0]; P.d = [f2(0), H]; P.e = [f2(s1), y1]; P.f = [f2(1), 0];
+  P.g = [f1(-0.13), H * 1.13]; P.h = [f1(1.13), -H * 0.13]; P.i = [f2(-0.13), H * 1.13]; P.j = [f2(1.13), -H * 0.13];
+  var lens = [['ab', L1[0]], ['bc', L1[1]]];
+  if (whole) { lens.push(['de', L2[0], undefined, 8]); lens.push(['df', L2[1], undefined, 36]); } else { lens.push(['de', L2[0]]); lens.push(['ef', L2[1]]); }
+  return geo({ pts: P, segs: ['lr', 'ms', 'nt', 'gh', 'ij'], hide: 'lmnrstabcdefghij', names: { l: 'ℓ', m: '<tspan font-style="italic">m</tspan>', n: '<tspan font-style="italic">n</tspan>' }, lab: { l: [-10, 0], m: [-10, 0], n: [-10, 0] }, lens: lens, w: 310, hmax: 250, pad: 30 });
+}
+T('F11', 8, '平行線と比（きほん）', 0, 1, function () {
+  var r = cop(), s1 = sc(), s2 = sc(), vals = [r[0] * s1, r[1] * s1, r[0] * s2, r[1] * s2], u = ri(0, 3), cr = ri(0, 1);
+  var lab = vals.map(function (x, i) { return i === u ? IX : dn(x); });
+  var eqn = (u < 2 ? (u === 0 ? v('x') : dn(vals[0])) + ' : ' + (u === 1 ? v('x') : dn(vals[1])) + ' = ' + dn(vals[2]) + ' : ' + dn(vals[3]) : dn(vals[0]) + ' : ' + dn(vals[1]) + ' = ' + (u === 2 ? v('x') : dn(vals[2])) + ' : ' + (u === 3 ? v('x') : dn(vals[3])));
+  return {
+    html: '右の図で、直線 ℓ, ' + v('m') + ', ' + v('n') + ' が平行であるとき、' + v('x') + ' の値を求めなさい。',
+    fig: plFig(vals[0], vals[1], cr, [lab[0], lab[1]], [lab[2], lab[3]], 0),
+    parts: [num('', '<i>x</i> = ', vals[u])],
+    expl: '<b>平行線と比</b>：平行な3直線に2直線が交わるとき、平行線で切りとられる線分の比は等しい。<br>（ℓ と ' + v('m') + ' の間）:（' + v('m') + ' と ' + v('n') + ' の間）が、どちらの直線でも同じ。<br>' + eqn + '<br>' + v('x') + ' = <b>' + fh(F(vals[u])) + '</b>' + (cr ? '<br>2直線がとちゅうで交わっていても、<b>同じ平行線の間どうし</b>を対応させれば同じように使える。' : '')
+  };
+});
+T('F12', 8, '平行線と比（全体の長さがからむ形）', 1, 1, function () {
+  var r = cop(), s1 = sc(), s2 = sc(), a = r[0] * s1, b = r[1] * s1, c = r[0] * s2, W = (r[0] + r[1]) * s2, k = ri(0, 1), cr = 0;
+  return {
+    html: '右の図で、直線 ℓ, ' + v('m') + ', ' + v('n') + ' が平行であるとき、' + v('x') + ' の値を求めなさい。（右側の直線の大きい弧は、ℓ から ' + v('n') + ' までの<b>全体</b>の長さを表します）',
+    fig: plFig(a, b, cr, [dn(a), dn(b)], k ? [dn(c), IX] : [IX, dn(W)], 1),
+    parts: [num('', '<i>x</i> = ', k ? W : c)],
+    expl: '<b>' + v('x') + ' がどの部分の長さかを、まず図でたしかめる。</b>' + (k ? v('x') + ' は ℓ から ' + v('n') + ' までの<b>全体</b>。' : dn(W) + ' は ℓ から ' + v('n') + ' までの<b>全体</b>。') + '<br>左の直線は ' + dn(a) + '（ℓ〜' + v('m') + '）と ' + dn(b) + '（' + v('m') + '〜' + v('n') + '）。全体は ' + dn(a + b) + '。<br>' +
+      (k ? '【解き方1】部分どうしでそろえる：右の直線の ' + v('m') + '〜' + v('n') + ' は ' + v('x') + ' − ' + dn(c) + '。<br>　' + dn(a) + ' : ' + dn(b) + ' = ' + dn(c) + ' : (' + v('x') + ' − ' + dn(c) + ')　' + dn(a) + '(' + v('x') + ' − ' + dn(c) + ') = ' + dn(b * c) + '　' + v('x') + ' = <b>' + fh(F(W)) + '</b><br>【解き方2】「上の部分 : 全体」でそろえる：' + dn(a) + ' : ' + dn(a + b) + ' = ' + dn(c) + ' : ' + v('x') + '　' + v('x') + ' = <b>' + fh(F(W)) + '</b>' : '「上の部分 : 全体」でそろえる：' + dn(a) + ' : ' + dn(a + b) + ' = ' + v('x') + ' : ' + dn(W) + '　' + dn(a + b) + v('x') + ' = ' + dn(a * W) + '　' + v('x') + ' = <b>' + fh(F(c)) + '</b>') +
+      '<br><b>よくあるまちがい</b>：' + dn(a) + ' : ' + dn(b) + ' = ' + (k ? dn(c) + ' : ' + v('x') : v('x') + ' : ' + dn(W)) + ' としてしまう（部分と全体をまぜている）。<b>左が「部分 : 部分」なら右も「部分 : 部分」</b>。'
+  };
+});
+
+T('F13', 8, '角の二等分線と比', 0, 1, function () {
+  var m, n, s, k, AB, AC, BC, tries = 0;
+  do { var r = cop(); m = r[0]; n = r[1]; s = pick([2, 3, 4, 5, 6]); k = pick([1, 2, 3, 1.5]); AB = m * s; AC = n * s; BC = (m + n) * k; tries++; } while (BC >= (AB + AC) * 0.8 || BC <= Math.max(AB, AC) * 0.6 || Math.max(AB, AC) / Math.min(AB, AC) > 2 || tries > 500 && false);
+  var P = triSSS(BC, AC, AB), kk = ri(0, 1); P.D = [m * k, 0];
+  return {
+    html: '右の図の △ABC で、線分ADは ∠BAC の二等分線です。' + v('x') + ' の値を求めなさい。',
+    fig: geo({ pts: P, segs: ['AB', 'BC', 'CA', 'AD'], angs: [['A', 'B', 'D', '●', 24], ['A', 'D', 'C', '●', 24]], lens: kk ? [['AB', dn(AB)], ['CA', dn(AC)], ['BD', IX], ['BC', dn(BC), 1, 34]] : [['AB', dn(AB)], ['CA', dn(AC)], ['BD', dn(m * k)], ['DC', IX]], w: 290, hmax: 220, lab: { D: [0, 15] } }),
+    parts: [num('', '<i>x</i> = ', kk ? m * k : n * k)],
+    expl: '<b>角の二等分線と比</b>：△ABC の ∠A の二等分線と辺BCとの交点をDとすると　<b>AB : AC = BD : DC</b><br>AB : AC = ' + dn(AB) + ' : ' + dn(AC) + ' = ' + m + ' : ' + n + '<br>' + (kk ? 'BD = ' + v('x') + ' とすると DC = ' + dn(BC) + ' − ' + v('x') + '。　' + m + ' : ' + n + ' = ' + v('x') + ' : (' + dn(BC) + ' − ' + v('x') + ')　' + co(F(n)) + v('x') + ' = ' + m + '(' + dn(BC) + ' − ' + v('x') + ')　' + (m + n) + v('x') + ' = ' + dn(m * BC) + '　' + v('x') + ' = <b>' + fh(F(m * k)) + '</b><br>（BC を ' + m + ' : ' + n + ' に分けるから、' + dn(BC) + ' × ' + frac(m, m + n) + ' でもよい）' : m + ' : ' + n + ' = ' + dn(m * k) + ' : ' + v('x') + '　' + m + v('x') + ' = ' + dn(n * m * k) + '　' + v('x') + ' = <b>' + fh(F(n * k)) + '</b>')
+  };
+});
+
+T('F14', 8, '平行な3本の線分（AB ∥ EF ∥ CD）', 1, 1, function () {
+  var q = pick([[6, 10], [3, 6], [4, 12], [6, 3], [10, 15], [4, 6], [6, 9], [12, 4], [8, 12], [5, 20], [6, 12]]), a = q[0], b = q[1], L = Math.max(a, b) * 1.3, r = ratioInt(a, b);
+  var P = { A: [0, a], B: [0, 0], C: [L, b], D: [L, 0] }; P.E = cross(P.A, P.D, P.B, P.C); P.F = [P.E[0], 0];
+  return {
+    html: '右の図で、AB, EF, CD は平行です。線分ADと線分BCの交点がEで、点Fは線分BD上にあります。AB = ' + a + ' cm、CD = ' + b + ' cm です。',
+    fig: geo({ pts: P, segs: ['AB', 'CD', 'AD', 'BC', 'EF', 'BD'], par: [], lens: [['AB', a + 'cm'], ['CD', b + 'cm']], w: 280, hmax: 240, lab: { E: [0, -14], F: [0, 15] } }),
+    parts: [nums('(1) EA : ED を、もっとも簡単な整数の比で求めなさい。', [0, ' : ', 1], [r[0], r[1]], { ratio: 1 }),
+      num('(2) EF の長さを求めなさい。', '', F(a * b, a + b), ' cm')],
+    expl: '(1) AB ∥ CD だから △EAB ∽ △EDC（錯角が等しい）。　EA : ED = AB : DC = ' + a + ' : ' + b + ' = <b>' + r[0] + ' : ' + r[1] + '</b><br>(2) △DAB で EF ∥ AB だから　<b>EF : AB = DE : DA</b><br>(1)より DE : EA = ' + r[1] + ' : ' + r[0] + ' だから、DE : DA = ' + r[1] + ' : (' + r[1] + ' + ' + r[0] + ') = ' + r[1] + ' : ' + (r[0] + r[1]) + '<br>EF : ' + a + ' = ' + r[1] + ' : ' + (r[0] + r[1]) + '　' + (r[0] + r[1]) + ' × EF = ' + a * r[1] + '　EF = <b>' + fh(F(a * b, a + b)) + '</b> cm<br><b>2段がまえの問題</b>：① 砂時計の形（△EAB と △EDC）で比を出す → ② その比を「部分 : 全体」になおして、大きい三角形（△DAB）で使う。DE : EA のまま（' + r[1] + ' : ' + r[0] + '）で EF : AB としないこと。'
+  };
+});
+
+T('F15', 8, '平行四辺形と延長した線', 1, 1, function () {
+  var q = pick([[2, 1], [1, 1], [1, 2], [3, 2], [2, 3], [3, 1], [1, 3]]), m = q[0], n = q[1], bc = n * pick([2, 3, 4, 6]);
+  var P = { A: [1.2, 3], D: [5.2, 3], B: [0, 0], C: [4, 0] }; P.E = between(P.C, P.D, m / (m + n)); P.F = [4 + 4 * m / n, 0];
+  var r = ratioInt(n, n + m);
+  return {
+    html: '右の図の平行四辺形ABCDで、辺CD上に点Eを CE : ED = ' + m + ' : ' + n + ' となるようにとり、線分AEを延長した直線と、辺BCを延長した直線との交点をFとします。BC = ' + bc + ' cm です。',
+    fig: geo({ pts: P, segs: ['AB', 'BC', 'CD', 'DA', 'AF', 'CF'], w: 330, hmax: 200, lab: { E: [12, -6], C: [0, 15] } }),
+    parts: [num('(1) CF の長さを求めなさい。', '', F(bc * m, n), ' cm'),
+      nums('(2) AD : BF を、もっとも簡単な整数の比で求めなさい。', [0, ' : ', 1], [r[0], r[1]], { ratio: 1 })],
+    expl: 'AD ∥ BF だから、△AED と △FEC は相似（砂時計の形）。<br>(1) AD : FC = DE : CE = ' + n + ' : ' + m + '。平行四辺形だから AD = BC = ' + bc + '。<br>' + bc + ' : CF = ' + n + ' : ' + m + '　CF = <b>' + fh(F(bc * m, n)) + '</b> cm<br>(2) BF = BC + CF = ' + bc + ' + ' + fh(F(bc * m, n)) + ' = ' + fh(F(bc * (m + n), n)) + '<br>AD : BF = ' + bc + ' : ' + fh(F(bc * (m + n), n)) + ' = <b>' + r[0] + ' : ' + r[1] + '</b><br>（比だけで考えると、AD を ' + n + ' とすると CF は ' + m + '、BC も ' + n + ' だから BF は ' + (n + m) + '。AD : BF = ' + n + ' : ' + (n + m) + '）<br><b>注意</b>：DE : CE の順と CE : ED の順を取りちがえない。対応は D ↔ C、A ↔ F。'
+  };
+});
+
+T('F16', 8, '線分を等分・m : n に分ける作図', 0, 1, function () {
+  var m = ri(1, 4), n = ri(1, 4), eq = ri(3, 6);
+  while (m === n) n = ri(1, 4);
+  return {
+    html: '線分ABを ' + m + ' : ' + n + ' に分ける点Pを、コンパスと定規で作図します。□にあてはまるものを選びなさい。また、(2), (3)に答えなさい。',
+    parts: [fill('(1)', ['① 点Aから、線分ABと重ならない半直線AXをひく。<br>② AX上に、点Aから順に、コンパスで等しい長さを ', 0, ' 個分とり、点をとる。<br>③ ', 1, ' と点Bを結ぶ。<br>④ 点Aから数えて ', 2, ' 番目の点を通り、③でひいた直線に ', 3, ' な直線をひき、線分ABとの交点をPとする。'], [Bk(String(m + n), String(m), String(n), String(m * n)), Bk('最後（' + (m + n) + ' 番目）の点', '最初（1番目）の点', m + ' 番目の点'), Bk(String(m), String(n), String(m + n)), Bk('平行', '垂直')]),
+      choice('(2) この方法で AP : PB = ' + m + ' : ' + n + ' になる理由として、もっともふさわしいものを選びなさい。', '平行線で切りとられる線分の比は等しいから（三角形と比の定理）', ['中点連結定理より、長さが半分になるから', '2つの三角形が合同になるから', '円周角の定理より、角が等しいから']),
+      num('(3) ノートの罫線（等しい間隔の平行線）を使って、ノートの横幅を ' + eq + ' 等分します。左はしの点と、そこから数えて何行下の罫線の右はしの点を結べばよいですか。', '', eq, ' 行下')],
+    expl: '(1) ' + m + ' : ' + n + ' に分けるには、全部で ' + m + ' + ' + n + ' = <b>' + (m + n) + '</b> 個の等しい区切りをつくる。最後の点とBを結び、<b>' + m + '</b> 番目の点を通る<b>平行</b>線をひく。<br>(2) 平行線をひいたので、三角形と比の定理より AP : PB =（AX上の ' + m + ' 個分）:（残り ' + n + ' 個分）= ' + m + ' : ' + n + '。<br>(3) ' + eq + ' 行下の罫線の右はしと結ぶと、ななめの線は等しい間隔の平行線で ' + eq + ' 等分される。その交点を通る縦の線をひけば、横幅が ' + eq + ' 等分できる。'
+  };
+});
+
+T('F19', 8, '角の二等分線と比の証明（穴うめ）', 0, 1, function () {
+  var A = [2.2, 3.6], B = [0, 0], C = [6, 0], ab = Math.hypot(A[0], A[1]), ac = Math.hypot(6 - A[0], A[1]), D = [6 * ab / (ab + ac), 0], E = [A[0] + A[0] / ab * ac, A[1] + A[1] / ab * ac];
+  return {
+    html: '△ABC の ∠A の二等分線と辺BCとの交点をDとすると、AB : AC = BD : DC となることを証明します。点Cを通り、ADに平行な直線をひき、辺BAの延長との交点をEとします。□にあてはまるものを選びなさい。',
+    fig: geo({ pts: { A: A, B: B, C: C, D: D, E: E }, segs: ['AB', 'BC', 'CA', 'AD', 'AE', 'EC'], par: ['AD', 'EC'], angs: [['A', 'B', 'D', '●', 22], ['A', 'D', 'C', '●', 22]], w: 300, hmax: 260, lab: { D: [0, 15] } }),
+    parts: [fill('', ['AD ∥ EC より、同位角は等しいから　∠BAD = ', 0, '　……①<br>AD ∥ EC より、錯角は等しいから　∠DAC = ', 1, '　……②<br>仮定より　∠BAD = ∠DAC　……③<br>①、②、③より　∠AEC = ∠ACE<br>よって、△ACE は ', 2, ' であり、AE = ', 3, '　……④<br>△BCE で、AD ∥ EC だから　BA : AE = ', 4, '　……⑤<br>④、⑤より　AB : AC = BD : DC'], [Bk('∠AEC', '∠ACE', '∠ECB'), Bk('∠ACE', '∠AEC', '∠ACB'), Bk('二等辺三角形', '正三角形', '直角三角形'), Bk('AC', 'AB', 'EC'), Bk('BD : DC', 'BD : BC', 'DC : BD')])],
+    expl: '<div class="proof">AD ∥ EC より、同位角は等しいから　∠BAD = ∠AEC　……①<br>錯角は等しいから　∠DAC = ∠ACE　……②<br>仮定より　∠BAD = ∠DAC　……③<br>①②③より ∠AEC = ∠ACE だから、△ACE は二等辺三角形で　AE = AC　……④<br>△BCE で AD ∥ EC だから　BA : AE = BD : DC　……⑤<br>④、⑤より　AB : AC = BD : DC</div><b>考え方</b>：平行線をひいて二等辺三角形をつくり、AC を AE に移してから、三角形と比の定理を使う。'
+  };
+});
+
+/* ===== 単元9：発展（入試レベル） ===== */
+UNITS.push('発展（入試レベル）');
+
+T('X1', 9, '【発展】変化の割合から文字の値を求める', 0, 1, function () {
+  var a = ra([[1, 1], [2, 1], [1, 2], [-1, 1], [3, 1], [-2, 1]]), t, k, r;
+  do { t = ri(-4, 5); k = ri(2, 5); r = fmul(a, 2 * t + k); } while (r.d !== 1 || r.n === 0);
+  return {
+    html: '関数 ' + yax(a) + ' について、' + v('x') + ' の値が ' + v('t') + ' から ' + v('t') + ' + ' + k + ' まで増加するときの変化の割合は ' + fh(r) + ' です。このとき、' + v('t') + ' の値を求めなさい。',
+    parts: [num('', '<i>t</i> = ', t)],
+    expl: v('x') + ' = ' + v('t') + ' のとき ' + v('y') + ' = ' + co(a) + v('t') + '<sup>2</sup>、　' + v('x') + ' = ' + v('t') + ' + ' + k + ' のとき ' + v('y') + ' = ' + co(a) + '(' + v('t') + ' + ' + k + ')<sup>2</sup><br>変化の割合 = ' + frac(co(a) + '(' + v('t') + ' + ' + k + ')<sup>2</sup> − ' + pn(a).replace(/^1$/, '') + v('t') + '<sup>2</sup>', '(' + v('t') + ' + ' + k + ') − ' + v('t')) + ' = ' + frac(co(a) + '(' + 2 * k + v('t') + ' + ' + k * k + ')', k) + ' = ' + co(a) + '(2' + v('t') + ' + ' + k + ')<br>' + co(a) + '(2' + v('t') + ' + ' + k + ') = ' + fh(r) + '　より　2' + v('t') + ' + ' + k + ' = ' + fh(fdiv(r, a)) + '　' + v('t') + ' = <b>' + mn(t) + '</b><br><b>近道</b>：' + v('y') + ' = ' + v('a') + X2 + ' で ' + v('x') + ' が ' + v('p') + ' から ' + v('q') + ' まで増加するときの変化の割合は ' + v('a') + '(' + v('p') + ' + ' + v('q') + ')。ここでは ' + co(a) + '{' + v('t') + ' + (' + v('t') + ' + ' + k + ')}。'
+  };
+});
+
+T('X2', 9, '【発展】ブレーキをかけるまでの距離＋制動距離（2次方程式）', 0, 1, function () {
+  var c = pick([[2, 0.5, 8], [2, 1, 4], [2, 2, 2], [4, 2, 8]]), a = F(1, c[2]), vv, Tm, D;
+  do { vv = pick([4, 6, 8, 10, 12]); Tm = pick([1, 1.5, 2, 0.5]); D = vv * Tm + vv * vv / c[2]; } while (D * 2 !== Math.round(D * 2));
+  return {
+    html: '自転車に乗っている人がブレーキをかけるとき、ブレーキがきき始めてから止まるまでに進む距離を制動距離といい、速さの2乗に比例します。ある自転車は、秒速 ' + c[0] + ' m で走るときの制動距離が ' + c[1] + ' m でした。',
+    parts: [nums('(1) 秒速 ' + v('x') + ' m で走るときの制動距離を ' + v('y') + ' m として、' + v('y') + ' を ' + v('x') + ' の式で表しなさい。', ['<i>y</i> = ', 0, ' ' + X2], [a]),
+      num('(2) ' + v('x') + ' の値が 5 から 7 まで増加するとき、' + v('y') + ' の増加量は ' + v('x') + ' の増加量の何倍ですか。', '', fmul(a, 12), ' 倍'),
+      num('(3) この自転車が一定の速さで走っていて、地点Aを通りすぎてから ' + Tm + ' 秒後にブレーキをかけたところ、地点Aから ' + dn(D) + ' m のところで止まりました。ブレーキをかける直前の速さを求めなさい。', '秒速 ', vv, ' m')],
+    expl: '(1) ' + c[1] + ' = ' + v('a') + ' × ' + c[0] + '<sup>2</sup>　' + v('a') + ' = ' + fh(a) + '　' + yax(a) + '<br>(2) 「' + v('y') + ' の増加量が ' + v('x') + ' の増加量の何倍か」＝<b>変化の割合</b>。' + fh(a) + ' × (5 + 7) = <b>' + fh(fmul(a, 12)) + '</b>（倍）<br>(3) 速さを秒速 ' + v('x') + ' m とする。<b>ブレーキをかけるまでに進んだ距離 ＋ 制動距離 ＝ ' + dn(D) + '</b><br>' + dn(Tm) + v('x') + ' + ' + fh(a) + X2 + ' = ' + dn(D) + '　両辺を ' + c[2] + ' 倍して　' + X2 + ' + ' + dn(Tm * c[2]) + v('x') + ' − ' + dn(D * c[2]) + ' = 0<br>(' + v('x') + ' − ' + vv + ')(' + v('x') + ' + ' + dn(D * c[2] / vv) + ') = 0　' + v('x') + ' &gt; 0 だから ' + v('x') + ' = <b>' + vv + '</b>'
+  };
+});
+
+T('X3', 9, '【発展】平行線と等積変形（放物線上の三角形）', 0, 1, function () {
+  var o, cx, cy;
+  do { o = parabLine(); cx = o.p + o.q; cy = fval(yv(o.a, cx)); } while (o.a.n < 0 || Math.abs(cy) > 20 || cx === 0);
+  var g = o.g, lo = Math.min(g.ymin, -1), hi = Math.max(g.ymax, cy + 1);
+  g.xmin = Math.min(g.xmin, cx - 1); g.xmax = Math.max(g.xmax, cx + 1); g.ymax = hi; g.sy = Math.min(24, 230 / (hi - lo));
+  g.curves.push({ f: function (x) { return fval(o.m) * x; }, c: '#1a9c5a', w: 1.6 });
+  g.dots.push({ x: cx, y: cy, label: 'C', c: '#1a9c5a', dx: cx > 0 ? 8 : -16, dy: 4 });
+  return {
+    html: '右の図のように、関数 ' + yax(o.a) + ' のグラフ上に、' + v('x') + ' 座標が ' + mn(o.p) + ' の点Aと、' + v('x') + ' 座標が ' + o.q + ' の点Bがあります。原点Oを通り直線ABに平行な直線と、' + yax(o.a) + ' のグラフとの交点のうち、Oでないほうを C とします。',
+    fig: graph(g),
+    parts: [nums('(1) 直線ABの式を求めなさい。' + NOTE2, ['<i>y</i> = ', 0, ' <i>x</i> + ', 1], [o.m, o.n]),
+      nums('(2) 点Cの座標を求めなさい。', ['C ( ', 0, ' , ', 1, ' )'], [cx, cy]),
+      num('(3) △ACB の面積を求めなさい。', '', o.area)],
+    expl: '(1) A(' + mn(o.p) + ', ' + mn(o.ya) + ')、B(' + o.q + ', ' + mn(o.yb) + ')。傾き ' + fh(o.m) + '、切片 ' + fh(o.n) + '　<b>' + lin(o.m, o.n) + '</b><br>(2) 平行な直線は<b>傾きが等しい</b>。Oを通るから ' + lin(o.m, 0) + '。放物線との交点は　' + co(o.a) + X2 + ' = ' + co(o.m) + v('x') + '　' + v('x') + ' = 0, ' + mn(cx) + '　C(<b>' + mn(cx) + ', ' + mn(cy) + '</b>)<br>(3) AB ∥ OC だから、ABを底辺とみると、△ACB と △AOB は<b>高さが等しい</b>。よって <b>△ACB = △OAB</b>（等積変形）。<br>△OAB = ' + frac(1, 2) + ' × ' + fh(fabs(o.n)) + ' × (' + (-o.p) + ' + ' + o.q + ') = <b>' + fh(o.area) + '</b><br><b>平行線が出てきたら、面積の等しい三角形をさがす。</b>'
+  };
+});
+
+T('X4', 9, '【発展】2つの放物線と直角二等辺三角形', 0, 1, function () {
+  var pr = pick([[[1, 1], [1, 3]], [[1, 1], [1, 2]], [[2, 1], [1, 1]], [[1, 2], [1, 4]], [[3, 2], [1, 2]], [[1, 1], [1, 5]], [[2, 1], [1, 2]]]), a = F(pr[0][0], pr[0][1]), b = F(pr[1][0], pr[1][1]), d = fsub(a, b);
+  var tt = fdiv(2, d), t0, s0, xs = nicex(b, 1, 6).filter(function (x) { return (a.n * x * x) % a.d === 0; });
+  t0 = pick(xs); s0 = pick(xs.filter(function (x) { return x !== t0; }).concat(xs.length < 2 ? [t0] : []));
+  var tv = Math.min(fval(tt), 3), ym = fval(a) * tv * tv, g = { xmin: -tv - 1, xmax: tv + 1, ymin: -1, ymax: ym + 1, sx: 150 / (tv + 1), sy: 200 / (ym + 2), nogrid: 1, noticks: 1, padL: 24 };
+  g.curves = [{ f: function (x) { return fval(a) * x * x; } }, { f: function (x) { return fval(b) * x * x; }, c: '#d23' }];
+  var Ay = fval(b) * tv * tv;
+  g.segs = [{ a: [tv, Ay], b: [tv, ym], c: '#333', w: 1.5 }, { a: [tv, Ay], b: [-tv, Ay], c: '#333', w: 1.5 }, { a: [-tv, Ay], b: [tv, ym], c: '#333', w: 1.5 }];
+  g.dots = [{ x: tv, y: Ay, label: 'A', c: '#333', dx: 8, dy: 12 }, { x: tv, y: ym, label: 'B', c: '#333' }, { x: -tv, y: Ay, label: 'C', c: '#333', dx: -18, dy: 12 }];
+  g.texts = [{ x: tv * 0.45, y: ym * 0.75, t: '①', c: '#1f4e9c' }, { x: tv + 0.4, y: Ay * 0.55, t: '②', c: '#d23' }];
+  return {
+    html: '右の図のように、2つの関数 ' + yax(a) + ' …①、' + yax(b) + ' …② のグラフがあります。②のグラフ上に ' + v('x') + ' 座標が正である点Aをとり、点Aを通り ' + v('y') + ' 軸に平行な直線と①のグラフとの交点を B、点Aと ' + v('y') + ' 軸について対称な点を C とします。',
+    fig: graph(g),
+    parts: [nums('(1) 点Aの ' + v('x') + ' 座標が ' + t0 + ' のとき、点Cの座標を求めなさい。', ['C ( ', 0, ' , ', 1, ' )'], [-t0, yv(b, t0)]),
+      num('(2) 点Bの ' + v('x') + ' 座標が ' + s0 + ' のとき、2点 B, C を通る直線の傾きを求めなさい。', '傾き ', fdiv(fmul(d, s0), 2)),
+      num('(3) 点Aの ' + v('x') + ' 座標を ' + v('t') + ' とします。△ABC が直角二等辺三角形になるとき、' + v('t') + ' の値を求めなさい。', '<i>t</i> = ', tt)],
+    expl: '(1) A(' + t0 + ', ' + fh(yv(b, t0)) + ')。' + v('y') + ' 軸について対称な点は、' + v('x') + ' 座標の符号だけが変わる。C(<b>−' + t0 + ', ' + fh(yv(b, t0)) + '</b>)<br>(2) B(' + s0 + ', ' + fh(yv(a, s0)) + ')、A(' + s0 + ', ' + fh(yv(b, s0)) + ')、C(−' + s0 + ', ' + fh(yv(b, s0)) + ')。　傾き = ' + frac(fh(yv(a, s0)) + ' − ' + fh(yv(b, s0)), s0 + ' − (−' + s0 + ')') + ' = <b>' + fh(fdiv(fmul(d, s0), 2)) + '</b><br>(3) ∠A = 90° だから、直角二等辺三角形になるのは <b>AB = AC</b> のとき。<br>AB = ' + co(a) + v('t') + '<sup>2</sup> − ' + co(b) + v('t') + '<sup>2</sup> = ' + co(d) + v('t') + '<sup>2</sup>、　AC = ' + v('t') + ' − (−' + v('t') + ') = 2' + v('t') + '<br>' + co(d) + v('t') + '<sup>2</sup> = 2' + v('t') + '　' + v('t') + ' &gt; 0 だから両辺を ' + v('t') + ' でわって　' + co(d) + v('t') + ' = 2　' + v('t') + ' = <b>' + fh(tt) + '</b><br><b>座標を文字で表して、長さを式にする</b>のが入試の定番。縦の長さは ' + v('y') + ' 座標の差、横の長さは ' + v('x') + ' 座標の差。'
+  };
+});
+
+T('X5', 9, '【発展】平行四辺形の対角線と線分の比', 0, 1, function () {
+  var r = cop(), m = r[0], n = r[1], k = pick([1, 2, 3]), bd = (2 * m + n) * k;
+  var P = { A: [1.4, 3.2], D: [6.4, 3.2], B: [0, 0], C: [5, 0] }; P.E = between(P.B, P.C, m / (m + n)); P.P = cross(P.A, P.E, P.B, P.D);
+  var r1 = ratioInt(m, m + n);
+  return {
+    html: '右の図の平行四辺形ABCDで、辺BC上に点Eを BE : EC = ' + m + ' : ' + n + ' となるようにとり、線分AEと対角線BDとの交点をPとします。',
+    fig: geo({ pts: P, segs: ['AB', 'BC', 'CD', 'DA', 'AE', 'BD'], w: 310, hmax: 220, lab: { E: [0, 15], P: [-2, -14] } }),
+    parts: [nums('(1) BP : PD を、もっとも簡単な整数の比で求めなさい。', [0, ' : ', 1], [r1[0], r1[1]], { ratio: 1 }),
+      num('(2) BD = ' + bd + ' cm のとき、BP の長さを求めなさい。', '', m * k, ' cm'),
+      nums('(3) AP : PE を、もっとも簡単な整数の比で求めなさい。', [0, ' : ', 1], [r1[1], r1[0]], { ratio: 1 })],
+    expl: 'AD ∥ BC だから、△PBE ∽ △PDA（錯角が等しい。砂時計の形）。<br>(1) BE : DA を求める。平行四辺形だから AD = BC。BC を ' + (m + n) + ' とすると BE は ' + m + '。<br>BP : PD = BE : DA = <b>' + r1[0] + ' : ' + r1[1] + '</b><br>(2) BP は BD の ' + frac(r1[0], r1[0] + r1[1]) + '。　' + bd + ' × ' + frac(r1[0], r1[0] + r1[1]) + ' = <b>' + m * k + '</b> cm<br>(3) AP : PE = DA : BE = <b>' + r1[1] + ' : ' + r1[0] + '</b>（AP に対応するのは EP。順番に注意）<br><b>ポイント</b>：BE : EC = ' + m + ' : ' + n + ' をそのまま使わず、<b>BE : BC（= AD）</b>になおす。'
+  };
+});
+
+T('X6', 9, '【発展】台形の対角線の中点を結ぶ', 0, 1, function () {
+  var a = pick([4, 6, 8, 5, 10]), b = a + pick([4, 6, 8, 2]);
+  var P = { B: [0, 0], C: [7, 0], A: [1.6, 4], D: [1.6 + 7 * a / b, 4] }; P.E = between(P.A, P.B, 0.5); P.M = between(P.B, P.D, 0.5); P.N = between(P.A, P.C, 0.5);
+  return {
+    html: '右の図で、四角形ABCDは AD ∥ BC の台形で、AD = ' + a + ' cm、BC = ' + b + ' cm です。辺ABの中点を E、対角線 BD, AC の中点をそれぞれ M, N とします。3点 E, M, N は一直線上にあります。',
+    fig: geo({ pts: P, segs: ['AB', 'BC', 'CD', 'DA', 'BD', 'AC', 'EN'], lens: [['AD', a + 'cm'], ['BC', b + 'cm']], w: 300, hmax: 220, lab: { E: [-13, 0], M: [-4, -12], N: [10, -10] } }),
+    parts: [num('(1) EM の長さを求めなさい。', '', F(a, 2), ' cm'), num('(2) EN の長さを求めなさい。', '', F(b, 2), ' cm'), num('(3) MN の長さを求めなさい。', '', F(b - a, 2), ' cm')],
+    expl: '(1) △ABD で、E, M はそれぞれ AB, BD の中点。中点連結定理より　EM ∥ AD、EM = ' + frac(1, 2) + 'AD = <b>' + fh(F(a, 2)) + '</b> cm<br>(2) △ABC で、E, N はそれぞれ AB, AC の中点。　EN ∥ BC、EN = ' + frac(1, 2) + 'BC = <b>' + fh(F(b, 2)) + '</b> cm<br>(3) EM も EN も BC に平行で、どちらも E を通るから、E, M, N は一直線上にある。<br>MN = EN − EM = ' + fh(F(b, 2)) + ' − ' + fh(F(a, 2)) + ' = <b>' + fh(F(b - a, 2)) + '</b> cm<br><b>覚えておくと便利</b>：台形の対角線の中点を結ぶ線分の長さは（下底 − 上底）÷ 2。'
+  };
+});
+
+T('X7', 9, '【発展】直角三角形の中の正方形', 0, 1, function () {
+  var q = pick([[3, 6], [4, 12], [6, 12], [6, 3], [10, 15], [4, 6], [3, 4], [12, 4], [8, 12], [5, 20]]), a = q[0], b = q[1], x = F(a * b, a + b), xv = fval(x);
+  var P = { A: [0, a], B: [0, 0], C: [b, 0], D: [0, xv], E: [xv, xv], F: [xv, 0] };
+  return {
+    html: '右の図のような、∠B = 90°、AB = ' + a + ' cm、BC = ' + b + ' cm の直角三角形ABCがあります。辺AB, AC, BC上にそれぞれ点 D, E, F をとり、四角形DBFEが正方形になるようにします。',
+    fig: geo({ pts: P, segs: ['AB', 'BC', 'CA', 'DE', 'EF'], fill: ['DBFE'], rights: [['B', 'A', 'C']], lens: [['AB', a + 'cm', 1, 30], ['BC', b + 'cm', 1, 30]], w: 300, hmax: 230, pad: 46, lab: { D: [-12, 0], E: [10, -8], F: [0, 15] } }),
+    parts: [choice('(1) △ABC と相似な三角形を選びなさい。', '△ADE', ['△DBF', '△DEF', '△BFE']),
+      num('(2) 正方形DBFEの1辺の長さを求めなさい。', '', x, ' cm')],
+    expl: '(1) DE ∥ BC だから、∠ADE = ∠ABC = 90°、∠A は共通。2組の角がそれぞれ等しいから △ABC ∽ <b>△ADE</b>（同じようにして △EFC も相似）<br>(2) 正方形の1辺を ' + v('x') + ' cm とすると、DE = ' + v('x') + '、AD = ' + a + ' − ' + v('x') + '。<br>AD : AB = DE : BC　(' + a + ' − ' + v('x') + ') : ' + a + ' = ' + v('x') + ' : ' + b + '<br>' + a + v('x') + ' = ' + b + '(' + a + ' − ' + v('x') + ')　' + (a + b) + v('x') + ' = ' + a * b + '　' + v('x') + ' = <b>' + fh(x) + '</b><br><b>長さを ' + v('x') + ' とおき、相似な三角形の辺の比で方程式をつくる。</b>'
+  };
+});
+
+T('X8', 9, '【発展】消費税（切り捨てのあるとびとびの関数）', 0, 1, function () {
+  var x1 = ri(21, 99), x2, P, skip = 11 * ri(2, 9) + 10, opts;
+  do { x2 = ri(25, 198); } while (x2 % 10 === 0 || x2 === x1);
+  P = x2 + Math.floor(x2 / 10);
+  function ok(pv) { for (var x = 1; x < 400; x++) if (x + Math.floor(x / 10) === pv) return true; return false; }
+  opts = [skip - 1, skip + 1, skip + 12].filter(ok).slice(0, 3).map(function (z) { return z + ' 円'; });
+  return {
+    html: '消費税を 10% とし、消費税分が小数になるときは 1 円未満を<b>切り捨て</b>ます。たとえば、本体価格 75 円の消費税分は 75 × 0.1 = 7.5 → 7 円で、税込み価格は 82 円です。本体価格は整数とします。',
+    parts: [num('(1) 本体価格 ' + x1 + ' 円の商品の税込み価格を求めなさい。', '', x1 + Math.floor(x1 / 10), ' 円'),
+      num('(2) 税込み価格が ' + P + ' 円の商品の本体価格を求めなさい。', '', x2, ' 円'),
+      choice('(3) 税込み価格として、<b>ありえない</b>金額を選びなさい。', skip + ' 円', opts)],
+    expl: '本体価格 ' + v('x') + ' 円の消費税分は、' + v('x') + ' ÷ 10 の整数部分（10 円ごとに 1 円ふえる階段の形の関数）。<br>(1) ' + x1 + ' × 0.1 = ' + dn(x1 / 10) + ' → ' + Math.floor(x1 / 10) + ' 円。　' + x1 + ' + ' + Math.floor(x1 / 10) + ' = <b>' + (x1 + Math.floor(x1 / 10)) + '</b> 円<br>(2) 見当をつける：' + P + ' ÷ 1.1 = ' + dn(Math.round(P / 1.1 * 10) / 10) + '。その近くの整数でたしかめる。<br>本体 ' + x2 + ' 円 → 消費税 ' + Math.floor(x2 / 10) + ' 円 → 税込み ' + P + ' 円　○　よって <b>' + x2 + '</b> 円<br>（' + (x2 + 1) + ' 円だと ' + (x2 + 1 + Math.floor((x2 + 1) / 10)) + ' 円になる。必ず<b>代入してたしかめる</b>）<br>(3) 本体が ' + (Math.floor(skip / 11) * 10 + 9) + ' 円のとき税込み ' + (skip - 1) + ' 円、' + (Math.floor(skip / 11) * 10 + 10) + ' 円のとき税込み ' + (skip + 1) + ' 円。本体が 1 円ふえるとき、消費税も 1 円ふえて、税込みが 2 円ふえるところがある。<b>' + skip + '</b> 円はとびこされる。'
+  };
+});
+
+T('X9', 9, '【発展】放物線と正方形', 0, 1, function () {
+  var a = ra([[1, 2], [1, 1], [2, 1], [1, 4], [1, 3], [2, 3]]), tt = fdiv(2, a), k = pick(nicex(a, 1, 6).filter(function (x) { return x !== fval(tt); })), tv = fval(tt), ym = fval(a) * tv * tv;
+  var g = { xmin: -tv - 1.2, xmax: tv + 1.2, ymin: -0.8, ymax: ym * 1.5, sx: 130 / (tv + 1.2), sy: 190 / (ym * 1.5 + 0.8), nogrid: 1, noticks: 1, padL: 24 };
+  var kx = tv * 0.75, ky = fval(a) * kx * kx;
+  g.curves = [{ f: function (x) { return fval(a) * x * x; } }];
+  g.segs = [{ a: [kx, ky], b: [-kx, ky], c: '#333', w: 1.5 }, { a: [kx, ky], b: [kx, 0], c: '#333', w: 1.5 }, { a: [-kx, ky], b: [-kx, 0], c: '#333', w: 1.5 }];
+  g.dots = [{ x: kx, y: ky, label: 'A', c: '#333' }, { x: -kx, y: ky, label: 'B', c: '#333', dx: -18 }, { x: -kx, y: 0, label: 'C', c: '#333', dx: -6, dy: 18 }, { x: kx, y: 0, label: 'D', c: '#333', dx: -4, dy: 18 }];
+  return {
+    html: '右の図のように、関数 ' + yax(a) + ' のグラフ上に ' + v('x') + ' 座標が正である点Aをとり、点Aと ' + v('y') + ' 軸について対称な点を B とします。また、点 B, A から ' + v('x') + ' 軸にひいた垂線と ' + v('x') + ' 軸との交点をそれぞれ C, D とします。',
+    fig: graph(g),
+    parts: [num('(1) 点Aの ' + v('x') + ' 座標が ' + k + ' のとき、長方形ABCDの周の長さを求めなさい。', '', fadd(4 * k, fmul(2, yv(a, k)))),
+      num('(2) 長方形ABCDが正方形になるとき、点Aの ' + v('x') + ' 座標を求めなさい。', '', tt),
+      num('(3) (2)のとき、正方形ABCDの面積を求めなさい。', '', fmul(fmul(tt, tt), 4))],
+    expl: '点Aの ' + v('x') + ' 座標を ' + v('t') + '（' + v('t') + ' &gt; 0）とすると、A(' + v('t') + ', ' + co(a) + v('t') + '<sup>2</sup>)、B(−' + v('t') + ', ' + co(a) + v('t') + '<sup>2</sup>)。<br><b>横 AB = 2' + v('t') + '、縦 AD = ' + co(a) + v('t') + '<sup>2</sup></b><br>(1) ' + v('t') + ' = ' + k + ' のとき、横 ' + 2 * k + '、縦 ' + fh(yv(a, k)) + '。周の長さ = 2 × (' + 2 * k + ' + ' + fh(yv(a, k)) + ') = <b>' + fh(fadd(4 * k, fmul(2, yv(a, k)))) + '</b><br>(2) 正方形 → 横 = 縦。　2' + v('t') + ' = ' + co(a) + v('t') + '<sup>2</sup>　' + v('t') + ' &gt; 0 だから両辺を ' + v('t') + ' でわって　' + co(a) + v('t') + ' = 2　' + v('t') + ' = <b>' + fh(tt) + '</b><br>(3) 1辺は 2 × ' + fh(tt) + ' = ' + fh(fmul(tt, 2)) + '。面積 = <b>' + fh(fmul(fmul(tt, tt), 4)) + '</b><br><b>注意</b>：横の長さは ' + v('t') + ' ではなく <b>2' + v('t') + '</b>（' + v('y') + ' 軸の左右に ' + v('t') + ' ずつ）。'
+  };
+});
+
+/* ===== 画面 ===== */
+var KEY = 'chu3_kimatsu_v1';
+var ST = (function () { try { var s = JSON.parse(localStorage.getItem(KEY)); if (s && s.types) return s; } catch (e) { } return { types: {}, tests: [] }; })();
+function save() { try { localStorage.setItem(KEY, JSON.stringify(ST)); } catch (e) { } }
+function stat(id) { if (!ST.types[id]) ST.types[id] = { n: 0, ok: 0, need: 0 }; return ST.types[id]; }
+var S = { mode: null, prob: null, ans: null, judged: false, res: null, focus: null, count: 0, right: 0, param: null, order: [], test: null, timer: null };
+var app = document.getElementById('app');
+var MODE_NAME = { unit: '単元ごとの練習', type: '同じ型をくり返す', weak: '苦手とっくん', fix: 'まちがい直し', test: '模擬テスト', review: 'テストのふり返り' };
+function plain(o) { return String(o).replace(/<span class="fr"><span>(.*?)<\/span><span>(.*?)<\/span><\/span>/g, '$1/$2 ').replace(/<[^>]+>/g, ''); }
+function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+function needList() { return TYPES.filter(function (t) { return stat(t.id).need > 0; }); }
+function isWeak(t) { var s = stat(t.id); return s.need > 0 || (t.weak && s.ok < 3) || (s.n >= 3 && s.ok / s.n < 0.6); }
+function weight(t) { var s = stat(t.id); return 1 + (t.weak && s.ok < 3 ? 4 : 0) + s.need * 4 + (s.n ? (1 - s.ok / s.n) * 4 : 1); }
+function wpick(list, avoid) {
+  var ws = list.map(function (t) { return weight(t) * (t.id === avoid && list.length > 1 ? 0.05 : 1); }), sum = ws.reduce(function (a, b) { return a + b; }, 0), r = Math.random() * sum;
+  for (var i = 0; i < list.length; i++) { r -= ws[i]; if (r <= 0) return list[i]; }
+  return list[list.length - 1];
+}
+
+/* ---------- ホーム ---------- */
+function home() {
+  stopTimer(); S.mode = null; S.prob = null;
+  var n = 0, ok = 0; TYPES.forEach(function (t) { var s = stat(t.id); n += s.n; ok += s.ok; });
+  var need = needList().length, done = TYPES.filter(function (t) { return stat(t.id).ok > 0; }).length;
+  var h = '<header class="hd"><h1>中3数学　期末テスト対策</h1><p>関数 <i>y</i> = <i>ax</i><sup>2</sup> の利用・いろいろな関数／相似な図形／平行線と比　<span class="sm">全 ' + TYPES.length + ' の型・数字は毎回変わります</span></p></header>';
+  h += '<div class="sum"><div><b>' + n + '</b>問<span>解いた数</span></div><div><b>' + (n ? Math.round(ok / n * 100) : 0) + '</b>%<span>正解率</span></div><div><b>' + done + '</b>/' + TYPES.length + '<span>正解したことのある型</span></div><div class="' + (need ? 'warn' : '') + '"><b>' + need + '</b>個<span>やり直し待ちの型</span></div>' + (ST.tests.length ? '<div><b>' + ST.tests[ST.tests.length - 1].score + '</b>点<span>前回の模擬テスト</span></div>' : '') + '</div>';
+  h += '<div class="modes">' +
+    '<button class="mode m1" data-act="weak"><b>苦手とっくん</b><span>苦手な型と、まちがえた型を多めに出します。まずはここから。</span></button>' +
+    '<button class="mode m2" data-act="fix"><b>まちがい直し' + (need ? '<em>' + need + '</em>' : '') + '</b><span>まちがえた型を、数字を変えて出します。2回続けて正解すると消えます。</span></button>' +
+    '<button class="mode m3" data-act="test"><b>模擬テスト</b><span>50分・25問・100点。全部の単元から出ます（発展も2問）。最後にまとめて丸つけ。</span></button>' +
+    '<button class="mode m4" data-act="all"><b>全部の型を順番に</b><span>' + TYPES.length + ' の型を1問ずつ。ぬけなく確かめたいときに。</span></button></div>';
+  h += '<div class="box weakbox"><h2>とくに気をつける所</h2><ul>' +
+    '<li><b>変域</b>：<i>x</i> の変域に 0 をふくむときは、<i>y</i> の最小（最大）は 0。両はしを並べるだけにしない。</li>' +
+    '<li><b>変域から <i>a</i></b>：原点から遠いほうのはしの <i>x</i> を使う。</li>' +
+    '<li><b>変化の割合</b>：「あと − まえ」。<i>a</i> が負のときの符号。</li>' +
+    '<li><b>動く点・図形の移動</b>：点がどの辺にいるかで式が変わる。変わり目の <i>x</i> を先に見つける。</li>' +
+    '<li><b>とびとびの関数</b>：とちゅうの時刻では値は変わらない。「まで」はその数をふくむ。</li>' +
+    '<li><b>三角形と比</b>：DE : BC が出てきたら AD : AB（AD : DB ではない）。</li>' +
+    '<li><b>平行線と比</b>：「部分 : 部分」と「部分 : 全体」をまぜない。</li>' +
+    '<li><b>中点連結定理の証明</b>：対角線をひく → 2つの三角形で定理 → 平行四辺形の条件。</li></ul></div>';
+  h += '<h2 class="sec">単元と型をえらんで練習する</h2>';
+  for (var u = 1; u < UNITS.length; u++) {
+    var ts = TYPES.filter(function (t) { return t.unit === u; });
+    h += '<details class="unit"' + (ts.some(function (t) { return stat(t.id).need > 0; }) ? ' open' : '') + '><summary><b>' + u + '. ' + UNITS[u] + '</b><span class="sm">' + ts.length + ' の型</span><button class="btn sm2" data-act="unit" data-u="' + u + '">この単元をまとめて練習</button></summary><table class="tl">';
+    ts.forEach(function (t) {
+      var s = stat(t.id);
+      h += '<tr><td>' + esc(t.name) + (t.weak ? '<span class="bd w">苦手</span>' : '') + (s.need ? '<span class="bd n">やり直し あと' + s.need + '回</span>' : '') + (!t.auto ? '<span class="bd s">自分で丸つけ</span>' : '') + '</td><td class="rc">' + (s.n ? s.ok + ' / ' + s.n + ' 問' : '<span class="sm">まだ</span>') + '</td><td><button class="btn" data-act="type" data-id="' + t.id + '">練習する</button></td></tr>';
+    });
+    h += '</table></details>';
+  }
+  if (ST.tests.length) {
+    h += '<h2 class="sec">模擬テストの記録</h2><div class="box"><table class="tl">' + ST.tests.slice().reverse().slice(0, 8).map(function (t) { return '<tr><td>' + t.date + '</td><td><b>' + t.score + '</b> 点</td><td class="sm">' + t.min + ' 分</td></tr>'; }).join('') + '</table></div>';
+  }
+  h += '<p class="foot"><button class="btn ghost" data-act="reset">記録をぜんぶ消す</button>　記録はこのパソコンのブラウザの中だけに残ります。</p>';
+  app.innerHTML = h; window.scrollTo(0, 0);
+}
+
+/* ---------- 問題を出す ---------- */
+function start(mode, param) {
+  S.mode = mode; S.param = param; S.count = 0; S.right = 0; S.order = []; S.last = null;
+  if (mode === 'fix' && !needList().length) { msg('やり直し待ちの型はありません', 'まちがえた型があると、ここに自動で入ります。いまは「苦手とっくん」か「模擬テスト」をやってみましょう。', [['ホームへ', home]]); return; }
+  next();
+}
+function nextType() {
+  var list;
+  if (S.mode === 'type') return typeById(S.param);
+  if (S.mode === 'fix') { list = needList(); if (!list.length) return null; return wpick(list, S.last); }
+  if (S.mode === 'weak') { list = TYPES.filter(isWeak); if (list.length < 6) list = TYPES; return wpick(list, S.last); }
+  if (!S.order.length) S.order = shuffle(TYPES.filter(function (t) { return S.param ? t.unit === S.param : true; }));
+  if (!S.param && S.count === 0) S.order = TYPES.slice();
+  return S.order.shift();
+}
+function next(sameType) {
+  var t = sameType ? typeById(S.prob.type) : nextType();
+  if (!t) { msg('まちがい直しが全部おわりました', 'やり直し待ちの型は 0 個です。よくがんばりました。', [['ホームへ', home]]); return; }
+  S.last = t.id; setProblem(makeProblem(t.id)); S.count++; drawProblem();
+}
+function setProblem(p, ans) {
+  S.prob = p; S.ans = ans || p.parts.map(blankAns); S.judged = false; S.res = null; S.warned = false; S.focus = null;
+  for (var i = 0; i < p.parts.length; i++) if (p.parts[i].kind === 'nums') { S.focus = [i, 0]; break; }
+}
+
+function showIn(s) {
+  if (!s) return '';
+  var neg = s.charAt(0) === '-', b = neg ? s.slice(1) : s, m = b.split('/');
+  if (m.length === 2 && m[1] !== '') return (neg ? '−' : '') + frac(m[0], m[1]);
+  return (neg ? '−' : '') + b;
+}
+function partHtml(p, pi, a, judged, r) {
+  var h = '<div class="part" data-p="' + pi + '">', i;
+  if (p.label) h += '<div class="plabel">' + p.label + '</div>';
+  if (p.kind === 'nums') {
+    h += '<div class="line">';
+    p.tpl.forEach(function (t) {
+      if (typeof t === 'number') h += '<span class="fld' + (judged ? ' lock' : '') + (S.focus && S.focus[0] === pi && S.focus[1] === t && !judged ? ' on' : '') + (p.ans[t].s !== undefined ? ' wide' : '') + '" data-p="' + pi + '" data-f="' + t + '">' + showIn(a[t]) + '</span>';
+      else h += '<span>' + t + '</span>';
+    });
+    h += '</div>';
+    if (judged && !r.ok) h += '<div class="right">正しい答え：<span class="line">' + p.tpl.map(function (t) { return typeof t === 'number' ? '<b class="ra">' + (p.ans[t].s !== undefined ? p.ans[t].s : fh(p.ans[t])) + '</b>' : '<span>' + t + '</span>'; }).join('') + '</span></div>';
+  } else if (p.kind === 'choice' || p.kind === 'multi') {
+    h += '<div class="opts' + (/<svg/.test(p.opts.join('')) ? ' pic' : '') + '">';
+    p.opts.forEach(function (o, k) {
+      var sel = p.kind === 'choice' ? a === k : a.indexOf(k) >= 0, good = p.kind === 'choice' ? p.ans === k : p.ans.indexOf(k) >= 0;
+      h += '<button class="opt' + (sel ? ' sel' : '') + (judged ? (good ? ' good' : (sel ? ' bad' : '')) + ' lock' : '') + '" data-p="' + pi + '" data-i="' + k + '">' + (p.kind === 'multi' ? '<span class="ck">' + (sel ? '✓' : '') + '</span>' : '') + '<span>' + o + '</span></button>';
+    });
+    h += '</div>';
+  } else if (p.kind === 'fill') {
+    h += '<div class="fillbox">';
+    p.tpl.forEach(function (t) {
+      if (typeof t === 'number') {
+        var b = p.blanks[t], okb = a[t] === b.ans;
+        h += '<select class="sel' + (judged ? (okb ? ' good' : ' bad') : '') + '" data-p="' + pi + '" data-b="' + t + '"' + (judged ? ' disabled' : '') + '><option value="-1">（えらぶ）</option>' + b.opts.map(function (o, k) { return '<option value="' + k + '"' + (a[t] === k ? ' selected' : '') + '>' + plain(o) + '</option>'; }).join('') + '</select>';
+        if (judged && !okb) h += '<span class="fixans">→ ' + b.opts[b.ans] + '</span>';
+      } else h += '<span>' + t + '</span>';
+    });
+    h += '</div>';
+  } else if (p.kind === 'plot') {
+    h += '<div class="plot' + (judged ? ' lock' : '') + '" data-p="' + pi + '">' + plotSvg(p, a, judged) + '</div>';
+    if (judged) h += '<div class="right">赤い線が正しいグラフ。緑＝正しい点、赤＝ちがう点、白＝足りない点。</div>';
+  } else {
+    if (!a.shown) h += '<button class="btn big" data-act="show" data-p="' + pi + '">ノートに書けたら　見本を見る</button>';
+    else {
+      h += '<div class="model"><div class="mt">見本</div>' + p.model + '</div><div class="checks"><div class="mt">自分の答えとくらべてチェック</div>' + p.checks.map(function (c) { return '<label class="chk"><input type="checkbox"' + (judged ? ' disabled' : '') + '><span>' + c + '</span></label>'; }).join('') + '</div>';
+      if (!judged) h += '<div class="selfb"><button class="btn ok" data-act="self" data-v="o" data-p="' + pi + '">○ 全部できた</button><button class="btn ng" data-act="self" data-v="x" data-p="' + pi + '">× できない所があった</button></div>';
+    }
+  }
+  if (judged && r) h += '<div class="mark ' + (r.ok ? 'o' : 'x') + '">' + (r.ok ? '○ 正解' : '× ちがいます') + (r.note ? '<span>' + r.note + '</span>' : '') + '</div>';
+  return h + '</div>';
+}
+function plotSvg(p, a, judged) {
+  var g = {}, k; for (k in p.g) g[k] = p.g[k];
+  g.curves = judged ? [{ f: function (x) { return p.show.f * x * x; }, c: '#d23' }] : [];
+  g.dots = [];
+  var key = function (q) { return q[0] + '_' + q[1]; }, right = p.pts.map(key);
+  a.forEach(function (q) { g.dots.push({ x: q[0], y: q[1], r: 5.5, c: judged ? (right.indexOf(key(q)) >= 0 ? '#1a9c5a' : '#d23') : '#1f4e9c' }); });
+  if (judged) { var mine = a.map(key); p.pts.forEach(function (q) { if (mine.indexOf(key(q)) < 0) g.dots.push({ x: q[0], y: q[1], r: 5.5, open: true, c: '#d23' }); }); }
+  var svg = graph(g); p.g._m = g._m; return svg;
+}
+function kpHtml() {
+  var ks = ['7', '8', '9', 'del', '4', '5', '6', '-', '1', '2', '3', '/', '0', '.', 'nx', 'ok'];
+  var lb = { del: '← 消す', '-': '−（マイナス）', '/': '／（分数）', nx: '次の□', ok: S.mode === 'test' ? '次の問題' : '判定' };
+  return '<div class="kp">' + ks.map(function (k) { return '<button class="key' + (k.length > 1 || k === '-' || k === '/' ? ' fn' : '') + (k === 'ok' ? ' go' : '') + '" data-k="' + k + '">' + (lb[k] || k) + '</button>'; }).join('') + '<div class="kpn">分数は「3 ／ 4」の順に入れると <span class="fr"><span>3</span><span>4</span></span> になります。キーボードの数字・−・/・Enter でも入れられます。</div></div>';
+}
+function drawProblem() {
+  var p = S.prob, test = S.mode === 'test', rev = S.mode === 'review', t = typeById(p.type), h = '';
+  h += '<div class="top"><button class="btn ghost" data-act="quit">← ' + (rev ? '結果にもどる' : (test ? 'テストをやめる' : 'ホームへ')) + '</button><span class="mn">' + MODE_NAME[S.mode] + '</span>';
+  if (test || rev) h += '<span class="pg">' + (S.test.i + 1) + ' / ' + S.test.probs.length + ' 問</span>' + (test ? '<span class="tm" id="tm"></span>' : '');
+  else h += '<span class="pg">' + S.count + ' 問目　正解 ' + S.right + '</span>';
+  h += '</div>';
+  if (test || rev) h += '<div class="nav">' + S.test.probs.map(function (q, i) { var d = S.test.answers[i] && answered(q, S.test.answers[i]); return '<button class="nb' + (i === S.test.i ? ' cur' : '') + (rev ? (S.test.results[i].ok ? ' o' : ' x') : (d ? ' done' : '')) + '" data-act="goto" data-i="' + i + '">' + (i + 1) + '</button>'; }).join('') + '</div>';
+  h += '<div class="card"><div class="qhead"><span class="un">' + UNITS[p.unit] + '</span><span class="tn">' + esc(p.name) + '</span>' + (t.weak ? '<span class="bd w">苦手</span>' : '') + (stat(p.type).need && !test ? '<span class="bd n">やり直し あと' + stat(p.type).need + '回</span>' : '') + '</div>';
+  h += '<div class="qbody' + (p.fig ? ' hasfig' : '') + '"><div class="qtext">' + p.html + '</div>' + (p.fig ? '<div class="qfig">' + p.fig + '</div>' : '') + '</div>';
+  var hasNum = p.parts.some(function (q) { return q.kind === 'nums'; });
+  h += '<div class="work"><div class="parts" id="parts">' + p.parts.map(function (q, i) { return partHtml(q, i, S.ans[i], S.judged, S.res ? S.res.parts[i] : null); }).join('') + '</div>' + (hasNum && !S.judged ? kpHtml() : '') + '</div>';
+  h += '<div id="warn" class="warnbar"></div><div class="actions" id="actions">' + actionsHtml() + '</div>';
+  if (S.judged) h += '<div class="expl"><div class="mt">' + (S.res.ok ? '解説（考え方をたしかめよう）' : '解説') + '</div>' + p.expl + '</div>';
+  h += '</div>';
+  app.innerHTML = h; window.scrollTo(0, 0);
+  if (test) tick();
+}
+function actionsHtml() {
+  var test = S.mode === 'test', rev = S.mode === 'review';
+  if (test) return '<button class="btn" data-act="prev"' + (S.test.i === 0 ? ' disabled' : '') + '>← 前の問題</button>' + (S.test.i < S.test.probs.length - 1 ? '<button class="btn big" data-act="tnext">次の問題 →</button>' : '') + '<button class="btn ng" data-act="finish">テストを終わって丸つけする</button>';
+  if (rev) return '<button class="btn" data-act="prev"' + (S.test.i === 0 ? ' disabled' : '') + '>← 前の問題</button><button class="btn" data-act="tnext"' + (S.test.i === S.test.probs.length - 1 ? ' disabled' : '') + '>次の問題 →</button><button class="btn big" data-act="type" data-id="' + S.prob.type + '">この型を練習する</button>';
+  if (!S.judged) return S.prob.parts.every(function (q) { return q.kind === 'self'; }) ? '' : '<button class="btn big" data-act="judge">判定する</button><button class="btn ghost" data-act="skip">わからない（答えを見る）</button>';
+  var s = stat(S.prob.type), tx = S.res.ok ? (s.need ? '<div class="info ok">正解。この型はあと ' + s.need + ' 回続けて正解すると「まちがい直し」から消えます。</div>' : '<div class="info ok">正解。</div>') : '<div class="info ng">この型は「まちがい直し」に入りました。数字を変えて、2回続けて正解するまで出ます。</div>';
+  return tx + '<button class="btn big" data-act="next">次の問題へ</button><button class="btn" data-act="again">同じ型をもう1問（数字を変えて）</button>';
+}
+function answered(p, ans) {
+  return p.parts.every(function (q, i) {
+    var a = ans[i];
+    if (q.kind === 'nums') return a.every(function (x) { return x !== ''; });
+    if (q.kind === 'choice') return a >= 0;
+    if (q.kind === 'multi' || q.kind === 'plot') return a.length > 0;
+    if (q.kind === 'fill') return a.every(function (x) { return x >= 0; });
+    return a.res !== '';
+  });
+}
+function doJudge(force) {
+  if (S.judged || S.mode === 'test' || S.mode === 'review') return;
+  if (!force && !S.warned && !answered(S.prob, S.ans)) { S.warned = true; document.getElementById('warn').innerHTML = 'まだ入れていない所があります。入れてから、もう一度「判定する」を押します。（このまま押すと、そのまま判定します）'; return; }
+  S.res = judgeProblem(S.prob, S.ans); S.judged = true;
+  var s = stat(S.prob.type); s.n++;
+  if (S.res.ok) { s.ok++; S.right++; if (s.need > 0) s.need--; } else s.need = 2;
+  save(); drawProblem();
+}
+
+/* ---------- 入力 ---------- */
+function fieldEl(f) { return app.querySelector('.fld[data-p="' + f[0] + '"][data-f="' + f[1] + '"]'); }
+function setFocus(f) { var o = app.querySelector('.fld.on'); if (o) o.classList.remove('on'); S.focus = f; var e = fieldEl(f); if (e) e.classList.add('on'); }
+function allFields() { var r = []; S.prob.parts.forEach(function (p, i) { if (p.kind === 'nums') p.ans.forEach(function (a, j) { r.push([i, j]); }); }); return r; }
+function nextField() { var fs = allFields(), k = -1; fs.forEach(function (f, i) { if (S.focus && f[0] === S.focus[0] && f[1] === S.focus[1]) k = i; }); if (fs.length) setFocus(fs[(k + 1) % fs.length]); }
+function typeKey(k) {
+  if (!S.prob || S.judged || S.mode === 'review') return;
+  if (k === 'ok') { if (S.mode === 'test') { saveTest(); if (S.test.i < S.test.probs.length - 1) gotoTest(S.test.i + 1); } else doJudge(); return; }
+  if (k === 'nx') { nextField(); return; }
+  if (!S.focus) return;
+  var cur = S.ans[S.focus[0]][S.focus[1]] || '';
+  if (k === 'del') cur = cur.slice(0, -1);
+  else if (k === '-') cur = cur.charAt(0) === '-' ? cur.slice(1) : '-' + cur;
+  else if (k === '/') { if (cur.indexOf('/') < 0 && /\d$/.test(cur)) cur += '/'; }
+  else if (k === '.') { var seg = cur.split('/').pop(); if (seg.indexOf('.') < 0 && /\d$/.test(cur)) cur += '.'; }
+  else if (cur.replace('-', '').length < 9) cur += k;
+  S.ans[S.focus[0]][S.focus[1]] = cur;
+  var e = fieldEl(S.focus); if (e) e.innerHTML = showIn(cur);
+  var w = document.getElementById('warn'); if (w) w.innerHTML = '';
+}
+document.addEventListener('keydown', function (e) {
+  if (document.getElementById('ov')) { if (e.key === 'Escape') closeMsg(); return; }
+  if (!S.prob || e.ctrlKey || e.metaKey || e.altKey) return;
+  if (e.target && e.target.tagName === 'SELECT') return;
+  if (S.judged && e.key === 'Enter' && S.mode !== 'review' && S.mode !== 'test') { e.preventDefault(); next(); return; }
+  if (/^[0-9]$/.test(e.key)) typeKey(e.key);
+  else if (e.key === '-' || e.key === '−') typeKey('-');
+  else if (e.key === '/') { e.preventDefault(); typeKey('/'); }
+  else if (e.key === '.') typeKey('.');
+  else if (e.key === 'Backspace') { e.preventDefault(); typeKey('del'); }
+  else if (e.key === 'Tab') { e.preventDefault(); typeKey('nx'); }
+  else if (e.key === 'Enter') { e.preventDefault(); typeKey('ok'); }
+});
+app.addEventListener('change', function (e) {
+  var t = e.target;
+  if (t.classList.contains('sel') && !S.judged) S.ans[+t.dataset.p][+t.dataset.b] = +t.value;
+});
+app.addEventListener('click', function (e) {
+  var t = e.target.closest('[data-k],[data-act],.fld,.opt,.plot');
+  if (!t) return;
+  if (t.dataset.k) { typeKey(t.dataset.k); return; }
+  if (t.classList.contains('fld')) { if (!S.judged) setFocus([+t.dataset.p, +t.dataset.f]); return; }
+  if (t.classList.contains('opt')) {
+    if (S.judged || S.mode === 'review') return;
+    var pi = +t.dataset.p, i = +t.dataset.i, p = S.prob.parts[pi];
+    if (p.kind === 'choice') { S.ans[pi] = i; t.parentNode.querySelectorAll('.opt').forEach(function (o) { o.classList.toggle('sel', o === t); }); }
+    else { var k = S.ans[pi].indexOf(i); if (k >= 0) S.ans[pi].splice(k, 1); else S.ans[pi].push(i); t.classList.toggle('sel', k < 0); t.querySelector('.ck').textContent = k < 0 ? '✓' : ''; }
+    return;
+  }
+  if (t.classList.contains('plot')) {
+    if (S.judged || S.mode === 'review') return;
+    var pp = +t.dataset.p, q = S.prob.parts[pp], svg = t.querySelector('svg'), rc = svg.getBoundingClientRect(), m = q.g._m, sc2 = m.W / rc.width;
+    var x = Math.round(q.g.xmin + ((e.clientX - rc.left) * sc2 - m.L) / m.sx), y = Math.round(q.g.ymax - ((e.clientY - rc.top) * sc2 - m.T) / m.sy);
+    if (x < q.g.xmin || x > q.g.xmax || y < q.g.ymin || y > q.g.ymax) return;
+    var arr = S.ans[pp], f = -1; arr.forEach(function (c, j) { if (c[0] === x && c[1] === y) f = j; });
+    if (f >= 0) arr.splice(f, 1); else arr.push([x, y]);
+    t.innerHTML = plotSvg(q, arr, false); return;
+  }
+  var a = t.dataset.act;
+  if (a === 'weak' || a === 'fix') start(a);
+  else if (a === 'all') start('unit', 0);
+  else if (a === 'unit') { e.preventDefault(); start('unit', +t.dataset.u); }
+  else if (a === 'type') { stopTimer(); start('type', t.dataset.id); }
+  else if (a === 'test') msg('模擬テストを始めます', '50分・25問・100点満点です。ノートと筆記用具を用意しましょう。とちゅうでは丸つけをしません。最後にまとめて丸つけをして、解説を見ます。', [['始める', startTest], ['やめる', null]]);
+  else if (a === 'judge') doJudge();
+  else if (a === 'skip') doJudge(true);
+  else if (a === 'next') next();
+  else if (a === 'again') next(true);
+  else if (a === 'show') { S.ans[+t.dataset.p].shown = true; redrawParts(); }
+  else if (a === 'self') { S.ans[+t.dataset.p].res = t.dataset.v; if (S.prob.parts.every(function (q, i) { return q.kind !== 'self' || S.ans[i].res; })) doJudge(true); }
+  else if (a === 'quit') { if (S.mode === 'review') showResult(); else if (S.mode === 'test') msg('テストをやめますか', 'ここまでの答えは消えます。', [['テストをやめる', home], ['続ける', null]]); else home(); }
+  else if (a === 'reset') msg('記録をぜんぶ消しますか', '解いた数・まちがい直し・模擬テストの記録がすべて消えます。元にもどせません。', [['消す', function () { ST = { types: {}, tests: [] }; save(); home(); }], ['やめる', null]]);
+  else if (a === 'prev') { saveTest(); gotoTest(S.test.i - 1); }
+  else if (a === 'tnext') { saveTest(); gotoTest(S.test.i + 1); }
+  else if (a === 'goto') { saveTest(); gotoTest(+t.dataset.i); }
+  else if (a === 'finish') { saveTest(); var left = S.test.probs.filter(function (q, i) { return !answered(q, S.test.answers[i]); }).length; msg('テストを終わって丸つけしますか', left ? 'まだ答えていない問題が ' + left + ' 問あります。' : '全部の問題に答えています。', [['丸つけする', finishTest], ['もどって続ける', null]]); }
+  else if (a === 'home') home();
+  else if (a === 'review') { S.mode = 'review'; gotoTest(+t.dataset.i); }
+  else if (a === 'msg') { var fn = MSG[+t.dataset.i]; closeMsg(); if (fn) fn(); }
+});
+function redrawParts() { var y = window.scrollY; document.getElementById('parts').innerHTML = S.prob.parts.map(function (q, i) { return partHtml(q, i, S.ans[i], S.judged, null); }).join(''); window.scrollTo(0, y); }
+
+/* ---------- メッセージ（alert・confirm のかわり） ---------- */
+var MSG = [];
+function msg(title, body, btns) {
+  closeMsg(); MSG = btns.map(function (b) { return b[1]; });
+  var d = document.createElement('div'); d.id = 'ov';
+  d.innerHTML = '<div class="dlg"><h3>' + title + '</h3><p>' + body + '</p><div class="dbt">' + btns.map(function (b, i) { return '<button class="btn' + (i === 0 ? ' big' : '') + '" data-act="msg" data-i="' + i + '">' + b[0] + '</button>'; }).join('') + '</div></div>';
+  d.addEventListener('click', function (e) { var t = e.target.closest('[data-act="msg"]'); if (!t) return; var fn = MSG[+t.dataset.i]; closeMsg(); if (fn) fn(); });
+  document.body.appendChild(d);
+}
+function closeMsg() { var o = document.getElementById('ov'); if (o) o.parentNode.removeChild(o); }
+
+/* ---------- 模擬テスト ---------- */
+var QUOTA = { 1: 4, 2: 4, 3: 2, 4: 3, 5: 2, 6: 2, 7: 3, 8: 3, 9: 2 };
+function startTest() {
+  var probs = [];
+  for (var u = 1; u < UNITS.length; u++) {
+    var pool = TYPES.filter(function (t) { return t.unit === u && t.auto; }), k = QUOTA[u];
+    while (k-- > 0 && pool.length) { var t = wpick(pool); pool = pool.filter(function (x) { return x !== t; }); probs.push(makeProblem(t.id)); }
+  }
+  S.mode = 'test'; S.test = { probs: probs, answers: probs.map(function (p) { return p.parts.map(blankAns); }), i: 0, start: Date.now(), limit: 50 * 60, results: null };
+  stopTimer(); S.timer = setInterval(tick, 1000); gotoTest(0);
+}
+function saveTest() { if (S.mode === 'test') S.test.answers[S.test.i] = S.ans; }
+function gotoTest(i) {
+  S.test.i = i; setProblem(S.test.probs[i], S.test.answers[i]);
+  if (S.mode === 'review') { S.judged = true; S.res = S.test.results[i]; S.focus = null; }
+  drawProblem();
+}
+function tick() {
+  if (S.mode !== 'test') return;
+  var left = S.test.limit - Math.floor((Date.now() - S.test.start) / 1000), e = document.getElementById('tm');
+  if (left <= 0) { saveTest(); finishTest(); msg('時間です', '50分がたちました。丸つけをしました。', [['結果を見る', null]]); return; }
+  if (e) { e.textContent = '残り ' + Math.floor(left / 60) + ' 分 ' + ('0' + left % 60).slice(-2) + ' 秒'; e.className = 'tm' + (left < 300 ? ' hot' : ''); }
+}
+function stopTimer() { if (S.timer) { clearInterval(S.timer); S.timer = null; } }
+function finishTest() {
+  stopTimer();
+  var T2 = S.test, per = 100 / T2.probs.length, score = 0;
+  T2.results = T2.probs.map(function (p, i) { var r = judgeProblem(p, T2.answers[i]); score += per * r.frac; var s = stat(p.type); s.n++; if (r.ok) { s.ok++; if (s.need > 0) s.need--; } else s.need = 2; return r; });
+  T2.score = Math.round(score); T2.min = Math.max(1, Math.round((Date.now() - T2.start) / 60000));
+  var d = new Date(); ST.tests.push({ date: (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.getHours() + ':' + ('0' + d.getMinutes()).slice(-2), score: T2.score, min: T2.min });
+  save(); showResult();
+}
+function showResult() {
+  var T2 = S.test; S.mode = 'result'; S.prob = null;
+  var h = '<div class="top"><button class="btn ghost" data-act="home">← ホームへ</button><span class="mn">模擬テストの結果</span></div><div class="card"><div class="score"><b>' + T2.score + '</b> 点<span>（100点満点・' + T2.min + ' 分）</span></div>';
+  h += '<table class="tl"><tr><th>単元</th><th>正解</th></tr>';
+  for (var u = 1; u < UNITS.length; u++) { var idx = []; T2.probs.forEach(function (p, i) { if (p.unit === u) idx.push(i); }); if (idx.length) h += '<tr><td>' + UNITS[u] + '</td><td>' + idx.filter(function (i) { return T2.results[i].ok; }).length + ' / ' + idx.length + '</td></tr>'; }
+  h += '</table><h3>1問ずつふり返る（押すと、自分の答え・正しい答え・解説が出ます）</h3><div class="rl">' + T2.probs.map(function (p, i) { var r = T2.results[i]; return '<button class="rrow ' + (r.ok ? 'o' : 'x') + '" data-act="review" data-i="' + i + '"><b>' + (i + 1) + '</b><span class="mk">' + (r.ok ? '○' : (r.frac > 0 ? '△' : '×')) + '</span><span>' + esc(p.name) + '</span></button>'; }).join('') + '</div>';
+  var bad = T2.results.filter(function (r) { return !r.ok; }).length;
+  h += '<div class="actions">' + (bad ? '<button class="btn big" data-act="fix">まちがえた ' + bad + ' 問の型を、数字を変えてやり直す</button>' : '') + '<button class="btn" data-act="home">ホームへ</button></div></div>';
+  app.innerHTML = h; window.scrollTo(0, 0);
+}
+/* 点検用：#g=単元番号 で、その単元の型を全部、正しい答えつきで並べる */
+function gallery(u) {
+  var h = '<div class="top"><button class="btn ghost" data-act="home">← ホームへ</button><span class="mn">点検用の一覧</span></div>';
+  TYPES.filter(function (t) { return !u || t.unit === u; }).forEach(function (t) {
+    var p = makeProblem(t.id), a = p.parts.map(rightAns), r = judgeProblem(p, a);
+    h += '<div class="card" style="margin-bottom:14px" data-gid="' + t.id + '"><div class="qhead"><span class="un">' + t.id + '</span><span class="tn">' + esc(t.name) + '</span></div><div class="qbody' + (p.fig ? ' hasfig' : '') + '"><div class="qtext">' + p.html + '</div>' + (p.fig ? '<div class="qfig">' + p.fig + '</div>' : '') + '</div><div class="parts">' + p.parts.map(function (q, i) { return partHtml(q, i, a[i], true, r.parts[i]); }).join('') + '</div><div class="expl">' + p.expl + '</div></div>';
+  });
+  S.prob = null; app.innerHTML = h;
+}
+function figGallery(u) {
+  var h = '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">';
+  TYPES.filter(function (t) { return !u || t.unit === u; }).forEach(function (t) {
+    for (var k = 0; k < 2; k++) {
+      var p = makeProblem(t.id), extra = p.parts.map(function (q) { return q.kind === 'plot' ? plotSvg(q, q.pts, true) : ((q.opts || []).join('').indexOf('<svg') >= 0 ? '<div class="figs">' + q.opts.map(function (o, i) { return '<div style="border:' + (i === q.ans || (q.ans.indexOf && q.ans.indexOf(i) >= 0) ? '3px solid #1a9c5a' : '1px solid #ccc') + '">' + o + '</div>'; }).join('') + '</div>' : ''); }).join('');
+      var ex = (p.expl.match(/<svg[\s\S]*?<\/svg>/) || [''])[0];
+      if (p.fig || extra || ex) h += '<div class="box" style="padding:6px;overflow:hidden"><b>' + t.id + '</b> ' + (p.fig || '') + extra + ex + '</div>';
+    }
+  });
+  S.prob = null; app.style.maxWidth = '1500px'; app.innerHTML = h + '</div>';
+}
+var HG = /^#([gf])=(\d+)$/.exec(location.hash);
+if (HG) (HG[1] === 'g' ? gallery : figGallery)(+HG[2]); else home();
+
+</script>
+</body>
+</html>
