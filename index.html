@@ -383,7 +383,8 @@ var UNITS = [null, '関数 y=ax² のきほん', '関数の利用', 'いろい�
 /* id, 単元, 名前, 苦手(1), 自動で丸つけできる(1), 作る関数 */
 function T(id, unit, name, weak, auto, fn) { TYPES.push({ id: id, unit: unit, name: name, weak: weak, auto: auto, gen: fn }); }
 function typeById(id) { for (var i = 0; i < TYPES.length; i++) if (TYPES[i].id === id) return TYPES[i]; return null; }
-function makeProblem(id) { var t = typeById(id); var p = t.gen(); p.type = id; p.unit = t.unit; p.name = t.name; return p; }
+function tidy(h) { return String(h).replace(/(^|[^\d.\/])1(<i>[a-z]<\/i>)/g, '$1$2').replace(/(^|[^\d.\/])1(\(<i>)/g, '$1$2').replace(/(^|[^\d.\/])0<i>[a-z]<\/i>/g, '$10'); }
+function makeProblem(id) { var t = typeById(id); var p = t.gen(); p.expl = tidy(p.expl); p.type = id; p.unit = t.unit; p.name = t.name; return p; }
 
 /* ===== 丸つけ（画面なしでも動く） ===== */
 function blankAns(p) {
@@ -661,7 +662,7 @@ T('B4', 2, '追いつく問題（放物線と直線）', 0, 1, function () {
 });
 
 T('B10', 2, 'グラフを読む（追いつく・速さ）', 0, 1, function () {
-  var a = F(1, pick([4, 2])), vv = a.d === 4 ? pick([1, 1.5, 2]) : pick([1, 2, 3]), m = vv * a.d, t = pick([2, 4, 6, 8].filter(function (x) { return x !== m; }));
+  var a = F(1, pick([4, 2])), vv = a.d === 4 ? pick([1, 1.5, 2]) : pick([1, 2]), m = vv * a.d, t = pick([2, 4, 6, 8].filter(function (x) { return x !== m && fval(a) * x * x <= 18 && vv * x <= 18; }));
   var g = { xmin: 0, xmax: 8, ymin: 0, ymax: 18, sx: 30, sy: 15, gy: 1, yt: 2, xt: 2, xl: '<tspan font-style="italic">x</tspan>(秒)', yl: '<tspan font-style="italic">y</tspan>(m)', curves: [{ f: function (x) { return fval(a) * x * x; }, c: '#d23' }, { f: function (x) { return vv * x; } }], texts: [{ x: 6.2, y: Math.min(fval(a) * 49 + 1.5, 17), t: '兄', c: '#d23' }, { x: 7.2, y: Math.min(vv * 7.2 - 1.5, 16), t: '弟', c: '#1f4e9c' }] };
   var d1 = fval(a) * t * t, d2 = vv * t;
   return {
@@ -691,7 +692,7 @@ function parabLine() {
   g.texts = [{ x: p, y: a.n > 0 ? -0.6 * (yr / 12 + 0.4) : 0.6 * (yr / 12 + 0.4), t: mn(p), anchor: 'middle' }, { x: q, y: a.n > 0 ? -0.6 * (yr / 12 + 0.4) : 0.6 * (yr / 12 + 0.4), t: String(q), anchor: 'middle' }];
   return { a: a, p: p, q: q, m: m, n: n, ya: ya, yb: yb, g: g, area: fmul(fmul(F(1, 2), fabs(n)), q - p) };
 }
-var NOTE2 = '<span class="note">※ 切片が負のときは、右の□に −3 のように負の数を入れます。</span>';
+var NOTE2 = '<span class="note">※ 傾きが 1 のときは 1、−1 のときは −1 と入れます。切片が負のときは、右の□に −3 のように負の数を入れます。</span>';
 function areaExpl(o) {
   return '直線ABと ' + v('y') + ' 軸の交点をCとすると、C(0, ' + fh(o.n) + ')。OC = ' + fh(fabs(o.n)) + ' を底辺とみて、△OABを ' + v('y') + ' 軸で2つに分ける。<br>△OAB = △OAC + △OBC = ' + frac(1, 2) + ' × ' + fh(fabs(o.n)) + ' × ' + (-o.p) + ' + ' + frac(1, 2) + ' × ' + fh(fabs(o.n)) + ' × ' + o.q + ' = <b>' + fh(o.area) + '</b><br>（高さは A, B の <b>' + v('x') + ' 座標の絶対値</b>。まとめて ' + frac(1, 2) + ' × ' + fh(fabs(o.n)) + ' × (' + (-o.p) + ' + ' + o.q + ') でもよい）';
 }
@@ -895,7 +896,7 @@ T('C3', 3, '階段のグラフを読む（● と ○）', 0, 1, function () {
 
 T('C4', 3, '2倍、2倍…とふえる関数（分裂・紙を切る）', 1, 1, function () {
   if (ri(0, 2)) {
-    var Tm = pick([20, 30, 15, 10]), n1 = ri(3, 6), k2 = ri(2, 5), t2 = Tm * k2 + pick([5, Tm / 2, Tm - 5]), N = pick([50, 100, 200, 500, 1000]), kN = 0;
+    var Tm = pick([20, 30, 15, 10]), n1 = ri(3, 6), k2 = ri(2, 5), t2 = Tm * k2 + pick([5, Tm - 5]), N = pick([50, 100, 200, 500, 1000]), kN = 0;
     while (Math.pow(2, kN) < N) kN++;
     return {
       html: Tm + ' 分ごとに1回分裂して、1個が2個になる細菌があります。分裂してできた細菌も、それぞれ ' + Tm + ' 分ごとに2個に分裂します。はじめ（0分後）に1個あった細菌が、' + v('x') + ' 分後に ' + v('y') + ' 個になっているとします。ただし、' + Tm + ' 分後に1回目の分裂が起こるものとします。',
@@ -1060,6 +1061,7 @@ T('D6', 4, '相似条件を見分ける', 0, 1, function () {
     ans = 2; ex = '△DEF の残りの角は ∠F = 180° − (' + al + '° + ' + b2 + '°) = ' + g2 + '°。∠B = ∠E = ' + b2 + '°、∠C = ∠F = ' + g2 + '°。<b>かいていない角は、三角形の内角の和 180° から計算する。</b>';
   } else {
     var b3 = pick([40, 50, 35, 45]), g3 = pick([60, 70, 80, 65]), a3 = 180 - b3 - g3, g4 = g3 + pick([5, 10, -5]), a4 = 180 - b3 - g4;
+    if ([b3, g4, a4].sort().join() === [b3, g3, a3].sort().join()) return typeById('D6').gen();
     f1 = triFig(triAA(b3, g3), 'ABC', { angB: b3 + '°', angC: g3 + '°' }); f2 = triFig(triAA(b3, g4), 'DEF', { angA: a4 + '°', angB: b3 + '°', mir: mir });
     ans = 3; ex = '△DEF の残りの角は ∠F = 180° − (' + a4 + '° + ' + b3 + '°) = ' + g4 + '°。△ABC の角は ' + b3 + '°、' + g3 + '°、' + a3 + '°、△DEF の角は ' + b3 + '°、' + g4 + '°、' + a4 + '°。等しい角は1組だけなので、相似とはいえない。';
   }
@@ -1270,7 +1272,7 @@ T('D15', 5, '正三角形を使った相似の証明（穴うめ）', 0, 1, func
 
 /* ---------- 単元6：相似の利用・有効数字 ---------- */
 T('E1', 6, '縮図を使って距離を求める', 0, 1, function () {
-  var n = pick([500, 800, 1000, 200, 400]), a2 = pick([3.5, 4, 2.5, 3, 4.5]), b2 = pick([5, 6, 5.5, 4.5]), c2 = pick([4.5, 5.2, 3.8, 6.1, 4.2]), ang = pick([61, 55, 70, 48]);
+  var n = pick([500, 800, 1000, 200, 400]), a2 = pick([3.5, 4, 2.5, 3, 4.5]), b2 = pick([5, 6, 5.5, 4.5]), ang = pick([61, 55, 70, 48]), c2 = Math.round(Math.sqrt(a2 * a2 + b2 * b2 - 2 * a2 * b2 * Math.cos(ang * Math.PI / 180)) * 10) / 10;
   var P = triSAS(a2, b2, ang), fig = geo({ pts: rename(P, { A: 'A', B: 'O', C: 'B' }), segs: ['AO', 'OB', 'BA'], lens: [['AO', dn(a2 * n / 100) + 'm'], ['OB', dn(b2 * n / 100) + 'm']], angs: [['O', 'A', 'B', ang + '°']], w: 250, hmax: 200 });
   return {
     html: '池をはさんだ2地点 A, B 間の距離を求めるために、地点Oを決めて調べたところ、OA = ' + dn(a2 * n / 100) + ' m、OB = ' + dn(b2 * n / 100) + ' m、∠AOB = ' + ang + '° でした。そこで、O′A′ = ' + a2 + ' cm となるように △AOB の縮図 △A′O′B′ をかきました。',
@@ -1305,17 +1307,17 @@ T('E3', 6, '見上げる角度と縮図（目の高さをたす）', 0, 1, funct
 });
 
 T('E4', 6, '真の値の範囲と誤差', 0, 1, function () {
-  var k = ri(0, 2), lo, hi, val, html, unit, er;
-  if (k === 0) { var dec = pick([1, 2]), st = dec === 1 ? 0.1 : 0.01; val = dec === 1 ? ri(21, 989) / 10 + 100 * ri(0, 1) : ri(101, 999) / 100; val = Math.round(val * 100) / 100; unit = pick(['cm', 'kg', 'm']); er = st / 2; lo = val - er; hi = val + er; html = '最小の目もりが ' + st + ' ' + unit + ' のはかりで、ある量をはかったら ' + val.toFixed(dec) + ' ' + unit + ' でした。'; }
+  var k = ri(0, 2), lo, hi, val, html, unit, er, vs;
+  if (k === 0) { var dec = pick([1, 2]), st = dec === 1 ? 0.1 : 0.01; val = dec === 1 ? ri(21, 989) / 10 + 100 * ri(0, 1) : ri(101, 999) / 100; val = Math.round(val * 100) / 100; unit = pick(['cm', 'kg', 'm']); er = st / 2; lo = val - er; hi = val + er; vs = val.toFixed(dec); html = '最小の目もりが ' + st + ' ' + unit + ' のはかりで、ある量をはかったら ' + val.toFixed(dec) + ' ' + unit + ' でした。'; }
   else if (k === 1) { val = ri(12, 98) * 10; unit = 'g'; er = 5; lo = val - 5; hi = val + 5; html = 'ある重さを測定し、10 g 未満を四捨五入して、測定値 ' + val + ' g を得ました。'; }
   else { val = ri(12, 98) * 100; unit = 'm'; er = 50; lo = val - 50; hi = val + 50; html = 'ある距離を測定し、100 m 未満を四捨五入して、測定値 ' + val + ' m を得ました。'; }
-  lo = Math.round(lo * 1000) / 1000; hi = Math.round(hi * 1000) / 1000;
+  if (!vs) vs = String(val); lo = Math.round(lo * 1000) / 1000; hi = Math.round(hi * 1000) / 1000;
   return {
     html: html + ' 真の値を ' + v('a') + ' ' + unit + ' とします。',
     parts: [nums('(1) ' + v('a') + ' の範囲を、不等号を使って表しなさい。', [0, ' ≦ <i>a</i> &lt; ', 1], [lo, hi]),
       num('(2) 誤差の絶対値は、もっとも大きくていくらですか。', '', er, ' ' + unit),
       choice('(3) 誤差の求め方として正しいものを選びなさい。', '（誤差）＝（近似値）−（真の値）', ['（誤差）＝（真の値）−（近似値）', '（誤差）＝（近似値）÷（真の値）', '（誤差）＝（近似値）＋（真の値）'])],
-    expl: '(1) 四捨五入して ' + dn(val) + ' になる数は、' + dn(lo) + ' <b>以上</b> ' + dn(hi) + ' <b>未満</b>。　<b>' + dn(lo) + ' ≦ ' + v('a') + ' &lt; ' + dn(hi) + '</b><br>（' + dn(hi) + ' は四捨五入すると1つ上になるので、ふくまない。右側は ≦ ではなく &lt;）<br>(2) 測定値 ' + dn(val) + ' から、いちばんはなれていても ' + dn(er) + '。　<b>' + dn(er) + '</b> ' + unit + '<br>(3) （誤差）＝（近似値）−（真の値）'
+    expl: '(1) 四捨五入して ' + vs + ' になる数は、' + dn(lo) + ' <b>以上</b> ' + dn(hi) + ' <b>未満</b>。　<b>' + dn(lo) + ' ≦ ' + v('a') + ' &lt; ' + dn(hi) + '</b><br>（' + dn(hi) + ' は四捨五入すると1つ上になるので、ふくまない。右側は ≦ ではなく &lt;）<br>(2) 測定値 ' + vs + ' から、いちばんはなれていても ' + dn(er) + '。　<b>' + dn(er) + '</b> ' + unit + '<br>(3) （誤差）＝（近似値）−（真の値）'
   };
 });
 
@@ -1414,7 +1416,7 @@ T('F3', 7, '三角形と比③（砂時計の形）', 0, 1, function () {
 });
 
 T('F4', 7, 'どの比を使うか選んで求める', 1, 1, function () {
-  var o = f2setup(), AB = o.AD + o.DB;
+  var o; do { o = f2setup(); } while (o.AD === o.AE || o.AD === o.DB); var AB = o.AD + o.DB;
   return {
     html: '右の図で、DE ∥ BC です。',
     fig: deFig(o.p / (o.p + o.q), [['AD', dn(o.AD)], ['DB', dn(o.DB)], ['AE', dn(o.AE)], ['EC', IY], ['BC', dn(o.BC)], ['DE', IX, -1, 8]]),
