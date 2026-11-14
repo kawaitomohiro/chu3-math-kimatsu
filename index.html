@@ -161,6 +161,27 @@ svg text{font-family:"Times New Roman","Hiragino Mincho ProN","Yu Mincho",serif}
 .exans>span,.expt>span,.exmiss>span{display:inline-block;font-weight:bold;font-size:14px;border-radius:99px;padding:0 12px;margin-right:10px;color:#fff}
 .exans>span{background:#1a9c5a}.expt>span{background:#1f4e9c}.exmiss>span{background:#c33}
 
+/* かんぺきメーター */
+.goal{background:#fff;border-radius:16px;padding:16px 22px 18px;margin-bottom:16px;box-shadow:0 2px 8px #0002;border-left:8px solid #1f9d6b}
+.goal.done{border-left-color:#e0a100;background:linear-gradient(90deg,#fff8e0,#fff 60%)}
+.goal .gh{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.goal h2{margin:0;font-size:22px}
+.goal .gp{margin-left:auto;color:#12784a;font-size:18px}.goal .gp b{font-size:40px;line-height:1}
+.goal.done .gp{color:#a87400}
+.goal .gl{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:16px;margin-top:6px}
+.goal .gl b{font-size:22px}
+.goal .gc{margin:8px 0 10px;font-size:17px;color:#234}
+.goal .gb{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.goal .gb .sm{margin-left:0;flex:1;min-width:260px}
+.mbar{height:18px;background:#e4e9f0;border-radius:99px;overflow:hidden;margin:8px 0 2px}
+.mbar>i{display:block;height:100%;background:linear-gradient(90deg,#35b98a,#1f9d6b);border-radius:99px;transition:width .5s;padding:0;font-size:0}
+.mbar.ex>i{background:linear-gradient(90deg,#f2c230,#e08a00)}
+.mbar.mini{height:8px;width:110px;margin:0;display:inline-block;vertical-align:middle;flex:none}
+.bd.k{background:#dff5ea;color:#12784a}.bd.h{background:#eef3f8;color:#456}
+.top .gm{margin-left:14px;font-size:15px;color:#345;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.top .gm b{font-size:19px;color:#12784a}
+.info.star{font-weight:bold;background:#fff3c4;color:#6b4a00}
+
 </style>
 </head>
 <body>
@@ -3215,12 +3236,58 @@ function save() { try { localStorage.setItem(KEY, JSON.stringify(ST)); } catch (
 function stat(id) { if (!ST.types[id]) ST.types[id] = { n: 0, ok: 0, need: 0 }; return ST.types[id]; }
 var S = { mode: null, prob: null, ans: null, judged: false, res: null, focus: null, count: 0, right: 0, param: null, order: [], test: null, timer: null };
 var app = document.getElementById('app');
-var MODE_NAME = { unit: '単元ごとの練習', type: '同じ型をくり返す', weak: '苦手とっくん', fix: 'まちがい直し', test: '模擬テスト', review: 'テストのふり返り' };
+var MODE_NAME = { goal: 'ゴールをめざす', unit: '単元ごとの練習', type: '同じ型をくり返す', weak: '苦手とっくん', fix: 'まちがい直し', test: '模擬テスト', review: 'テストのふり返り' };
 function plain(o) { return String(o).replace(/<span class="fr"><span>(.*?)<\/span><span>(.*?)<\/span><\/span>/g, '$1/$2 ').replace(/<[^>]+>/g, ''); }
 function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
 function needList() { return TYPES.filter(function (t) { return stat(t.id).need > 0; }); }
 function isWeak(t) { var s = stat(t.id); return s.need > 0 || (t.weak && s.ok < 3) || (s.n >= 3 && s.ok / s.n < 0.6); }
 function weight(t) { var s = stat(t.id); return 1 + (t.weak && s.ok < 3 ? 4 : 0) + s.need * 4 + (s.n ? (1 - s.ok / s.n) * 4 : 1); }
+/* ---------- かんぺきメーター（同じ型で2回続けて正解＝かんぺき） ---------- */
+var EXU = 9;
+function pts(t) { var s = stat(t.id); return s.need > 0 ? 2 - s.need : Math.min(s.ok, 2); }
+function mastered(t) { return pts(t) >= 2; }
+function baseTypes() { return TYPES.filter(function (t) { return t.unit !== EXU; }); }
+function exTypes() { return TYPES.filter(function (t) { return t.unit === EXU; }); }
+function prog(list) { var p = 0, m = 0; list.forEach(function (t) { var x = pts(t); p += x; if (x >= 2) m++; }); return { n: list.length, m: m, left: list.length * 2 - p, pct: Math.floor(p / (list.length * 2) * 100) }; }
+function meterBar(pct, cls) { return '<div class="mbar ' + (cls || '') + '"><i style="width:' + pct + '%"></i></div>'; }
+function cheer(g) {
+  if (g.pct === 0) return 'まずは1つ、「かんぺき」を作ってみよう。';
+  if (g.left <= 10) return 'ゴールは目の前。あと ' + g.left + ' 問、正解するだけ。';
+  if (g.pct < 25) return 'いいスタート。この調子で1つずつ。';
+  if (g.pct < 50) return '調子が出てきた。もうすぐ半分。';
+  if (g.pct < 75) return '半分をこえた。ここまで来る人は、じつは多くない。';
+  return 'ゴールが見えてきた。ここからは1問ごとに終わりが近づく。';
+}
+function goalHtml() {
+  var g = prog(baseTypes()), x = prog(exTypes()), best = ST.tests.reduce(function (a, t) { return Math.max(a, t.score); }, 0), h = '<div class="goal' + (g.left ? '' : ' done') + '">';
+  if (g.left) {
+    h += '<div class="gh"><h2>かんぺきメーター</h2><span class="gp"><b>' + g.pct + '</b>%</span></div>' + meterBar(g.pct) +
+      '<div class="gl"><span>かんぺきになった型 <b>' + g.m + '</b> / ' + g.n + '</span><span>ゴールまで、最短であと <b>' + g.left + '</b> 問 正解</span></div>' +
+      '<p class="gc">' + cheer(g) + '</p>' +
+      '<div class="gb"><button class="btn big" data-act="goal">ゴールをめざす（まだの型だけ出します）</button><span class="sm">同じ型で2回続けて正解すると「かんぺき」。テスト範囲の ' + g.n + ' の型がぜんぶ かんぺき になったらゴールです。</span></div>';
+  } else if (x.left) {
+    h += '<div class="gh"><h2>ゴール達成　テスト範囲の ' + g.n + ' の型、ぜんぶ かんぺき</h2><span class="gp"><b>100</b>%</span></div>' + meterBar(100) +
+      '<p class="gc">ここでやめても、もう十分です。<br>……ただ、ここまで来られる人なら、<b>発展（入試レベル）</b>も解けてしまうかもしれません。' + (x.m ? 'すでに ' + x.m + ' 個は かんぺき です。' : '') + '</p>' +
+      '<div class="gl"><span>発展の型 <b>' + x.m + '</b> / ' + x.n + '</span><span>完全制覇まで、最短であと <b>' + x.left + '</b> 問 正解</span></div>' + meterBar(x.pct, 'ex') +
+      '<div class="gb"><button class="btn big" data-act="goal">発展にちょうせんする</button><span class="sm">やらなくても大丈夫。やれたら、かなりすごい。</span></div>';
+  } else {
+    h += '<div class="gh"><h2>完全制覇　発展まで ' + TYPES.length + ' の型、ぜんぶ かんぺき</h2><span class="gp"><b>100</b>%</span></div>' + meterBar(100) + meterBar(100, 'ex') +
+      '<p class="gc">このアプリの問題は、ぜんぶ自分のものになりました。もうやることはありません。<br>' +
+      (best >= 95 ? '模擬テストも ' + best + ' 点。あとは当日、いつもどおりに解くだけです。' : '……と言いたいところですが、<b>模擬テストで 95 点</b>をこえたら本物です。' + (best ? 'いまの最高は ' + best + ' 点。' : '') + 'ためしてみたくなりませんか。') + '</p>' +
+      (best >= 95 ? '' : '<div class="gb"><button class="btn big" data-act="test">模擬テストで力だめし</button></div>');
+  }
+  return h + '</div>';
+}
+function checkGoal() {
+  var g = prog(baseTypes()), x = prog(exTypes()), stay = S.mode === 'result' ? 'ホームへ' : '解説を見てから決める', fn = S.mode === 'result' ? home : null;
+  if (!g.left && !ST.g1) {
+    ST.g1 = true; if (!x.left) ST.g2 = true; save();
+    msg('ゴール！　テスト範囲は ぜんぶ かんぺき', 'テスト範囲の ' + g.n + ' の型を、ぜんぶ2回続けて正解しました。ここまでやり切ったのは本当にすごいことです。今日はここで終わりにしても十分です。<br><br>……ただ、ここまで来られる人なら、<b>発展（入試レベル）</b>の ' + x.n + ' 個も、もしかすると解けてしまうかもしれません。', [[stay, fn], ['発展にちょうせんする', function () { start('goal'); }]]);
+  } else if (!x.left && !g.left && !ST.g2) {
+    ST.g2 = true; save();
+    msg('完全制覇！　発展まで ぜんぶ かんぺき', '入試レベルの発展まで、' + TYPES.length + ' の型をぜんぶ自分のものにしました。ここまでできる中学生は、そう多くありません。<br><br>もうやることはありません。……と言いたいところですが、<b>模擬テストで 95 点</b>をこえられるか、ためしてみたくなりませんか。', [[stay, fn], ['模擬テストで力だめし', startTest]]);
+  }
+}
 function wpick(list, avoid) {
   var ws = list.map(function (t) { return weight(t) * (t.id === avoid && list.length > 1 ? 0.05 : 1); }), sum = ws.reduce(function (a, b) { return a + b; }, 0), r = Math.random() * sum;
   for (var i = 0; i < list.length; i++) { r -= ws[i]; if (r <= 0) return list[i]; }
@@ -3233,6 +3300,7 @@ function home() {
   var n = 0, ok = 0; TYPES.forEach(function (t) { var s = stat(t.id); n += s.n; ok += s.ok; });
   var need = needList().length, done = TYPES.filter(function (t) { return stat(t.id).ok > 0; }).length;
   var h = '<header class="hd"><h1>中3数学　期末テスト対策</h1><p>関数 <i>y</i> = <i>ax</i><sup>2</sup> の利用・いろいろな関数／相似な図形／平行線と比　<span class="sm">全 ' + TYPES.length + ' の型・数字は毎回変わります</span></p></header>';
+  h += goalHtml();
   h += '<div class="sum"><div><b>' + n + '</b>問<span>解いた数</span></div><div><b>' + (n ? Math.round(ok / n * 100) : 0) + '</b>%<span>正解率</span></div><div><b>' + done + '</b>/' + TYPES.length + '<span>正解したことのある型</span></div><div class="' + (need ? 'warn' : '') + '"><b>' + need + '</b>個<span>やり直し待ちの型</span></div>' + (ST.tests.length ? '<div><b>' + ST.tests[ST.tests.length - 1].score + '</b>点<span>前回の模擬テスト</span></div>' : '') + '</div>';
   h += '<div class="modes">' +
     '<button class="mode m1" data-act="weak"><b>苦手とっくん</b><span>苦手な型と、まちがえた型を多めに出します。まずはここから。</span></button>' +
@@ -3251,10 +3319,10 @@ function home() {
   h += '<h2 class="sec">単元と型をえらんで練習する</h2>';
   for (var u = 1; u < UNITS.length; u++) {
     var ts = TYPES.filter(function (t) { return t.unit === u; });
-    h += '<details class="unit"' + (ts.some(function (t) { return stat(t.id).need > 0; }) ? ' open' : '') + '><summary><b>' + u + '. ' + UNITS[u] + '</b><span class="sm">' + ts.length + ' の型</span><button class="btn sm2" data-act="unit" data-u="' + u + '">この単元をまとめて練習</button></summary><table class="tl">';
+    h += '<details class="unit"' + (ts.some(function (t) { return stat(t.id).need > 0; }) ? ' open' : '') + '><summary><b>' + u + '. ' + UNITS[u] + '</b><span class="sm">かんぺき ' + ts.filter(mastered).length + ' / ' + ts.length + '</span>' + meterBar(prog(ts).pct, 'mini' + (u === EXU ? ' ex' : '')) + '<button class="btn sm2" data-act="unit" data-u="' + u + '">この単元をまとめて練習</button></summary><table class="tl">';
     ts.forEach(function (t) {
       var s = stat(t.id);
-      h += '<tr><td>' + esc(t.name) + (t.weak ? '<span class="bd w">苦手</span>' : '') + (s.need ? '<span class="bd n">やり直し あと' + s.need + '回</span>' : '') + (!t.auto ? '<span class="bd s">自分で丸つけ</span>' : '') + '</td><td class="rc">' + (s.n ? s.ok + ' / ' + s.n + ' 問' : '<span class="sm">まだ</span>') + '</td><td><button class="btn" data-act="type" data-id="' + t.id + '">練習する</button></td></tr>';
+      h += '<tr><td>' + esc(t.name) + (t.weak ? '<span class="bd w">苦手</span>' : '') + (mastered(t) ? '<span class="bd k">★ かんぺき</span>' : (s.need ? '<span class="bd n">やり直し あと' + s.need + '回</span>' : (pts(t) === 1 ? '<span class="bd h">あと1回でかんぺき</span>' : ''))) + (!t.auto ? '<span class="bd s">自分で丸つけ</span>' : '') + '</td><td class="rc">' + (s.n ? s.ok + ' / ' + s.n + ' 問' : '<span class="sm">まだ</span>') + '</td><td><button class="btn" data-act="type" data-id="' + t.id + '">練習する</button></td></tr>';
     });
     h += '</table></details>';
   }
@@ -3275,6 +3343,12 @@ function nextType() {
   var list;
   if (S.mode === 'type') return typeById(S.param);
   if (S.mode === 'fix') { list = needList(); if (!list.length) return null; return wpick(list, S.last); }
+  if (S.mode === 'goal') {
+    list = baseTypes().filter(function (t) { return !mastered(t); });
+    if (!list.length) list = exTypes().filter(function (t) { return !mastered(t); });
+    if (!list.length) return null;
+    return wpick(list, S.last);
+  }
   if (S.mode === 'weak') { list = TYPES.filter(isWeak); if (list.length < 6) list = TYPES; return wpick(list, S.last); }
   if (!S.order.length) S.order = shuffle(TYPES.filter(function (t) { return S.param ? t.unit === S.param : true; }));
   if (!S.param && S.count === 0) S.order = TYPES.slice();
@@ -3282,6 +3356,7 @@ function nextType() {
 }
 function next(sameType) {
   var t = sameType ? typeById(S.prob.type) : nextType();
+  if (!t && S.mode === 'goal') { home(); return; }
   if (!t) { msg('まちがい直しが全部おわりました', 'やり直し待ちの型は 0 個です。よくがんばりました。', [['ホームへ', home]]); return; }
   S.last = t.id; setProblem(makeProblem(t.id)); S.count++; drawProblem();
 }
@@ -3355,7 +3430,7 @@ function drawProblem() {
   var p = S.prob, test = S.mode === 'test', rev = S.mode === 'review', t = typeById(p.type), h = '';
   h += '<div class="top"><button class="btn ghost" data-act="quit">← ' + (rev ? '結果にもどる' : (test ? 'テストをやめる' : 'ホームへ')) + '</button><span class="mn">' + MODE_NAME[S.mode] + '</span>';
   if (test || rev) h += '<span class="pg">' + (S.test.i + 1) + ' / ' + S.test.probs.length + ' 問</span>' + (test ? '<span class="tm" id="tm"></span>' : '');
-  else h += '<span class="pg">' + S.count + ' 問目　正解 ' + S.right + '</span>';
+  else { var g = prog(baseTypes()), gx = prog(exTypes()); h += '<span class="pg">' + S.count + ' 問目　正解 ' + S.right + '</span><span class="gm">' + (g.left ? 'ゴールまで あと <b>' + g.left + '</b> 問' : (gx.left ? '完全制覇まで あと <b>' + gx.left + '</b> 問' : '完全制覇')) + meterBar(g.left ? g.pct : gx.pct, 'mini' + (g.left ? '' : ' ex')) + '</span>'; }
   h += '</div>';
   if (test || rev) h += '<div class="nav">' + S.test.probs.map(function (q, i) { var d = S.test.answers[i] && answered(q, S.test.answers[i]); return '<button class="nb' + (i === S.test.i ? ' cur' : '') + (rev ? (S.test.results[i].ok ? ' o' : ' x') : (d ? ' done' : '')) + '" data-act="goto" data-i="' + i + '">' + (i + 1) + '</button>'; }).join('') + '</div>';
   h += '<div class="card"><div class="qhead"><span class="un">' + UNITS[p.unit] + '</span><span class="tn">' + esc(p.name) + '</span>' + (t.weak ? '<span class="bd w">苦手</span>' : '') + (stat(p.type).need && !test ? '<span class="bd n">やり直し あと' + stat(p.type).need + '回</span>' : '') + '</div>';
@@ -3373,7 +3448,7 @@ function actionsHtml() {
   if (test) return '<button class="btn" data-act="prev"' + (S.test.i === 0 ? ' disabled' : '') + '>← 前の問題</button>' + (S.test.i < S.test.probs.length - 1 ? '<button class="btn big" data-act="tnext">次の問題 →</button>' : '') + '<button class="btn ng" data-act="finish">テストを終わって丸つけする</button>';
   if (rev) return '<button class="btn" data-act="prev"' + (S.test.i === 0 ? ' disabled' : '') + '>← 前の問題</button><button class="btn" data-act="tnext"' + (S.test.i === S.test.probs.length - 1 ? ' disabled' : '') + '>次の問題 →</button><button class="btn big" data-act="type" data-id="' + S.prob.type + '">この型を練習する</button>';
   if (!S.judged) return S.prob.parts.every(function (q) { return q.kind === 'self'; }) ? '' : '<button class="btn big" data-act="judge">判定する</button><button class="btn ghost" data-act="skip">わからない（答えを見る）</button>';
-  var s = stat(S.prob.type), tx = S.res.ok ? (s.need ? '<div class="info ok">正解。この型はあと ' + s.need + ' 回続けて正解すると「まちがい直し」から消えます。</div>' : '<div class="info ok">正解。</div>') : '<div class="info ng">この型は「まちがい直し」に入りました。数字を変えて、2回続けて正解するまで出ます。</div>';
+  var s = stat(S.prob.type), ty = typeById(S.prob.type), g = prog(ty.unit === EXU ? exTypes() : baseTypes()), tx = S.res.ok ? (S.justM ? '<div class="info ok star">正解。★ この型は「かんぺき」になりました。（' + (ty.unit === EXU ? '発展 ' : '') + g.m + ' / ' + g.n + (g.left ? '・あと ' + g.left + ' 問' : '') + '）</div>' : (mastered(ty) ? '<div class="info ok">正解。この型は、もう「かんぺき」です。</div>' : '<div class="info ok">正解。この型は、あと1回続けて正解すると「かんぺき」です。</div>')) : '<div class="info ng">' + (S.lostM ? '「かんぺき」がいったん外れました。' : '') + 'この型は「まちがい直し」に入りました。数字を変えて、2回続けて正解すると「かんぺき」になります。</div>';
   return tx + '<button class="btn big" data-act="next">次の問題へ</button><button class="btn" data-act="again">同じ型をもう1問（数字を変えて）</button>';
 }
 function answered(p, ans) {
@@ -3390,9 +3465,10 @@ function doJudge(force) {
   if (S.judged || S.mode === 'test' || S.mode === 'review') return;
   if (!force && !S.warned && !answered(S.prob, S.ans)) { S.warned = true; document.getElementById('warn').innerHTML = 'まだ入れていない所があります。入れてから、もう一度「判定する」を押します。（このまま押すと、そのまま判定します）'; return; }
   S.res = judgeProblem(S.prob, S.ans); S.judged = true;
-  var s = stat(S.prob.type); s.n++;
+  var s = stat(S.prob.type), ty = typeById(S.prob.type), was = mastered(ty); s.n++;
   if (S.res.ok) { s.ok++; S.right++; if (s.need > 0) s.need--; } else s.need = 2;
-  save(); drawProblem();
+  S.justM = !was && mastered(ty); S.lostM = was && !mastered(ty);
+  save(); drawProblem(); checkGoal();
 }
 
 /* ---------- 入力 ---------- */
@@ -3454,7 +3530,7 @@ app.addEventListener('click', function (e) {
     t.innerHTML = plotSvg(q, arr, false); return;
   }
   var a = t.dataset.act;
-  if (a === 'weak' || a === 'fix') start(a);
+  if (a === 'weak' || a === 'fix' || a === 'goal') start(a);
   else if (a === 'all') start('unit', 0);
   else if (a === 'unit') { e.preventDefault(); start('unit', +t.dataset.u); }
   else if (a === 'type') { stopTimer(); start('type', t.dataset.id); }
@@ -3518,7 +3594,7 @@ function finishTest() {
   T2.results = T2.probs.map(function (p, i) { var r = judgeProblem(p, T2.answers[i]); score += per * r.frac; var s = stat(p.type); s.n++; if (r.ok) { s.ok++; if (s.need > 0) s.need--; } else s.need = 2; return r; });
   T2.score = Math.round(score); T2.min = Math.max(1, Math.round((Date.now() - T2.start) / 60000));
   var d = new Date(); ST.tests.push({ date: (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.getHours() + ':' + ('0' + d.getMinutes()).slice(-2), score: T2.score, min: T2.min });
-  save(); showResult();
+  save(); showResult(); checkGoal();
 }
 function showResult() {
   var T2 = S.test; S.mode = 'result'; S.prob = null;
