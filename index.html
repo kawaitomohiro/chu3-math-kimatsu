@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>中3数学 期末テスト対策</title>
+<title>がんばれ芭ちゃん！テストまんてん講座（数学）</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#f3f5f9;color:#1c2330;font-family:"BIZ UDPGothic","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;font-size:18px;line-height:1.75}
@@ -181,6 +181,8 @@ svg text{font-family:"Times New Roman","Hiragino Mincho ProN","Yu Mincho",serif}
 .top .gm{margin-left:14px;font-size:15px;color:#345;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
 .top .gm b{font-size:19px;color:#12784a}
 .info.star{font-weight:bold;background:#fff3c4;color:#6b4a00}
+
+.hd h1{color:#d9482b;font-size:34px}.hd h1 .ttl2{color:#1c2330;margin-left:10px}.hd h1 .ttl3{font-size:16px;color:#667;font-weight:normal;margin-left:14px}
 
 </style>
 </head>
@@ -3251,11 +3253,11 @@ function exTypes() { return TYPES.filter(function (t) { return t.unit === EXU; }
 function prog(list) { var p = 0, m = 0; list.forEach(function (t) { var x = pts(t); p += x; if (x >= 2) m++; }); return { n: list.length, m: m, left: list.length * 2 - p, pct: Math.floor(p / (list.length * 2) * 100) }; }
 function meterBar(pct, cls) { return '<div class="mbar ' + (cls || '') + '"><i style="width:' + pct + '%"></i></div>'; }
 function cheer(g) {
-  if (g.pct === 0) return 'まずは1つ、「かんぺき」を作ってみよう。';
-  if (g.left <= 10) return 'ゴールは目の前。あと ' + g.left + ' 問、正解するだけ。';
+  if (g.pct === 0) return '芭ちゃん、まずは1つ、「かんぺき」を作ってみよう。';
+  if (g.left <= 10) return '芭ちゃん、ゴールは目の前。あと ' + g.left + ' 問、正解するだけ。';
   if (g.pct < 25) return 'いいスタート。この調子で1つずつ。';
   if (g.pct < 50) return '調子が出てきた。もうすぐ半分。';
-  if (g.pct < 75) return '半分をこえた。ここまで来る人は、じつは多くない。';
+  if (g.pct < 75) return '半分をこえた。さすが芭ちゃん。ここまで来る人は、じつは多くない。';
   return 'ゴールが見えてきた。ここからは1問ごとに終わりが近づく。';
 }
 function goalHtml() {
@@ -3267,12 +3269,12 @@ function goalHtml() {
       '<div class="gb"><button class="btn big" data-act="goal">ゴールをめざす（まだの型だけ出します）</button><span class="sm">同じ型で2回続けて正解すると「かんぺき」。テスト範囲の ' + g.n + ' の型がぜんぶ かんぺき になったらゴールです。</span></div>';
   } else if (x.left) {
     h += '<div class="gh"><h2>ゴール達成　テスト範囲の ' + g.n + ' の型、ぜんぶ かんぺき</h2><span class="gp"><b>100</b>%</span></div>' + meterBar(100) +
-      '<p class="gc">ここでやめても、もう十分です。<br>……ただ、ここまで来られる人なら、<b>発展（入試レベル）</b>も解けてしまうかもしれません。' + (x.m ? 'すでに ' + x.m + ' 個は かんぺき です。' : '') + '</p>' +
+      '<p class="gc">芭ちゃん、ここでやめても、もう十分です。<br>……ただ、ここまで来られる芭ちゃんなら、<b>発展（入試レベル）</b>も解けてしまうかもしれません。' + (x.m ? 'すでに ' + x.m + ' 個は かんぺき です。' : '') + '</p>' +
       '<div class="gl"><span>発展の型 <b>' + x.m + '</b> / ' + x.n + '</span><span>完全制覇まで、最短であと <b>' + x.left + '</b> 問 正解</span></div>' + meterBar(x.pct, 'ex') +
       '<div class="gb"><button class="btn big" data-act="goal">発展にちょうせんする</button><span class="sm">やらなくても大丈夫。やれたら、かなりすごい。</span></div>';
   } else {
     h += '<div class="gh"><h2>完全制覇　発展まで ' + TYPES.length + ' の型、ぜんぶ かんぺき</h2><span class="gp"><b>100</b>%</span></div>' + meterBar(100) + meterBar(100, 'ex') +
-      '<p class="gc">このアプリの問題は、ぜんぶ自分のものになりました。もうやることはありません。<br>' +
+      '<p class="gc">芭ちゃん、まんてん講座は卒業です。問題は、ぜんぶ自分のものになりました。もうやることはありません。<br>' +
       (best >= 95 ? '模擬テストも ' + best + ' 点。あとは当日、いつもどおりに解くだけです。' : '……と言いたいところですが、<b>模擬テストで 95 点</b>をこえたら本物です。' + (best ? 'いまの最高は ' + best + ' 点。' : '') + 'ためしてみたくなりませんか。') + '</p>' +
       (best >= 95 ? '' : '<div class="gb"><button class="btn big" data-act="test">模擬テストで力だめし</button></div>');
   }
@@ -3282,10 +3284,10 @@ function checkGoal() {
   var g = prog(baseTypes()), x = prog(exTypes()), stay = S.mode === 'result' ? 'ホームへ' : '解説を見てから決める', fn = S.mode === 'result' ? home : null;
   if (!g.left && !ST.g1) {
     ST.g1 = true; if (!x.left) ST.g2 = true; save();
-    msg('ゴール！　テスト範囲は ぜんぶ かんぺき', 'テスト範囲の ' + g.n + ' の型を、ぜんぶ2回続けて正解しました。ここまでやり切ったのは本当にすごいことです。今日はここで終わりにしても十分です。<br><br>……ただ、ここまで来られる人なら、<b>発展（入試レベル）</b>の ' + x.n + ' 個も、もしかすると解けてしまうかもしれません。', [[stay, fn], ['発展にちょうせんする', function () { start('goal'); }]]);
+    msg('やったね芭ちゃん！　テスト範囲は ぜんぶ かんぺき', 'テスト範囲の ' + g.n + ' の型を、ぜんぶ2回続けて正解しました。ここまでやり切ったのは本当にすごいことです。今日はここで終わりにしても十分です。<br><br>……ただ、ここまで来られる芭ちゃんなら、<b>発展（入試レベル）</b>の ' + x.n + ' 個も、もしかすると解けてしまうかもしれません。', [[stay, fn], ['発展にちょうせんする', function () { start('goal'); }]]);
   } else if (!x.left && !g.left && !ST.g2) {
     ST.g2 = true; save();
-    msg('完全制覇！　発展まで ぜんぶ かんぺき', '入試レベルの発展まで、' + TYPES.length + ' の型をぜんぶ自分のものにしました。ここまでできる中学生は、そう多くありません。<br><br>もうやることはありません。……と言いたいところですが、<b>模擬テストで 95 点</b>をこえられるか、ためしてみたくなりませんか。', [[stay, fn], ['模擬テストで力だめし', startTest]]);
+    msg('芭ちゃん、完全制覇！　発展まで ぜんぶ かんぺき', 'まんてん講座は卒業です。入試レベルの発展まで、' + TYPES.length + ' の型をぜんぶ自分のものにしました。ここまでできる中学生は、そう多くありません。<br><br>もうやることはありません。……と言いたいところですが、<b>模擬テストで 95 点</b>をこえられるか、ためしてみたくなりませんか。', [[stay, fn], ['模擬テストで力だめし', startTest]]);
   }
 }
 function wpick(list, avoid) {
@@ -3299,7 +3301,7 @@ function home() {
   stopTimer(); S.mode = null; S.prob = null;
   var n = 0, ok = 0; TYPES.forEach(function (t) { var s = stat(t.id); n += s.n; ok += s.ok; });
   var need = needList().length, done = TYPES.filter(function (t) { return stat(t.id).ok > 0; }).length;
-  var h = '<header class="hd"><h1>中3数学　期末テスト対策</h1><p>関数 <i>y</i> = <i>ax</i><sup>2</sup> の利用・いろいろな関数／相似な図形／平行線と比　<span class="sm">全 ' + TYPES.length + ' の型・数字は毎回変わります</span></p></header>';
+  var h = '<header class="hd"><h1>がんばれ芭ちゃん！<span class="ttl2">テストまんてん講座</span><span class="ttl3">中3 数学・期末</span></h1><p>関数 <i>y</i> = <i>ax</i><sup>2</sup> の利用・いろいろな関数／相似な図形／平行線と比　<span class="sm">全 ' + TYPES.length + ' の型・数字は毎回変わります</span></p></header>';
   h += goalHtml();
   h += '<div class="sum"><div><b>' + n + '</b>問<span>解いた数</span></div><div><b>' + (n ? Math.round(ok / n * 100) : 0) + '</b>%<span>正解率</span></div><div><b>' + done + '</b>/' + TYPES.length + '<span>正解したことのある型</span></div><div class="' + (need ? 'warn' : '') + '"><b>' + need + '</b>個<span>やり直し待ちの型</span></div>' + (ST.tests.length ? '<div><b>' + ST.tests[ST.tests.length - 1].score + '</b>点<span>前回の模擬テスト</span></div>' : '') + '</div>';
   h += '<div class="modes">' +
